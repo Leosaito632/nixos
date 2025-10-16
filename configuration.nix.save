@@ -4,12 +4,21 @@
 
 { config, pkgs, ... }:
 
+# Enable home-manager
+let
+  home-manager = builtins.fetchTarball "https:/github.com/nix-community/home-manager/archive/release-25.05.tar.gz";
+in
 {
-  # Enable mysql
-  services.mysql = {
-    enable = true;
-    package = pkgs.mariadb;
-  };
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+      (import "${home-manager}/nixos")
+  ];
+
+  home-manager.useUserPackages = true;
+  home-manager.useGlobalPkgs = true;
+  home-manager.backupFileExtension = "backup";
+  home-manager.users.leo = import ./home.nix;
 
   # Enable zsh
   programs.zsh.enable = true;
@@ -24,11 +33,10 @@
   };
 
   # Fonts
-  # fonts.packages = with pkgs; [
-    # nerd-fonts.hack
-    # nerd-fonts.symbols-only
-    # nerd.fonts.meslo-lg 
-  # ];
+  fonts.packages = with pkgs; [
+    nerd-fonts.hack
+    nerd-fonts.symbols-only
+  ];
 
   # Neovim as default editor
   programs.neovim = {
@@ -178,7 +186,4 @@
     TERMINAL = "alacritty";
     TERM = "alacritty";
   };
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
 }
