@@ -16,19 +16,11 @@
 
   # Default User shell
   users.defaultUserShell = pkgs.zsh;
-  users.users.leo.shell = pkgs.zsh;
 
   # Default terminal for GNOME Files
   xdg.mime.defaultApplications = {
     "x-terminal-emulator" = "alacritty.desktop";
   };
-
-  # Fonts
-  # fonts.packages = with pkgs; [
-    # nerd-fonts.hack
-    # nerd-fonts.symbols-only
-    # nerd.fonts.meslo-lg 
-  # ];
 
   # Neovim as default editor
   programs.neovim = {
@@ -46,16 +38,12 @@
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
   # Enable networking
   networking.networkmanager.enable = true;
 
   # Enable bluetooth
-  # hardware.bluetooth.enable = true; # enables support for Bluetooth
-  # hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
 
   # Set your time zone.
@@ -80,12 +68,12 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  # services.xserver.displayManager.gdm.enable = true;
+  # services.xserver.desktopManager.gnome.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  # services.displayManager.sddm.enable = true;
-  # services.desktopManager.plasma6.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # Enable Hyprland
   # programs.hyprland.enable = true;
@@ -127,7 +115,6 @@
     description = "Leonardo Saito";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-    #  thunderbird
     ];
   };
 
@@ -140,8 +127,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    vim
+    kitty
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
