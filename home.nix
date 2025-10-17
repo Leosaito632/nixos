@@ -1,12 +1,45 @@
-{ config, pkgs, ...}:
-
+{inputs, config, pkgs, ...}:
 {
+  imports = [
+    inputs.illogical-impulse.homeManagerModules.default
+  ];
+  programs.kitty.font = {
+    name = "MesloLGS NF"; # Use a fonte que você já instala
+  };
+
+  illogical-impulse = {
+    # Enable Dotfiles
+    enable = true;
+    hyprland = {
+      # Monitor preference
+      monitor = [ ",preferred,auto,1" ];
+      # Use cusomize hyprland packages
+      package = pkgs.hyprland;
+      xdgPortalPackage = pkgs.xdg-desktop-portal-hyprland;
+      
+      # package = hypr.hyprland;
+      # xdgPortalPackage = hypr.xdg-desktop-portal-hyprland;
+
+      # Set NIXOS_OZONE_WL=1
+      ozoneWayland.enable = true;
+    };
+    theme = {
+      # Customize Cursors,
+      # the following config is the default config
+      # if you don't set.
+      cursor = {
+        package = pkgs.bibata-cursors;
+        theme = "Bibata-Modern-Ice";
+      };
+    };
+  };
  home.username = "leo";
  home.homeDirectory = "/home/leo";
  home.stateVersion = "25.05";
 
  # preciso disso?? acho que nao
  # programs.home-manager.enable = true;
+
 
  home.shellAliases = {
    nshell = "nix-shell --command 'zsh'";
@@ -24,6 +57,8 @@
    viAlias = true;
    vimAlias = true;
  };
+ 
+
 
  # Enable Alacritty
  programs.alacritty.enable = true;
@@ -52,7 +87,6 @@
    '';
 
  };
-
 
  # Installed Programs
  home.packages = with pkgs; [

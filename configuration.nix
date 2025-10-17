@@ -11,6 +11,9 @@
     package = pkgs.mariadb;
   };
 
+  # Precisa pro end-4-dots hyprland funcionar
+  services.udisks2.enable = true;
+
   # Enable zsh
   programs.zsh.enable = true;
 
@@ -76,7 +79,7 @@
   services.desktopManager.plasma6.enable = true;
 
   # Enable Hyprland
-  # programs.hyprland.enable = true;
+  programs.hyprland.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
