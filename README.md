@@ -1,4 +1,1 @@
-https://github.com/bigsaltyfishes/end-4-dots
-
-
-https://github.com/celesrenata/end-4-flakes
+Minha configuracao do NixOS, com Flakes, Home Manager e usado o flake de illogical impulse do https://github.com/xBLACKICEx/end-4-dots-hyprland-nixos
