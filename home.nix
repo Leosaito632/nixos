@@ -7,35 +7,13 @@ in
     inputs.illogical-impulse.homeManagerModules.default
   ];
 
-# bigsaltyfish/sitolam
-#   illogical-impulse = {
-#     # Enable Dotfiles
-#     enable = true;
-#     hyprland = {
-#       # Monitor preference
-#       monitor = [ ",preferred,auto,1" ];
-#       # Use cusomize hyprland packages
-#       package = pkgs.hyprland;
-#       # package = hypr.hyprland;
-# 
-#       xdgPortalPackage = pkgs.xdg-desktop-portal-hyprland;
-#       # xdgPortalPackage = hypr.xdg-desktop-portal-hyprland;
-# 
-#       # Set NIXOS_OZONE_WL=1
-#       ozoneWayland.enable = true;
-#     };
-#     theme = {
-#       # Customize Cursors,
-#       # the following config is the default config
-#       # if you don't set.
-#       cursor = {
-#         package = pkgs.bibata-cursors;
-#         theme = "Bibata-Modern-Ice";
-#       };
-#     };
-#   };
 
-  # xBLACKICEx 
+  home.username = "leo";
+  home.homeDirectory = "/home/leo";
+  home.stateVersion = "25.05";
+
+
+  # xBLACKICEx end-4-dots Hyprland config 
   illogical-impulse = {
     # Enable the dotfiles suite
     enable = true;
@@ -50,7 +28,7 @@ in
 
       # Enable Wayland ozone
       ozoneWayland.enable = true;
-    };
+  };
 
     # Dotfiles configurations
     dotfiles = {
@@ -60,23 +38,14 @@ in
   };
 
 
-  home.username = "leo";
-  home.homeDirectory = "/home/leo";
-  home.stateVersion = "25.05";
- 
-  # preciso disso?? acho que nao
-  # programs.home-manager.enable = true;
- 
- 
   home.shellAliases = {
     nshell = "nix-shell --command 'zsh'";
-    hme = "sudo nvim /etc/nixos/home.nix";
-    nre = "sudo nvim /etc/nixos/configuration.nix";
-    nrs = "sudo nixos-rebuild switch";
-    updateNix = "sudo nixos-rebuild switch --upgrade";
+    hme = "nvim ~/.dotfiles/home.nix";
+    nre = "nvim ~/.dotfiles/configuration.nix";
+    nrs = "nixos-rebuild switch --flake ~/.dotfiles#default";
   };
- 
- 
+
+
   # Enable neovim and set as default text editor
   programs.neovim = {
     enable = true;
@@ -84,13 +53,12 @@ in
     viAlias = true;
     vimAlias = true;
   };
-  
- 
- 
+
+
   # Enable Alacritty
   programs.alacritty.enable = true;
- 
-  # Enable zsh
+
+  # Enable and config zsh
   programs.zsh = {
     enable=true;
     enableCompletion = true;
@@ -140,14 +108,13 @@ in
       discord
       meslo-lgs-nf
       nerd-fonts.meslo-lg
+      dbeaver-bin
   ];
  
   # Fonts
   fonts.fontconfig.enable = true;
- 
-  home.file.".p10k.zsh" = {
-    source = ./p10k.zsh;
-  };
+  # powerlevel10k config file source 
+  home.file.".p10k.zsh".source = ./p10k.zsh;
  
  # Session Variables
   home.sessionVariables = {
@@ -158,4 +125,17 @@ in
   };
 
 
-} 
+  wayland.windowManager.hyprland.extraConfig = ''
+    # ===============================================
+    # == Minha Configuração Pessoal de Teclado
+    # ===============================================
+    input {
+        kb_layout = us,br
+        kb_variant = ,abnt2
+        kb_options = grp:win_space_toggle
+	kb_model =
+        kb_rules =
+    }
+  '';
+
+}
