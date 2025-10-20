@@ -5,6 +5,7 @@ in
 {
   imports = [
     inputs.illogical-impulse.homeManagerModules.default
+    inputs.zen-browser.homeModules.twilight
   ];
 
 
@@ -80,8 +81,9 @@ in
         source "''${HOME}/.p10k.zsh"
       fi
     '';
- 
   };
+  # Enable zen zen-browser
+  programs.zen-browser.enable=true;
  
   # Installed Programs
   home.packages = with pkgs; [
