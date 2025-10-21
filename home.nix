@@ -31,19 +31,17 @@ in
       ozoneWayland.enable = true;
   };
 
-    # Dotfiles configurations
-    dotfiles = {
-        fish.enable = true;
-        kitty.enable = true;
-    };
   };
 
 
   home.shellAliases = {
-    nshell = "nix-shell --command 'zsh'";
+    nshell = "nix-shell --command 'zszshh'";
     hme = "nvim ~/.dotfiles/home.nix";
     nre = "nvim ~/.dotfiles/configuration.nix";
     nrs = "nixos-rebuild switch --flake ~/.dotfiles#default";
+    vpn = "openfortivpn vpn.pucpr.br:443 -u leonardo.saito --realm=saml | openfortivpn-webview vpn.pucpr.br:443 | sudo openfortivpn vpn.pucpr.br:443 -u leonardo.saito --realm=saml --cookie-on-stdin";
+    zen-browser="zen";
+    plan = "io.github.alainm23.planify"
   };
 
 
@@ -111,6 +109,10 @@ in
       meslo-lgs-nf
       nerd-fonts.meslo-lg
       dbeaver-bin
+      foot
+      slurp
+      black
+      planify
   ];
  
   # Fonts
@@ -120,10 +122,10 @@ in
  
  # Session Variables
   home.sessionVariables = {
-    BROWSER = "firefox";
-    TERMINAL = "alacritty";
+    BROWSER = "zen";
+    TERMINAL = "foot";
     POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD="true";
-    TERM = "alacritty";
+    TERM = "foot";
   };
 
 
