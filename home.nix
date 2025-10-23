@@ -1,4 +1,4 @@
-{inputs, config, pkgs, ...}:
+{inputs, config, pkgs,lib, ...}:
 let
   hypr = inputs.hyprland.packages.${pkgs.system};
 in
@@ -29,10 +29,8 @@ in
 
       # Enable Wayland ozone
       ozoneWayland.enable = true;
+    };
   };
-
-  };
-
 
   home.shellAliases = {
     nshell = "nix-shell --command 'zszshh'";
@@ -41,7 +39,7 @@ in
     nrs = "nixos-rebuild switch --flake ~/.dotfiles#default";
     vpn = "openfortivpn vpn.pucpr.br:443 -u leonardo.saito --realm=saml | openfortivpn-webview vpn.pucpr.br:443 | sudo openfortivpn vpn.pucpr.br:443 -u leonardo.saito --realm=saml --cookie-on-stdin";
     zen-browser="zen";
-    plan = "io.github.alainm23.planify"
+    plan = "io.github.alainm23.planify";
   };
 
 
