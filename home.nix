@@ -33,7 +33,7 @@ in
   };
 
   home.shellAliases = {
-    nshell = "nix-shell --command 'zszshh'";
+    nshell = "nix-shell --command 'zsh'";
     hme = "nvim ~/.dotfiles/home.nix";
     nre = "nvim ~/.dotfiles/configuration.nix";
     nrs = "nixos-rebuild switch --flake ~/.dotfiles#default";
