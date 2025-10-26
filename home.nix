@@ -107,7 +107,6 @@ in
       meslo-lgs-nf
       nerd-fonts.meslo-lg
       dbeaver-bin
-      foot
       slurp
       black
       planify
@@ -115,12 +114,13 @@ in
  
   # Fonts
   fonts.fontconfig.enable = true;
+
   # powerlevel10k config file source 
   home.file.".p10k.zsh".source = ./p10k.zsh;
  
  # Session Variables
   home.sessionVariables = {
-    BROWSER = "zen";
+    BROWSER = "firefox";
     TERMINAL = "foot";
     POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD="true";
     TERM = "foot";
@@ -140,4 +140,13 @@ in
     }
   '';
 
+  # foot
+  programs.foot = {
+    enable=true;
+    settings = {
+      main = {
+        font = "MesloLGS NF:size=12";
+      };
+    };
+  };
 }
