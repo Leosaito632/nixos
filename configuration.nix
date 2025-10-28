@@ -5,6 +5,11 @@
 { config, pkgs, ... }:
 
 {
+  # Steam
+  programs.steam = {
+    enable = true;
+  };
+
   # Enable mysql
   services.mysql = {
     enable = true;
