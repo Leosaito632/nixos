@@ -70,7 +70,7 @@ in
     # Enable ohMyZsh
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "command-not-found"];
+      plugins = [ "git" "command-not-found" "docker-compose" "docker"];
     };
     initContent = ''
       if [ -f "''${HOME}/.p10k.zsh" ]; then
@@ -80,7 +80,16 @@ in
   };
   # Enable zen zen-browser
   programs.zen-browser.enable=true;
- 
+
+  # foot
+  programs.foot = {
+    enable=true;
+    settings = {
+      main = {
+        font = "MesloLGS NF:size=12";
+      };
+    };
+  };
   # Installed Programs
   home.packages = with pkgs; [
       wget
@@ -140,13 +149,4 @@ in
     }
   '';
 
-  # foot
-  programs.foot = {
-    enable=true;
-    settings = {
-      main = {
-        font = "MesloLGS NF:size=12";
-      };
-    };
-  };
 }
