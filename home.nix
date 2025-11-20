@@ -4,7 +4,6 @@
     inputs.zen-browser.homeModules.twilight
   ];
 
-
   home.username = "leo";
   home.homeDirectory = "/home/leo";
   home.stateVersion = "25.05";
