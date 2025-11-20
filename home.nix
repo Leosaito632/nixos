@@ -37,7 +37,7 @@ in
     hme = "nvim ~/.dotfiles/home.nix";
     nre = "nvim ~/.dotfiles/configuration.nix";
     nrs = "nixos-rebuild switch --flake ~/.dotfiles#default";
-    vpn = "openfortivpn vpn.pucpr.br:443 -u leonardo.saito --realm=saml | openfortivpn-webview vpn.pucpr.br:443 | sudo openfortivpn vpn.pucpr.br:443 -u leonardo.saito --realm=saml --cookie-on-stdin";
+		vpn = "openfortivpn-webview vpn.pucpr.br:443 | sudo openfortivpn vpn.pucpr.br:443 -u leonardo.saito --realm=saml --cookie-on-stdin";
     zen-browser="zen";
     plan = "io.github.alainm23.planify";
   };

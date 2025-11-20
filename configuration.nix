@@ -25,11 +25,6 @@
   # Default User shell
   users.defaultUserShell = pkgs.zsh;
 
-  # Default terminal for GNOME Files
-  xdg.mime.defaultApplications = {
-    "x-terminal-emulator" = "alacritty.desktop";
-  };
-
   # Neovim as default editor
   programs.neovim = {
     enable = true;
