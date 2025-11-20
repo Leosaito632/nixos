@@ -1,12 +1,12 @@
 {inputs, config, pkgs, lib, hostName, ...}:
-let
-  hypr = inputs.hyprland.packages.${pkgs.system};
-in
+# let
+#   hypr = inputs.hyprland.packages.${pkgs.system};
+# in
 {
-  imports = [
-    inputs.illogical-impulse.homeManagerModules.default
-    inputs.zen-browser.homeModules.twilight
-  ];
+  # imports = [
+  #   inputs.illogical-impulse.homeManagerModules.default
+  #   inputs.zen-browser.homeModules.twilight
+  # ];
 
 
   home.username = "leo";
@@ -14,22 +14,22 @@ in
   home.stateVersion = "25.05";
 
   # xBLACKICEx end-4-dots Hyprland config 
-  illogical-impulse = {
-    # Enable the dotfiles suite
-    enable = true;
+  # illogical-impulse = {
+  #   # Enable the dotfiles suite
+  #   enable = true;
 
-    hyprland = {
-      # Use customized Hyprland build
-      # package = pkgs.hyprland;
-      package = hypr.hyprland;
+  #   hyprland = {
+  #     # Use customized Hyprland build
+  #     # package = pkgs.hyprland;
+  #     package = hypr.hyprland;
 
-      # xdgPortalPackage = pkgs.xdg-desktop-portal-hyprland;
-      xdgPortalPackage = hypr.xdg-desktop-portal-hyprland;
+  #     # xdgPortalPackage = pkgs.xdg-desktop-portal-hyprland;
+  #     xdgPortalPackage = hypr.xdg-desktop-portal-hyprland;
 
-      # Enable Wayland ozone
-      ozoneWayland.enable = true;
-    };
-  };
+  #     # Enable Wayland ozone
+  #     ozoneWayland.enable = true;
+  #   };
+  # };
 
   home.shellAliases = {
     nshell = "nix-shell --command 'zsh'";
@@ -76,7 +76,7 @@ in
   };
 
   # Enable zen zen-browser
-  programs.zen-browser.enable=true;
+  # programs.zen-browser.enable=true;
 
 	# Install firefox.
   programs.firefox.enable = true;
@@ -115,7 +115,6 @@ in
       tree
       discord
       dbeaver-bin
-      slurp
       black
       planify
   ];
@@ -135,17 +134,17 @@ in
   };
 
 
-  wayland.windowManager.hyprland.extraConfig = ''
-    # ===============================================
-    # == Minha Configuração Pessoal de Teclado
-    # ===============================================
-    input {
-        kb_layout = us,br
-        kb_variant = ,abnt2
-        kb_options = grp:win_space_toggle
-        kb_model =
-        kb_rules =
-    }
-  '';
+#   wayland.windowManager.hyprland.extraConfig = ''
+#     # ===============================================
+#     # == Minha Configuração Pessoal de Teclado
+#     # ===============================================
+#     input {
+#         kb_layout = us,br
+#         kb_variant = ,abnt2
+#         kb_options = grp:win_space_toggle
+#         kb_model =
+#         kb_rules =
+#     }
+#   '';
 
 }
