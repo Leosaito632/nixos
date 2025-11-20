@@ -1,35 +1,13 @@
 {inputs, config, pkgs, lib, hostName, ...}:
-# let
-#   hypr = inputs.hyprland.packages.${pkgs.system};
-# in
 {
-  # imports = [
-  #   inputs.illogical-impulse.homeManagerModules.default
-  #   inputs.zen-browser.homeModules.twilight
-  # ];
+  imports = [
+    inputs.zen-browser.homeModules.twilight
+  ];
 
 
   home.username = "leo";
   home.homeDirectory = "/home/leo";
   home.stateVersion = "25.05";
-
-  # xBLACKICEx end-4-dots Hyprland config 
-  # illogical-impulse = {
-  #   # Enable the dotfiles suite
-  #   enable = true;
-
-  #   hyprland = {
-  #     # Use customized Hyprland build
-  #     # package = pkgs.hyprland;
-  #     package = hypr.hyprland;
-
-  #     # xdgPortalPackage = pkgs.xdg-desktop-portal-hyprland;
-  #     xdgPortalPackage = hypr.xdg-desktop-portal-hyprland;
-
-  #     # Enable Wayland ozone
-  #     ozoneWayland.enable = true;
-  #   };
-  # };
 
   home.shellAliases = {
     nshell = "nix-shell --command 'zsh'";
@@ -38,6 +16,25 @@
     nrs = "nixos-rebuild switch --flake ~/.dotfiles#${hostName}";
     vpn = "openfortivpn-webview vpn.pucpr.br:443 | sudo openfortivpn vpn.pucpr.br:443 -u leonardo.saito --realm=saml --cookie-on-stdin"; 
     plan = "io.github.alainm23.planify"; };
+
+  # -------- HYPRLAND --------
+  wayland.windowManager.hyprland = {
+    enable = true;
+    package = pkgs.hyprland;
+    xwayland.enable = true;
+
+    # Desabilita a geração de config do Home Manager
+    # para usar o arquivo hyprland.conf copiado do https://github.com/vasujain275/rudra.
+    extraConfig = builtins.readFile ./config/hypr/hyprland.conf;
+  };
+
+  # Linkar os arquivos de configuração
+  xdg.configFile."hypr".source = ./config/hypr;
+  xdg.configFile."waybar".source = ./config/waybar;
+  xdg.configFile."dunst".source = ./config/dunst;
+  xdg.configFile."wlogout".source = ./config/wlogout;
+	xdg.configFile."rofi".source = ./config/rofi;
+
 
 	# -------- PROGRAMS --------
   # Enable neovim and set as default text editor
@@ -76,7 +73,7 @@
   };
 
   # Enable zen zen-browser
-  # programs.zen-browser.enable=true;
+  programs.zen-browser.enable=true;
 
 	# Install firefox.
   programs.firefox.enable = true;
@@ -117,6 +114,46 @@
       dbeaver-bin
       black
       planify
+
+		  # Dependências do hyprland do hyprland do https://github.com/vasujain275/rudra/
+      # --- Core do Hyprland ---
+      hyprland
+      hyprlock    # Bloqueio de tela
+      hypridle    # Inatividade/Suspensão
+      hyprpicker  # Seletor de cores (Win+Shift+C)
+      
+      # --- Interface Gráfica ---
+      waybar      # Barra superior
+      dunst       # Notificações
+      rofi-wayland # Menu de apps
+      wlogout     # Menu de sair
+      swww        # Wallpaper Engine
+      
+      # --- Utilitários de Sistema ---
+      grim        # Screenshot
+      slurp       # Selecionar área
+      swappy      # Editor de screenshot
+      wl-clipboard# Copiar/Colar
+      cliphist    # Histórico de clipboard
+      libnotify   # Para o comando 'notify-send'
+      imagemagick # Processamento de imagens (usado nos scripts)
+      pavucontrol # Controle de volume GUI
+      playerctl   # Controle de mídia (Play/Pause)
+      brightnessctl # Brilho da tela
+      networkmanagerapplet # Ícone de rede na barra
+      
+      # --- Fontes e Ícones usados pelo Rudra ---
+      bibata-cursors
+      papirus-icon-theme
+      nerd-fonts.jetbrains-mono # Fonte principal do terminal/editor
+      font-awesome              # Ícones da Waybar
+      montserrat                # Fonte da UI
+
+      # --- Scripts do Rudra ---
+      (import ./scripts/wallsetter.nix { inherit pkgs; })
+      (import ./scripts/rofi-launcher.nix { inherit pkgs; })
+      (import ./scripts/screenshootin.nix { inherit pkgs; })
+      (import ./scripts/list-hypr-bindings.nix { inherit pkgs; })
   ];
  
   # Fonts
