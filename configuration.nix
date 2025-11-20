@@ -94,6 +94,7 @@ in
     enable = true;
     wayland.enable = false;
 		theme = "rudra";
+		autoNumlock = true;
   };
 
 	# Enable Hyprland
