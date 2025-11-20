@@ -113,6 +113,9 @@
       dbeaver-bin
       black
       planify
+      xfce.thunar
+      xfce.tumbler
+      yazi
 
 		  # Dependências do hyprland do hyprland do https://github.com/vasujain275/rudra/
       # --- Core do Hyprland ---
