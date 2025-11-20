@@ -5,6 +5,13 @@
 { config, pkgs, ... }:
 
 {
+  # Fonts
+  fonts.packages = with pkgs; [
+     meslo-lgs-nf
+     nerd-fonts.meslo-lg
+  ];
+
+
   # Steam
   programs.steam = {
     enable = true;
@@ -24,15 +31,6 @@
 
   # Default User shell
   users.defaultUserShell = pkgs.zsh;
-
-  # Neovim as default editor
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-  };
-
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -120,9 +118,6 @@
     packages = with pkgs; [
     ];
   };
-
-  # Install firefox.
-  programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

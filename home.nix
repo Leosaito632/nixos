@@ -1,4 +1,4 @@
-{inputs, config, pkgs,lib, ...}:
+{inputs, config, pkgs, lib, hostName, ...}:
 let
   hypr = inputs.hyprland.packages.${pkgs.system};
 in
@@ -12,7 +12,6 @@ in
   home.username = "leo";
   home.homeDirectory = "/home/leo";
   home.stateVersion = "25.05";
-
 
   # xBLACKICEx end-4-dots Hyprland config 
   illogical-impulse = {
@@ -36,13 +35,11 @@ in
     nshell = "nix-shell --command 'zsh'";
     hme = "nvim ~/.dotfiles/home.nix";
     nre = "nvim ~/.dotfiles/configuration.nix";
-    nrs = "nixos-rebuild switch --flake ~/.dotfiles#default";
-		vpn = "openfortivpn-webview vpn.pucpr.br:443 | sudo openfortivpn vpn.pucpr.br:443 -u leonardo.saito --realm=saml --cookie-on-stdin";
-    zen-browser="zen";
-    plan = "io.github.alainm23.planify";
-  };
+    nrs = "nixos-rebuild switch --flake ~/.dotfiles#${hostName}";
+    vpn = "openfortivpn-webview vpn.pucpr.br:443 | sudo openfortivpn vpn.pucpr.br:443 -u leonardo.saito --realm=saml --cookie-on-stdin"; 
+    plan = "io.github.alainm23.planify"; };
 
-
+	# -------- PROGRAMS --------
   # Enable neovim and set as default text editor
   programs.neovim = {
     enable = true;
@@ -50,7 +47,6 @@ in
     viAlias = true;
     vimAlias = true;
   };
-
 
   # Enable Alacritty
   programs.alacritty.enable = true;
@@ -78,8 +74,12 @@ in
       fi
     '';
   };
+
   # Enable zen zen-browser
   programs.zen-browser.enable=true;
+
+	# Install firefox.
+  programs.firefox.enable = true;
 
   # foot
   programs.foot = {
@@ -90,6 +90,7 @@ in
       };
     };
   };
+
   # Installed Programs
   home.packages = with pkgs; [
       wget
@@ -113,8 +114,6 @@ in
       nodejs
       tree
       discord
-      meslo-lgs-nf
-      nerd-fonts.meslo-lg
       dbeaver-bin
       slurp
       black
@@ -144,7 +143,7 @@ in
         kb_layout = us,br
         kb_variant = ,abnt2
         kb_options = grp:win_space_toggle
-	kb_model =
+        kb_model =
         kb_rules =
     }
   '';
