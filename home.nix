@@ -153,7 +153,7 @@
       (import ./scripts/wallsetter.nix { inherit pkgs; })
       (import ./scripts/rofi-launcher.nix { inherit pkgs; })
       (import ./scripts/screenshootin.nix { inherit pkgs; })
-      (import ./scripts/list-hypr-bindings.nix { inherit pkgs; })
+      (import ./scripts/list-hypr-bindings.nix { inherit pkgs; host = hostName; })
   ];
  
   # Fonts
@@ -169,19 +169,4 @@
     POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD="true";
     TERM = "foot";
   };
-
-
-#   wayland.windowManager.hyprland.extraConfig = ''
-#     # ===============================================
-#     # == Minha Configuração Pessoal de Teclado
-#     # ===============================================
-#     input {
-#         kb_layout = us,br
-#         kb_variant = ,abnt2
-#         kb_options = grp:win_space_toggle
-#         kb_model =
-#         kb_rules =
-#     }
-#   '';
-
 }

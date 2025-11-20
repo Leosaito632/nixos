@@ -10,23 +10,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # illogical-impulse = {
-    #   url = "github:xBLACKICEx/end-4-dots-hyprland-nixos";
-    #   inputs.nixpkgs.follows = "nixpkgs"; 
-    # };
-    # Fixed version that works with xBLACKICEx end-4-dots 
-    # hyprland = {
-    #   url = "github:hyprwm/Hyprland/v0.50.1-b";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    # zen-browser = {
-    #   url = "github:0xc000022070/zen-browser-flake";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  # outputs = inputs@{ self, nixpkgs, home-manager, hyprland, zen-browser, ... }:
-	outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, zen-browser, ... }:
 
 	let
 		system="x86_64-linux";
