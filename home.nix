@@ -7,6 +7,7 @@
   home.username = "leo";
   home.homeDirectory = "/home/leo";
   home.stateVersion = "25.05";
+	home.enableNixpkgsReleaseCheck = false;
 
   home.shellAliases = {
     nshell = "nix-shell --command 'zsh'";
@@ -113,8 +114,7 @@
       dbeaver-bin
       black
       planify
-      xfce.thunar
-      xfce.tumbler
+      nautilus 
       yazi
 
 		  # Dependências do hyprland do hyprland do https://github.com/vasujain275/rudra/
@@ -132,6 +132,7 @@
       swww        # Wallpaper Engine
       
       # --- Utilitários de Sistema ---
+      hyprshot
       grim        # Screenshot
       slurp       # Selecionar área
       swappy      # Editor de screenshot

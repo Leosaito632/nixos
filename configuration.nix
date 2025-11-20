@@ -35,6 +35,9 @@ in
   # Precisa pro end-4-dots hyprland funcionar
   services.udisks2.enable = true;
 
+	# Pra lixeira funcionar com Nautilus
+	services.gvfs.enable = true;
+
   # Enable zsh
   programs.zsh.enable = true;
 
@@ -89,7 +92,7 @@ in
 
   services.displayManager.sddm = {
     enable = true;
-    wayland.enable = true;
+    wayland.enable = false;
 		theme = "rudra";
   };
 
