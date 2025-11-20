@@ -3,7 +3,16 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
+let
+  sddmTheme = pkgs.stdenv.mkDerivation {
+    name = "rudra-sddm-theme";
+    src = ./sddm-theme;
+    installPhase = ''
+      mkdir -p $out/share/sddm/themes/rudra
+      cp -r * $out/share/sddm/themes/rudra
+    '';
+  };
+in
 {
   # Fonts
   fonts.packages = with pkgs; [
@@ -73,11 +82,19 @@
   # services.xserver.desktopManager.gnome.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  # services.displayManager.sddm.enable = true;
+  # services.desktopManager.plasma6.enable = true;
 
-  # Enable Hyprland
-  # programs.hyprland.enable = true;
+	# SDDM
+
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+		theme = "rudra";
+  };
+
+	# Enable Hyprland
+  programs.hyprland.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -126,6 +143,11 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim
+		# Dependências Gráficas do SDDM
+    libsForQt5.qt5.qtgraphicaleffects
+    libsForQt5.qt5.qtquickcontrols2
+    libsForQt5.qt5.qtsvg
+    sddmTheme
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
