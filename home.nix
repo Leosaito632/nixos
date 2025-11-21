@@ -2,6 +2,7 @@
 {
   imports = [
     inputs.zen-browser.homeModules.twilight
+    inputs.stylix.homeModules.stylix
   ];
 
   home.username = "leo";
@@ -15,56 +16,53 @@
     nre = "nvim ~/.dotfiles/configuration.nix";
     nrs = "sudo nixos-rebuild switch --flake ~/.dotfiles#${hostName}";
     vpn = "openfortivpn-webview vpn.pucpr.br:443 | sudo openfortivpn vpn.pucpr.br:443 -u leonardo.saito --realm=saml --cookie-on-stdin"; 
-    plan = "io.github.alainm23.planify"; };
+    plan = "io.github.alainm23.planify";
+  };
 
   # -------- CONFIGURAÇÃO DE TEMA --------
-  gtk = {
+  stylix = {
     enable = true;
-
-    theme = {
-      name = "Adwaita-dark"; # Força o tema escuro padrão
-      package = pkgs.gnome-themes-extra;
-    };
-
+    image = ./sddm-theme/Backgrounds/hk2.jpg;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
+    
     iconTheme = {
-      name = "Papirus-Dark"; # Ícones bonitos e escuros
+      enable = true;
       package = pkgs.papirus-icon-theme;
+      dark = "Papirus-Dark";
+      light = "Papirus-Light";
     };
 
-    cursorTheme = {
-      name = "Bibata-Modern-Ice";
+    cursor = {
       package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
       size = 24;
     };
 
-    # Força a preferência por tema escuro em apps GTK 3 e 4
-    gtk3.extraConfig = {
-      gtk-application-prefer-dark-theme = 1;
-    };
-    gtk4.extraConfig = {
-      gtk-application-prefer-dark-theme = 1;
-    };
-  };
-
-  dconf.settings = {
-      "org/gnome/desktop/interface" = {
-        color-scheme = "prefer-dark";
+    fonts = {
+      monospace = {
+        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "JetBrainsMono Nerd Font Mono";
+      };
+      sansSerif = {
+        package = pkgs.montserrat;
+        name = "Montserrat";
+      };
+      serif = {
+        package = pkgs.montserrat;
+        name = "Montserrat";
       };
     };
 
-  # Configuração para apps Qt seguirem o GTK
-  qt = {
-    enable = true;
-    platformTheme.name = "gtk";
-    style.name = "adwaita-dark";
-  };
+    # Controle quais apps o Stylix deve dominar
+    targets = {
+      gtk.enable = true;
+      foot.enable = true;
 
-  # Garante que o cursor do Hyprland também siga o tema
-  home.pointerCursor = {
-    gtk.enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Ice";
-    size = 24;
+      waybar.enable = false;
+      hyprland.enable = false;
+      rofi.enable = false;
+      neovim.enable = false;
+    };
   };
 
   # -------- HYPRLAND --------
@@ -81,12 +79,20 @@
   # Linkar os arquivos de configuração
   xdg.configFile."hypr".source = ./config/hypr;
   xdg.configFile."waybar".source = ./config/waybar;
-  xdg.configFile."dunst".source = ./config/dunst;
   xdg.configFile."wlogout".source = ./config/wlogout;
-	xdg.configFile."rofi".source = ./config/rofi;
+  xdg.configFile."nvim".source = ./config/nvim;
 
 
-	# -------- PROGRAMS --------
+  # -------- PROGRAMS --------
+  programs.rofi = {
+		enable = true;
+		package = pkgs.rofi-wayland;
+		extraConfig = {
+			modi = "drun,run";
+			show-icons = true;
+		};
+  };
+
   # Enable neovim and set as default text editor
   programs.neovim = {
     enable = true;
@@ -125,23 +131,19 @@
   # Enable zen zen-browser
   programs.zen-browser.enable=true;
 
-	# Install firefox.
+  # Install firefox.
   programs.firefox.enable = true;
 
   # foot
   programs.foot = {
     enable=true;
-    settings = {
-      main = {
-        font = "MesloLGS NF:size=12";
-      };
-    };
   };
 
   # Installed Programs
   home.packages = with pkgs; [
       wget
       fastfetch
+      microfetch
       btop
       git
       gh
@@ -226,6 +228,6 @@
     TERMINAL = "foot";
     POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD="true";
     TERM = "foot";
-		GTK_THEME = "Adwaita:dark";
+    GTK_THEME = "Adwaita:dark";
   };
 }

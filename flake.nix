@@ -14,9 +14,11 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    stylix.url = "github:danth/stylix";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, zen-browser, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, zen-browser, stylix, ... }:
 
 	let
 		system="x86_64-linux";
