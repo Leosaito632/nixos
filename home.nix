@@ -17,6 +17,50 @@
     vpn = "openfortivpn-webview vpn.pucpr.br:443 | sudo openfortivpn vpn.pucpr.br:443 -u leonardo.saito --realm=saml --cookie-on-stdin"; 
     plan = "io.github.alainm23.planify"; };
 
+  # -------- CONFIGURAÇÃO DE TEMA --------
+  gtk = {
+    enable = true;
+
+    theme = {
+      name = "Adwaita-dark"; # Força o tema escuro padrão
+      package = pkgs.gnome-themes-extra;
+    };
+
+    iconTheme = {
+      name = "Papirus-Dark"; # Ícones bonitos e escuros
+      package = pkgs.papirus-icon-theme;
+    };
+
+    cursorTheme = {
+      name = "Bibata-Modern-Ice";
+      package = pkgs.bibata-cursors;
+      size = 24;
+    };
+
+    # Força a preferência por tema escuro em apps GTK 3 e 4
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme = 1;
+    };
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme = 1;
+    };
+  };
+
+  # Configuração para apps Qt seguirem o GTK
+  qt = {
+    enable = true;
+    platformTheme.name = "gtk";
+    style.name = "adwaita-dark";
+  };
+
+  # Garante que o cursor do Hyprland também siga o tema
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Ice";
+    size = 24;
+  };
+
   # -------- HYPRLAND --------
   wayland.windowManager.hyprland = {
     enable = true;
