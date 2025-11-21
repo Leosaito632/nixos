@@ -167,7 +167,10 @@
       nautilus 
       yazi
 
-		  # Dependências do hyprland do hyprland do https://github.com/vasujain275/rudra/
+      # bluetooth
+      blueman
+
+      # Dependências do hyprland do hyprland do https://github.com/vasujain275/rudra/
       # --- Core do Hyprland ---
       hyprland
       hyprlock    # Bloqueio de tela
@@ -209,6 +212,8 @@
       (import ./scripts/list-hypr-bindings.nix { inherit pkgs; })
   ];
  
+  services.blueman-applet.enable = true;
+
   # Fonts
   fonts.fontconfig.enable = true;
 
