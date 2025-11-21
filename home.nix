@@ -3,6 +3,7 @@
   imports = [
     inputs.zen-browser.homeModules.twilight
     inputs.stylix.homeModules.stylix
+		./config/rofi/rofi.nix
   ];
 
   home.username = "leo";
@@ -84,14 +85,14 @@
 
 
   # -------- PROGRAMS --------
-  programs.rofi = {
-		enable = true;
-		package = pkgs.rofi-wayland;
-		extraConfig = {
-			modi = "drun,run";
-			show-icons = true;
-		};
-  };
+  # programs.rofi = {
+	# 	enable = true;
+	# 	package = pkgs.rofi-wayland;
+	# 	extraConfig = {
+	# 		modi = "drun,run";
+	# 		show-icons = true;
+	# 	};
+  # };
 
   # Enable neovim and set as default text editor
   programs.neovim = {
