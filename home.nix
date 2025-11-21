@@ -21,6 +21,12 @@
   gtk = {
     enable = true;
 
+    dconf.settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+      };
+    };
+
     theme = {
       name = "Adwaita-dark"; # Força o tema escuro padrão
       package = pkgs.gnome-themes-extra;
@@ -215,5 +221,6 @@
     TERMINAL = "foot";
     POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD="true";
     TERM = "foot";
+		GTK_THEME = "Adwaita:dark";
   };
 }
