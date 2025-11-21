@@ -17,7 +17,7 @@ pkgs.writeShellScriptBin "wallsetter" ''
     done
 
   	PREVIOUS=$WALLPAPER
-		cp "$WALLPAPER" ~/.cache/current_wallpaper.png
+    ${pkgs.imagemagick}/bin/magick "$WALLPAPER" ~/.cache/current_wallpaper.png
 
 
   	${pkgs.swww}/bin/swww img "$WALLPAPER" --transition-type random --transition-step 255 --transition-fps 60
