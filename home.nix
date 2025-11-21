@@ -21,12 +21,6 @@
   gtk = {
     enable = true;
 
-    dconf.settings = {
-      "org/gnome/desktop/interface" = {
-        color-scheme = "prefer-dark";
-      };
-    };
-
     theme = {
       name = "Adwaita-dark"; # Força o tema escuro padrão
       package = pkgs.gnome-themes-extra;
@@ -51,6 +45,12 @@
       gtk-application-prefer-dark-theme = 1;
     };
   };
+
+  dconf.settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+      };
+    };
 
   # Configuração para apps Qt seguirem o GTK
   qt = {
