@@ -31,8 +31,7 @@
   # -------- CONFIGURAÇÃO DE TEMA --------
   stylix = {
     enable = true;
-    image = ./Backgrounds/hk2.jpg;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-mirage.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-dark.yaml";
 
     iconTheme = {
       enable = true;
@@ -95,15 +94,6 @@
   xdg.configFile."nvim".source = ./config/nvim;
 
   # -------- PROGRAMS --------
-  # programs.rofi = {
-  # 	enable = true;
-  # 	package = pkgs.rofi-wayland;
-  # 	extraConfig = {
-  # 		modi = "drun,run";
-  # 		show-icons = true;
-  # 	};
-  # };
-
   # Enable neovim and set as default text editor
   programs.neovim = {
     enable = true;
@@ -179,14 +169,6 @@
     xclip
     pinta
     csvlens
-    gcc
-    pyright
-    bruno
-    nodejs
-    tree
-    discord
-    dbeaver-bin
-    black
     planify
     nautilus
     yazi
