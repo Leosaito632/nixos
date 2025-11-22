@@ -78,7 +78,6 @@
 
     };
   };
-
   # -------- HYPRLAND --------
   wayland.windowManager.hyprland = {
     enable = true;
@@ -228,6 +227,8 @@
     (import ./scripts/rofi-launcher.nix { inherit pkgs; })
     (import ./scripts/screenshootin.nix { inherit pkgs; })
     (import ./scripts/list-hypr-bindings.nix { inherit pkgs; })
+    # --- Meu script :D ---
+    (import ./scripts/quicknote.nix { inherit pkgs; })
   ];
 
   services.blueman-applet.enable = true;
