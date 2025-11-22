@@ -78,3 +78,30 @@ map("n", "<Space>bw", "<Cmd>BufferOrderByWindowNumber<CR>", opts)
 -- Other:
 -- :BarbarEnable - enables barbar (enabled by default)
 -- :BarbarDisable - very bad command, should never be used
+
+-- MARKDOWN
+-- Função para alternar checkbox
+local function toggle_checkbox()
+	local line = vim.api.nvim_get_current_line()
+	local new_line = ""
+
+	if line:match("^%s*-%s%[ %]") then
+		new_line = line:gsub("-%s%[ %]", "- [x]", 1)
+	elseif line:match("^%s*-%s%[x%]") then
+		new_line = line:gsub("-%s%[x%]", "- [ ]", 1)
+	else
+		-- Se não tem checkbox, adiciona um no começo
+		new_line = "- [ ] " .. line
+	end
+
+	vim.api.nvim_set_current_line(new_line)
+end
+
+-- Cria o atalho (apenas para arquivos markdown)
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "markdown",
+	callback = function()
+		-- Mapeia <Leader>c para Check
+		vim.keymap.set("n", "<leader>c", toggle_checkbox, { buffer = true, desc = "Toggle Checkbox" })
+	end,
+})

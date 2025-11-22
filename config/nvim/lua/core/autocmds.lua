@@ -21,3 +21,14 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt_local.softtabstop = 4
 	end,
 })
+
+-- Autosave em markdown (para minhas anotações nixos)
+vim.api.nvim_create_autocmd({ "TextChanged", "InsertLeave" }, {
+	pattern = "*.md",
+	callback = function()
+		-- Salva silenciosamente se houver mudanças
+		if vim.bo.modified then
+			vim.cmd("silent write")
+		end
+	end,
+})
