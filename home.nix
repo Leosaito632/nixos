@@ -1,6 +1,13 @@
-{ inputs, config, pkgs, lib, hostName, ... }: {
+{
+  inputs,
+  config,
+  pkgs,
+  lib,
+  hostName,
+  ...
+}:
+{
   imports = [
-    inputs.zen-browser.homeModules.twilight
     inputs.stylix.homeModules.stylix
     ./config/rofi/rofi.nix
   ];
@@ -15,8 +22,7 @@
     hme = "nvim ~/.dotfiles/home.nix";
     nre = "nvim ~/.dotfiles/configuration.nix";
     nrs = "sudo nixos-rebuild switch --flake ~/.dotfiles#${hostName}";
-    vpn =
-      "openfortivpn-webview vpn.pucpr.br:443 | sudo openfortivpn vpn.pucpr.br:443 -u leonardo.saito --realm=saml --cookie-on-stdin";
+    vpn = "openfortivpn-webview vpn.pucpr.br:443 | sudo openfortivpn vpn.pucpr.br:443 -u leonardo.saito --realm=saml --cookie-on-stdin";
     plan = "io.github.alainm23.planify";
   };
 
@@ -112,15 +118,22 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    plugins = [{
-      name = "powerlevel10k";
-      src = pkgs.zsh-powerlevel10k;
-      file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-    }];
+    plugins = [
+      {
+        name = "powerlevel10k";
+        src = pkgs.zsh-powerlevel10k;
+        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      }
+    ];
     # Enable ohMyZsh
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "command-not-found" "docker-compose" "docker" ];
+      plugins = [
+        "git"
+        "command-not-found"
+        "docker-compose"
+        "docker"
+      ];
     };
     initContent = ''
       if [ -f "''${HOME}/.p10k.zsh" ]; then
@@ -129,17 +142,20 @@
     '';
   };
 
-  # Enable zen zen-browser
-  programs.zen-browser.enable = true;
-
   # Install firefox.
   programs.firefox.enable = true;
 
   # foot
-  programs.foot = { enable = true; };
+  programs.foot = {
+    enable = true;
+  };
 
   # Installed Programs
   home.packages = with pkgs; [
+    inputs.zen-browser.packages."${pkgs.system}".default
+    cargo
+    rustc
+    nodejs
     wget
     fastfetch
     microfetch
@@ -223,7 +239,7 @@
   # Fonts
   fonts.fontconfig.enable = true;
 
-  # powerlevel10k config file source 
+  # powerlevel10k config file source
   home.file.".p10k.zsh".source = ./p10k.zsh;
 
   # Session Variables
