@@ -153,6 +153,9 @@
   # Installed Programs
   home.packages = with pkgs; [
     inputs.zen-browser.packages."${pkgs.system}".default
+    stylua
+    shfmt
+    nodePackages.prettier
     cargo
     rustc
     nodejs

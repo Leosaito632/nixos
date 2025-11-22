@@ -16,10 +16,9 @@ in
 {
   # Fonts
   fonts.packages = with pkgs; [
-     meslo-lgs-nf
-     nerd-fonts.meslo-lg
+    meslo-lgs-nf
+    nerd-fonts.meslo-lg
   ];
-
 
   # Steam
   programs.steam = {
@@ -35,8 +34,8 @@ in
   # Precisa pro end-4-dots hyprland funcionar
   services.udisks2.enable = true;
 
-	# Pra lixeira funcionar com Nautilus
-	services.gvfs.enable = true;
+  # Pra lixeira funcionar com Nautilus
+  services.gvfs.enable = true;
 
   # Enable zsh
   programs.zsh.enable = true;
@@ -57,7 +56,6 @@ in
   # Enable bluetooth
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
-
 
   # Set your time zone.
   time.timeZone = "America/Sao_Paulo";
@@ -88,16 +86,16 @@ in
   # services.displayManager.sddm.enable = true;
   # services.desktopManager.plasma6.enable = true;
 
-	# SDDM
+  # SDDM
 
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = false;
-		theme = "rudra";
-		autoNumlock = true;
+    theme = "rudra";
+    autoNumlock = true;
   };
 
-	# Enable Hyprland
+  # Enable Hyprland
   programs.hyprland.enable = true;
 
   # Configure keymap in X11
@@ -135,7 +133,11 @@ in
   users.users.leo = {
     isNormalUser = true;
     description = "Leonardo Saito";
-    extraGroups = [ "networkmanager" "wheel" "docker"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
     packages = with pkgs; [
     ];
   };
@@ -147,7 +149,7 @@ in
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim
-		# Dependências Gráficas do SDDM
+    # Dependências Gráficas do SDDM
     libsForQt5.qt5.qtgraphicaleffects
     libsForQt5.qt5.qtquickcontrols2
     libsForQt5.qt5.qtsvg
@@ -174,7 +176,6 @@ in
   networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [ 3306 ];
 
-
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
@@ -183,7 +184,11 @@ in
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   virtualisation.docker.enable = true;
+  programs.nix-ld.enable = true;
 }
