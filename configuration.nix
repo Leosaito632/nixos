@@ -173,8 +173,24 @@ in
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [ 3306 ];
+  networking.firewall = {
+    enable = true;
+
+    # Porta padrão do Terraria/tModLoader
+    allowedTCPPorts = [
+      7777
+      3306
+    ];
+    allowedUDPPorts = [ 7777 ];
+
+    # Faixa de portas usada pela Steam para P2P (Multiplayer via lista de amigos)
+    allowedUDPPortRanges = [
+      {
+        from = 27000;
+        to = 27050;
+      }
+    ];
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
