@@ -184,6 +184,8 @@
     fd
     tree
 
+    discord
+
     # bluetooth
     blueman
 
