@@ -11,6 +11,7 @@
     inputs.zen-browser.homeModules.twilight
     inputs.stylix.homeModules.stylix
     ./config/rofi/rofi.nix
+    ./config/wlogout/wlogout.nix
   ];
 
   home.username = "leo";
@@ -31,7 +32,7 @@
   # -------- CONFIGURAÇÃO DE TEMA --------
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-dark.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 
     iconTheme = {
       enable = true;
@@ -67,6 +68,7 @@
       foot.enable = true;
       dunst.enable = true;
 
+      yazi.enable = false;
       firefox.enable = false;
       zen-browser.enable = false;
       waybar.enable = false;
@@ -90,7 +92,7 @@
   # Linkar os arquivos de configuração
   xdg.configFile."hypr".source = ./config/hypr;
   xdg.configFile."waybar".source = ./config/waybar;
-  xdg.configFile."wlogout".source = ./config/wlogout;
+  xdg.configFile."wlogout/icons".source = ./config/wlogout/icons;
   xdg.configFile."nvim".source = ./config/nvim;
 
   # -------- PROGRAMS --------
