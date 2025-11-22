@@ -9,4 +9,5 @@ require("lazy").setup({
     -- Importa todos os arquivos .lua da sua pasta 'lua/plugins'
     { import = "plugins" },
   },
+  lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json",
 })
