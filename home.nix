@@ -60,7 +60,7 @@
       foot.enable = true;
 
       firefox.enable = false;
-      zen.enable = false;
+      zen-browser.enable = false;
       waybar.enable = false;
       hyprland.enable = false;
       rofi.enable = false;
