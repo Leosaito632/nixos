@@ -169,6 +169,8 @@
       planify
       nautilus 
       yazi
+			ripgrep
+			nixfmt
 
       # bluetooth
       blueman
