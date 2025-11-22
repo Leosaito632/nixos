@@ -8,6 +8,7 @@
 }:
 {
   imports = [
+    inputs.zen-browser.homeModules.twilight
     inputs.stylix.homeModules.stylix
     ./config/rofi/rofi.nix
   ];
@@ -141,6 +142,8 @@
       fi
     '';
   };
+  # Install zen-browser.
+  programs.zen-browser.enable = true;
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -152,7 +155,6 @@
 
   # Installed Programs
   home.packages = with pkgs; [
-    inputs.zen-browser.packages."${pkgs.system}".twilight
     stylua
     shfmt
     nodePackages.prettier
