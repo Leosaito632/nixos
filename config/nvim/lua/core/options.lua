@@ -1,5 +1,5 @@
 -- [[ Setting options ]] See `:h vim.o`
-vim.g.mapleader = ' '
+vim.g.mapleader = " "
 
 -- NOTE: You can change these options as you wish!
 -- For more options, you can see `:help option-list`
@@ -36,5 +36,5 @@ vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
 
 -- sei la to querendo usar so espaço e nao tab
-vim.o.expandtab = true   -- converte tab em espaço
+vim.o.expandtab = true -- converte tab em espaço
 vim.o.smartindent = true
