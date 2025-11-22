@@ -9,6 +9,6 @@ return {
 	-- priority = 1000,
 	--
 	config = function()
-		vim.cmd("colorscheme carbonfox")
+		vim.cmd("catppuccin-mocha")
 	end,
 }
