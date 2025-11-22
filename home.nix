@@ -31,7 +31,7 @@
   # -------- CONFIGURAÇÃO DE TEMA --------
   stylix = {
     enable = true;
-    image = ./sddm-theme/Backgrounds/hk2.jpg;
+    image = ./Backgrounds/hk2.jpg;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-mirage.yaml";
 
     iconTheme = {
