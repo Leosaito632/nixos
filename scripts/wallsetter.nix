@@ -1,26 +1,33 @@
 { pkgs, ... }:
 
 pkgs.writeShellScriptBin "wallsetter" ''
-
-  TIMEOUT=720
+  TIMEOUT=600
 
   for pid in $(pidof -o %PPID -x wallsetter); do
-  	kill $pid
+      kill $pid
   done
 
-  if ! [ -d ~/Pictures/Wallpapers ]; then notify-send -t 5000 "~/Pictures/Wallpapers does not exist" && exit 1; fi
-  if [ $(ls -1 ~/Pictures/Wallpapers | wc -l) -lt 1 ]; then	notify-send -t 9000 "The wallpaper folder is expected to have more than 1 image. Exiting Wallsetter." && exit 1; fi
+  if ! [ -d ~/Pictures/Wallpapers ]; then 
+      notify-send -u critical "Erro Wallsetter" "~/Pictures/Wallpapers não encontrado" && exit 1
+  fi
 
   while true; do
-    while [ "$WALLPAPER" == "$PREVIOUS" ]; do
-      WALLPAPER=$(find ~/Pictures/Wallpapers -name '*' | awk '!/.git/' | tail -n +2 | shuf -n 1)
-    done
+      WALLPAPER=$(find -L ~/Pictures/Wallpapers -type f -iregex ".*\.\(jpg\|jpeg\|png\)" | shuf -n 1)
 
-  	PREVIOUS=$WALLPAPER
-    ${pkgs.imagemagick}/bin/magick "$WALLPAPER" ~/.cache/current_wallpaper.png
+      if [ -z "$WALLPAPER" ]; then
+          notify-send "Wallsetter" "Nenhuma imagem encontrada em ~/Pictures/Wallpapers"
+          continue
+      fi
 
+      if [ "$WALLPAPER" == "$PREVIOUS" ] && [ $(ls -1 ~/Pictures/Wallpapers | wc -l) -gt 1 ]; then
+          continue
+      fi
 
-  	${pkgs.swww}/bin/swww img "$WALLPAPER" --transition-type random --transition-step 255 --transition-fps 60
-  	sleep $TIMEOUT
+      PREVIOUS=$WALLPAPER
+
+      ${pkgs.imagemagick}/bin/magick "$WALLPAPER" ~/.cache/current_wallpaper.png
+      ${pkgs.swww}/bin/swww img "$WALLPAPER" --transition-type random --transition-step 10 --transition-fps 60
+      
+      sleep $TIMEOUT
   done
 ''

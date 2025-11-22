@@ -166,6 +166,7 @@
     gh
     vscode
     wasistlos
+    zapzap
     obsidian
     openfortivpn
     openfortivpn-webview
