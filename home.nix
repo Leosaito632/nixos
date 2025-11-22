@@ -66,15 +66,16 @@
     targets = {
       gtk.enable = true;
       foot.enable = true;
-      dunst.enable = true;
 
-      yazi.enable = false;
+      yazi.enable = true;
       firefox.enable = false;
       zen-browser.enable = false;
       waybar.enable = false;
       hyprland.enable = false;
       rofi.enable = false;
       neovim.enable = false;
+      dunst.enable = false;
+
     };
   };
 
@@ -94,6 +95,7 @@
   xdg.configFile."waybar".source = ./config/waybar;
   xdg.configFile."wlogout/icons".source = ./config/wlogout/icons;
   xdg.configFile."nvim".source = ./config/nvim;
+  xdg.configFile."dunst".source = ./config/dunst;
 
   # -------- PROGRAMS --------
   # Enable neovim and set as default text editor
@@ -179,6 +181,7 @@
     unzip
     gnumake
     fd
+    tree
 
     # bluetooth
     blueman
