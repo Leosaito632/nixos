@@ -25,6 +25,7 @@
     nrs = "sudo nixos-rebuild switch --flake ~/.dotfiles#${hostName}";
     vpn = "openfortivpn-webview vpn.pucpr.br:443 | sudo openfortivpn vpn.pucpr.br:443 -u leonardo.saito --realm=saml --cookie-on-stdin";
     plan = "io.github.alainm23.planify";
+    cls = "clear";
   };
 
   # -------- CONFIGURAÇÃO DE TEMA --------
