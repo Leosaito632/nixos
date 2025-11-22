@@ -96,6 +96,8 @@
   xdg.configFile."wlogout/icons".source = ./config/wlogout/icons;
   xdg.configFile."nvim".source = ./config/nvim;
   xdg.configFile."dunst".source = ./config/dunst;
+  # Linkar wallpapers
+  home.file."Pictures/Wallpapers".source = ./sddm-theme/Backgrounds;
 
   # -------- PROGRAMS --------
   # Enable neovim and set as default text editor

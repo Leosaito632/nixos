@@ -71,7 +71,7 @@
           background-size: 25%;
           border-style: solid;
           background-color: rgba(12, 12, 12, 0.3);
-          border: 3px solid #${colors.base05};
+          border: 3px solid #FFFFFF;
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
         button:focus,
@@ -79,7 +79,7 @@
         button:hover {
           color: #${colors.base0B};
           background-color: rgba(12, 12, 12, 0.5);
-          border: 3px solid #${colors.base0B};
+          border: 3px solid #FFFFFF;
         }
 
         /* Aponta para os ícones que vamos linkar manualmente */
