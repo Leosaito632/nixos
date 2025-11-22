@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 pkgs.writeShellScriptBin "wallsetter" ''
-  TIMEOUT=600
+  TIMEOUT=300
 
   for pid in $(pidof -o %PPID -x wallsetter); do
       kill $pid
