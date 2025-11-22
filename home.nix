@@ -66,6 +66,7 @@
     targets = {
       gtk.enable = true;
       foot.enable = true;
+      dunst.enable = true;
 
       firefox.enable = false;
       zen-browser.enable = false;
