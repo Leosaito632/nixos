@@ -1,381 +1,136 @@
 {
-// sourced from header module
+  "layer": "top",
+  "position": "top",
+  "mod": "dock",
+  "height": 40,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
 
-	"layer": "top",
-	"position": "top",
-	"mod": "dock",
-	"height": 40,
-	"exclusive": true,
-	"passthrough": false,
-	"gtk-layer-shell": true,
+  "modules-left": [
+    "custom/left",
+    "custom/rofi",
+    "backlight",
+    "pulseaudio",
+    "battery",
+    "power-profiles-daemon",
+    "custom/right",
+  ],
+  "modules-center": ["custom/left", "hyprland/workspaces", "custom/right"],
+  "modules-right": [
+    "custom/left",
+    "network",
+    "tray",
+    "clock",
+    "temperature",
+    "custom/right",
+  ],
 
-	"modules-left": ["custom/left","custom/rofi","backlight","pulseaudio","battery","power-profiles-daemon","custom/right"],
-	"modules-center": ["custom/left","hyprland/workspaces","custom/right"],
-	"modules-right": ["custom/left","tray","clock","custom/right"],
-
-  "network": {
-		"tooltip": true,
-		"format-wifi": "<span foreground='#FF8B49'> {bandwidthDownBytes}</span> <span foreground='#FF6962'> {bandwidthUpBytes}</span>",
-		"format-ethernet": "<span foreground='#FF8B49'> {bandwidthDownBytes}</span> <span foreground='#FF6962'> {bandwidthUpBytes}</span>",
-		"tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
-		"format-linked": "󰈀 {ifname} (No IP)",
-		"format-disconnected": " 󰖪 ",
-		"tooltip-format-disconnected": "Disconnected",
-		"interval": 2,
-		"on-click-right": "~/.config/waybar/network.py"
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "  ",
+      "performance": "  ",
+      "balanced": "  ",
+      "power-saver": "  ",
+    },
   },
 
-
-	"temperature": {
-	  "thermal-zone": 2,
-	  "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-	  "critical-threshold": 80,
-	  "format-critical": "{temperatureC}°C ",
-	  "format": "{temperatureC}°C "
-	},
-
-	"custom/rofi": {
-     "format": "  {}",
-     "on-click": "rofi -show drun"
-	},
-
-	"hyprland/workspaces": {
-		"disable-scroll": true,
-		"all-outputs": true,
-		"on-click": "activate",
-		"persistent_workspaces": {
-				"1": [],
-				"2": [],
-				"3": [],
-				"4": [],
-				"5": []
-		}
-	},
-
-	"battery": {
-			"states": {
-					"good": 95,
-					"warning": 30,
-					"critical": 20,
-							"Fuck off Switch off": 10
-			},
-			"format": "{icon} {capacity}%",
-			"format-charging": " {capacity}%",
-			"format-plugged": " {capacity}%",
-			"format-alt": "{time} {icon}",
-			"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
-	},
-
-	"pulseaudio": {
-        "format": "{icon} {volume}",
-        "format-muted": "󰖁",
-        "on-click": "pavucontrol -t 3",
-        "on-click-middle": "~/.config/hypr/scripts/volumecontrol.sh -o m",
-        "on-scroll-up": "~/.config/hypr/scripts/volumecontrol.sh -o i",
-        "on-scroll-down": "~/.config/hypr/scripts/volumecontrol.sh -o d",
-        "tooltip-format": "{icon} {desc} // {volume}%",
-        "scroll-step": 5,
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-   }
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "on-click": "activate",
+    "format": "{icon}",
+    "persistent-workspaces": {
+      "*": 10,
     },
+  },
 
-
-    "tray": {
-      "icon-size": 20,
-        "spacing": 9
-    },
-
+  "custom/rofi": {
+    "format": "  {}",
+    "on-click": "rofi -show drun",
+  },
 
   "clock": {
-        "format": " {:%H:%M}",
-        "on-click": "~/.config/eww/scripts/toggle_control_center.sh"
-      },
+    "format": " {:%H:%M}",
+    "on-click": "~/.config/eww/scripts/toggle_control_center.sh",
+  },
 
-
-"backlight": {
+  "backlight": {
     "device": "intel_backlight",
-    "on-scroll-up": "light -A 7",
-    "on-scroll-down": "light -U 7",
+    "on-scroll-up": "brightnessctl set +5%",
+    "on-scroll-down": "brightnessctl set 5%-",
     "format": "{icon} {percent}%",
-    "format-icons": [
-      "󰃞",
-      "󰃟",
-      "󰃠",
-      "󱩎",
-      "󱩏",
-      "󱩐",
-      "󱩑",
-      "󱩒",
-      "󱩓",
-      "󰛨"
-    ]
-},
+    "format-icons": ["󰃞", "󰃟", "󰃠", "󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󰛨"],
+  },
 
-
-// modules for padding //
-
-    "custom/left": {
-        "format": " ",
-        "interval" : "once",
-        "tooltip": false
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20,
     },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+  },
 
-    "custom/right": {
-        "format": " ",
-        "interval" : "once",
-        "tooltip": false
+  "pulseaudio": {
+    "format": "{icon} {volume}",
+    "format-muted": "󰖁",
+    "on-click": "pavucontrol -t 3",
+    "scroll-step": 5,
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""],
     },
+  },
 
+  "network": {
+    "tooltip": true,
+    "format-wifi": "<span foreground='#FF8B49'> {bandwidthDownBytes}</span> <span foreground='#FF6962'> {bandwidthUpBytes}</span>",
+    "format-ethernet": "<span foreground='#FF8B49'> {bandwidthDownBytes}</span> <span foreground='#FF6962'> {bandwidthUpBytes}</span>",
+    "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+    "format-linked": "󰈀 {ifname} (No IP)",
+    "format-disconnected": " 󰖪 ",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 2,
+  },
+
+  "bluetooth": {
+    "format": " {status}",
+    "format-connected": " {device_alias}",
+    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "on-click": "blueman-manager",
+  },
+
+  "tray": {
+    "icon-size": 20,
+    "spacing": 9,
+  },
+
+  "custom/left": {
+    "format": " ",
+    "interval": "once",
+    "tooltip": false,
+  },
+
+  "custom/right": {
+    "format": " ",
+    "interval": "once",
+    "tooltip": false,
+  },
 }
-
-
-// positions generated based on config.ctl //
-
-	"modules-left": ["custom/padd","","custom/padd"],
-	"modules-center": ["custom/padd","","custom/padd"],
-	"modules-right": ["custom/padd","","custom/padd"],
-
-
-// sourced from modules based on config.ctl //
-
-
-
-// positions generated based on config.ctl //
-
-	"modules-left": ["custom/padd","","custom/padd"],
-	"modules-center": ["custom/padd","","custom/padd"],
-	"modules-right": ["custom/padd","","custom/padd"],
-
-
-// sourced from modules based on config.ctl //
-
-
-
-// positions generated based on config.ctl //
-
-	"modules-left": ["custom/padd","","custom/padd"],
-	"modules-center": ["custom/padd","","custom/padd"],
-	"modules-right": ["custom/padd","","custom/padd"],
-
-
-// sourced from modules based on config.ctl //
-
-
-
-// positions generated based on config.ctl //
-
-	"modules-left": ["custom/padd","","custom/padd"],
-	"modules-center": ["custom/padd","","custom/padd"],
-	"modules-right": ["custom/padd","","custom/padd"],
-
-
-// sourced from modules based on config.ctl //
-
-
-
-// positions generated based on config.ctl //
-
-	"modules-left": ["custom/padd","","custom/padd"],
-	"modules-center": ["custom/padd","","custom/padd"],
-	"modules-right": ["custom/padd","","custom/padd"],
-
-
-// sourced from modules based on config.ctl //
-
-
-
-// positions generated based on config.ctl //
-
-	"modules-left": ["custom/padd","","custom/padd"],
-	"modules-center": ["custom/padd","","custom/padd"],
-	"modules-right": ["custom/padd","","custom/padd"],
-
-
-// sourced from modules based on config.ctl //
-
-
-
-// positions generated based on config.ctl //
-
-	"modules-left": ["custom/padd","","custom/padd"],
-	"modules-center": ["custom/padd","","custom/padd"],
-	"modules-right": ["custom/padd","","custom/padd"],
-
-
-// sourced from modules based on config.ctl //
-
-
-
-// positions generated based on config.ctl //
-
-	"modules-left": ["custom/padd","","custom/padd"],
-	"modules-center": ["custom/padd","","custom/padd"],
-	"modules-right": ["custom/padd","","custom/padd"],
-
-
-// sourced from modules based on config.ctl //
-
-
-
-// positions generated based on config.ctl //
-
-	"modules-left": ["custom/padd","","custom/padd"],
-	"modules-center": ["custom/padd","","custom/padd"],
-	"modules-right": ["custom/padd","","custom/padd"],
-
-
-// sourced from modules based on config.ctl //
-
-
-
-// positions generated based on config.ctl //
-
-	"modules-left": ["custom/padd","","custom/padd"],
-	"modules-center": ["custom/padd","","custom/padd"],
-	"modules-right": ["custom/padd","","custom/padd"],
-
-
-// sourced from modules based on config.ctl //
-
-
-
-// positions generated based on config.ctl //
-
-	"modules-left": ["custom/padd","","custom/padd"],
-	"modules-center": ["custom/padd","","custom/padd"],
-	"modules-right": ["custom/padd","","custom/padd"],
-
-
-// sourced from modules based on config.ctl //
-
-
-
-// positions generated based on config.ctl //
-
-	"modules-left": ["custom/padd","","custom/padd"],
-	"modules-center": ["custom/padd","","custom/padd"],
-	"modules-right": ["custom/padd","","custom/padd"],
-
-
-// sourced from modules based on config.ctl //
-
-
-
-// positions generated based on config.ctl //
-
-	"modules-left": ["custom/padd","","custom/padd"],
-	"modules-center": ["custom/padd","","custom/padd"],
-	"modules-right": ["custom/padd","","custom/padd"],
-
-
-// sourced from modules based on config.ctl //
-
-
-
-// positions generated based on config.ctl //
-
-	"modules-left": ["custom/padd","","custom/padd"],
-	"modules-center": ["custom/padd","","custom/padd"],
-	"modules-right": ["custom/padd","","custom/padd"],
-
-
-// sourced from modules based on config.ctl //
-
-
-
-// positions generated based on config.ctl //
-
-	"modules-left": ["custom/padd","","custom/padd"],
-	"modules-center": ["custom/padd","","custom/padd"],
-	"modules-right": ["custom/padd","","custom/padd"],
-
-
-// sourced from modules based on config.ctl //
-
-
-
-// positions generated based on config.ctl //
-
-	"modules-left": ["custom/padd","","custom/padd"],
-	"modules-center": ["custom/padd","","custom/padd"],
-	"modules-right": ["custom/padd","","custom/padd"],
-
-
-// sourced from modules based on config.ctl //
-
-
-
-// positions generated based on config.ctl //
-
-	"modules-left": ["custom/padd","","custom/padd"],
-	"modules-center": ["custom/padd","","custom/padd"],
-	"modules-right": ["custom/padd","","custom/padd"],
-
-
-// sourced from modules based on config.ctl //
-
-
-
-// positions generated based on config.ctl //
-
-	"modules-left": ["custom/padd","","custom/padd"],
-	"modules-center": ["custom/padd","","custom/padd"],
-	"modules-right": ["custom/padd","","custom/padd"],
-
-
-// sourced from modules based on config.ctl //
-
-
-
-// positions generated based on config.ctl //
-
-	"modules-left": ["custom/padd","","custom/padd"],
-	"modules-center": ["custom/padd","","custom/padd"],
-	"modules-right": ["custom/padd","","custom/padd"],
-
-
-// sourced from modules based on config.ctl //
-
-
-
-// positions generated based on config.ctl //
-
-	"modules-left": ["custom/padd","","custom/padd"],
-	"modules-center": ["custom/padd","","custom/padd"],
-	"modules-right": ["custom/padd","","custom/padd"],
-
-
-// sourced from modules based on config.ctl //
-
-
-
-// positions generated based on config.ctl //
-
-	"modules-left": ["custom/padd","","custom/padd"],
-	"modules-center": ["custom/padd","","custom/padd"],
-	"modules-right": ["custom/padd","","custom/padd"],
-
-
-// sourced from modules based on config.ctl //
-
-
-
-// power profile daemon
-"power-profiles-daemon": {
-  "format": "{icon}",
-  "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-  "tooltip": true,
-  "format-icons": {
-    "default": "",
-    "performance": "",
-    "balanced": "",
-    "power-saver": ""
-  }
-},

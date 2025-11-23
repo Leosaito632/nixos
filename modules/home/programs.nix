@@ -90,6 +90,8 @@
     playerctl
     brightnessctl
     networkmanagerapplet
+    power-profiles-daemon
+    killall
 
     # --- Fonts & Icons ---
     bibata-cursors
