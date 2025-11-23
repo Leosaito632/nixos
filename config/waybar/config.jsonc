@@ -9,7 +9,7 @@
 	"passthrough": false,
 	"gtk-layer-shell": true,
 
-	"modules-left": ["custom/left","custom/rofi","backlight","pulseaudio","battery","custom/right"],
+	"modules-left": ["custom/left","custom/rofi","backlight","pulseaudio","battery","power-profiles-daemon","custom/right"],
 	"modules-center": ["custom/left","hyprland/workspaces","custom/right"],
 	"modules-right": ["custom/left","tray","clock","custom/right"],
 
@@ -364,3 +364,18 @@
 
 
 // sourced from modules based on config.ctl //
+
+
+
+// power profile daemon
+"power-profiles-daemon": {
+  "format": "{icon}",
+  "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+  "tooltip": true,
+  "format-icons": {
+    "default": "",
+    "performance": "",
+    "balanced": "",
+    "power-saver": ""
+  }
+},
