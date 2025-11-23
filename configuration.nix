@@ -22,7 +22,6 @@
     device = "nodev";
     efiSupport = true;
     useOSProber = true;
-    bootLoaderId="leosaitonixos"
   };
 
   boot.loader.grub.configurationLimit = 5;
