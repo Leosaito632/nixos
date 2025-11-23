@@ -133,6 +133,11 @@
 
   services.blueman.enable = true;
 
+  ###
+  # POLKIT pra poder usar GPARTED
+  ###
+  security.polkit.enable = true;
+
   ####
   # SWAP
   ####
@@ -149,4 +154,5 @@
   ###
 
   system.stateVersion = "25.05";
+
 }

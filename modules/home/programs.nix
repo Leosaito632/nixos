@@ -92,6 +92,7 @@
     networkmanagerapplet
     power-profiles-daemon
     killall
+    gparted
 
     # --- Fonts & Icons ---
     bibata-cursors
