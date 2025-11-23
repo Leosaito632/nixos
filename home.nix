@@ -90,14 +90,23 @@
   };
 
   # Linkar os arquivos de configuração
-  xdg.configFile."hypr".source = ./config/hypr;
+  xdg.configFile."hypr/hyprland.conf".source = ./config/hypr/hyprland.conf;
+  xdg.configFile."hypr/keybindings.conf".source = ./config/hypr/keybindings.conf;
+  xdg.configFile."hypr/windowrules.conf".source = ./config/hypr/windowrules.conf;
+  xdg.configFile."hypr/hyprlock.conf".source = ./config/hypr/hyprlock.conf;
+  xdg.configFile."hypr/hypridle.conf".source = ./config/hypr/hypridle.conf;
+  # Config de monitores
+  xdg.configFile."hypr/monitors.conf".source =
+    if hostName == "desktop" then
+      ./config/hypr/monitors-desktop.conf
+    else
+      ./config/hypr/monitors-laptop.conf;
   xdg.configFile."waybar".source = ./config/waybar;
   xdg.configFile."wlogout/icons".source = ./config/wlogout/icons;
   xdg.configFile."nvim".source = ./config/nvim;
   xdg.configFile."dunst".source = ./config/dunst;
   # Linkar wallpapers
   home.file."Pictures/Wallpapers".source = ./sddm-theme/Backgrounds;
-
   # -------- PROGRAMS --------
   # Enable neovim and set as default text editor
   programs.neovim = {

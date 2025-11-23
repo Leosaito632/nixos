@@ -207,4 +207,11 @@ in
 
   virtualisation.docker.enable = true;
   programs.nix-ld.enable = true;
+
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 8192;
+    }
+  ];
 }
