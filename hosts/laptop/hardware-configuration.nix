@@ -39,6 +39,18 @@
     ];
   };
 
+  fileSystems."/home/leo/Disco2" = {
+    device = "/dev/disk/by-uuid/9efbde97-d931-4c10-905b-cb7d0ac4b871";
+    fsType = "ext4";
+    options = [
+      "nofail"
+    ];
+  };
+
+  systemd.tmpfiles.rules = [
+    "d /home/leo/Disco2 0755 leo users -"
+  ];
+
   swapDevices = [
     { device = "/dev/disk/by-uuid/6c8215d7-a3e0-431c-a16f-a6e09d3dafee"; }
   ];

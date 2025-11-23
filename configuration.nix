@@ -25,18 +25,12 @@
     bootLoaderId="leosaitonixos"
   };
 
-  boot.loader.grub.configurationLimit = 3;
+  boot.loader.grub.configurationLimit = 5;
   boot.cleanTmpDir = true;
 
   boot.loader.grub.extraConfig = ''
     # Remove old entries automatically
   '';
-
-  fileSystems."/boot" = {
-    device = "/";
-    fsType = "none";
-    options = [ "bind" ];
-  };
 
   nix.gc = {
     automatic = true;
@@ -87,10 +81,12 @@
   ];
 
   nixpkgs.config.allowUnfree = true;
+
   swapDevices = [
     {
       device = "/swapfile";
       size = 8192;
     }
   ];
+
 }
