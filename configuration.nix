@@ -15,27 +15,28 @@
   boot.loader.systemd-boot.enable = false;
 
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot";
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
   boot.loader.grub = {
     enable = true;
     device = "nodev";
     efiSupport = true;
-
-    # Detecta o Windows
     useOSProber = true;
 
-    # --- O SEGREDO DO SUCESSO ---
-    # Isso diz ao GRUB: "Deixe o kernel no disco grande (/nix/store),
-    # não tente espremer ele na partição de boot minúscula."
-    copyKernels = lib.mkForce false;
-
-    # Desativa imagem de fundo para economizar espaço
-    splashImage = null;
   };
 
-  boot.loader.systemd-boot.configurationLimit = 1;
-  boot.initrd.compressor = "xz";
+  boot.loader.grub.configurationLimit = 3;
+  boot.cleanTmpDir = true;
+
+  boot.loader.grub.extraConfig = ''
+    # Remove old entries automatically
+  '';
+
+  fileSystems."/boot" = {
+    device = "/";
+    fsType = "none";
+    options = [ "bind" ];
+  };
 
   nix.gc = {
     automatic = true;
