@@ -14,27 +14,21 @@
     "pulseaudio",
     "battery",
     "power-profiles-daemon",
-    "custom/right",
-  ],
-  "modules-center": ["custom/left", "hyprland/workspaces", "custom/right"],
-  "modules-right": [
-    "custom/left",
-    "network",
-    "tray",
-    "clock",
     "temperature",
     "custom/right",
   ],
+  "modules-center": ["custom/left", "hyprland/workspaces", "custom/right"],
+  "modules-right": ["custom/left", "tray", "clock", "custom/right"],
 
   "power-profiles-daemon": {
     "format": "{icon}",
     "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
     "tooltip": true,
     "format-icons": {
-      "default": "  ",
-      "performance": "  ",
-      "balanced": "  ",
-      "power-saver": "  ",
+      "default": "    ",
+      "performance": "    ",
+      "balanced": "    ",
+      "power-saver": "    ",
     },
   },
 
