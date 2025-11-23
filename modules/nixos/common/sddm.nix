@@ -2,7 +2,7 @@
 let
   sddmTheme = pkgs.stdenv.mkDerivation {
     name = "rudra-sddm-theme";
-    src = ../../sddm-theme;
+    src = ../../../sddm-theme;
     installPhase = ''
       mkdir -p $out/share/sddm/themes/rudra
       cp -r * $out/share/sddm/themes/rudra

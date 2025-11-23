@@ -1,5 +1,5 @@
 {
-  description = "NixOS com Home Manager e Hyprland end-4-dots";
+  description = "NixOS com Home Manager e Hyprland copiado do github.com/vasujain275/rudra/";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
@@ -31,7 +31,6 @@
     let
       system = "x86_64-linux";
       commonModules = [
-        ./configuration.nix
         home-manager.nixosModules.home-manager
       ];
       homeManagerCommon = {
@@ -49,9 +48,8 @@
       nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = commonModules ++ [
-          ./hosts/desktop/hardware-configuration.nix
+          ./hosts/desktop/configuration.nix
           homeManagerCommon
-          ./modules/nixos/amd-drivers.nix
           {
             home-manager.extraSpecialArgs.hostName = "desktop";
           }
@@ -60,9 +58,8 @@
       nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = commonModules ++ [
-          ./hosts/laptop/hardware-configuration.nix
+          ./hosts/laptop/configuration.nix
           homeManagerCommon
-          ./modules/nixos/intel-drivers.nix
           {
             home-manager.extraSpecialArgs.hostName = "laptop";
           }
