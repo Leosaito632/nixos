@@ -37,9 +37,6 @@
     "all-outputs": true,
     "on-click": "activate",
     "format": "{icon}",
-    "persistent-workspaces": {
-      "*": 10,
-    },
   },
 
   "custom/rofi": {
