@@ -1,135 +1,68 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-let
-  sddmTheme = pkgs.stdenv.mkDerivation {
-    name = "rudra-sddm-theme";
-    src = ./sddm-theme;
-    installPhase = ''
-      mkdir -p $out/share/sddm/themes/rudra
-      cp -r * $out/share/sddm/themes/rudra
-    '';
-  };
-in
 {
-  # Fonts
-  fonts.packages = with pkgs; [
-    meslo-lgs-nf
-    nerd-fonts.meslo-lg
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+
+{
+  imports = [
+    ./modules/nixos/gaming.nix
+    ./modules/nixos/development.nix
+    ./modules/nixos/sddm.nix
   ];
 
-  # Steam
-  programs.steam = {
-    enable = true;
-  };
+  boot.loader.systemd-boot.enable = false;
 
-  # Enable mysql
-  services.mysql = {
-    enable = true;
-    package = pkgs.mariadb;
-  };
-
-  # Precisa pro end-4-dots hyprland funcionar
-  services.udisks2.enable = true;
-
-  # Pra lixeira funcionar com Nautilus
-  services.gvfs.enable = true;
-
-  # Enable zsh
-  programs.zsh.enable = true;
-
-  # Default User shell
-  users.defaultUserShell = pkgs.zsh;
-
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi.efiSysMountPoint = "/boot";
 
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  boot.loader.grub = {
+    enable = true;
+    device = "nodev";
+    efiSupport = true;
 
-  # Enable networking
+    # Detecta o Windows
+    useOSProber = true;
+
+    # --- O SEGREDO DO SUCESSO ---
+    # Isso diz ao GRUB: "Deixe o kernel no disco grande (/nix/store),
+    # não tente espremer ele na partição de boot minúscula."
+    copyKernels = lib.mkForce false;
+
+    # Desativa imagem de fundo para economizar espaço
+    splashImage = null;
+  };
+
+  boot.loader.systemd-boot.configurationLimit = 1;
+  boot.initrd.compressor = "xz";
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
+
+  networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
-  # Enable bluetooth
-  hardware.bluetooth.enable = true; # enables support for Bluetooth
-  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
-
-  # Set your time zone.
   time.timeZone = "America/Sao_Paulo";
-
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "pt_BR.UTF-8";
-    LC_IDENTIFICATION = "pt_BR.UTF-8";
-    LC_MEASUREMENT = "pt_BR.UTF-8";
-    LC_MONETARY = "pt_BR.UTF-8";
-    LC_NAME = "pt_BR.UTF-8";
-    LC_NUMERIC = "pt_BR.UTF-8";
-    LC_PAPER = "pt_BR.UTF-8";
-    LC_TELEPHONE = "pt_BR.UTF-8";
-    LC_TIME = "pt_BR.UTF-8";
-  };
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  # services.xserver.displayManager.gdm.enable = true;
-  # services.xserver.desktopManager.gnome.enable = true;
-
-  # Enable the KDE Plasma Desktop Environment.
-  # services.displayManager.sddm.enable = true;
-  # services.desktopManager.plasma6.enable = true;
-
-  # SDDM
-
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = false;
-    theme = "rudra";
-    autoNumlock = true;
-  };
-
-  # Enable Hyprland
-  programs.hyprland.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "br";
-    variant = "";
-  };
-
-  # Configure console keymap
-  console.keyMap = "br-abnt2";
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  programs.hyprland.enable = true;
+
+  programs.zsh.enable = true;
+
   users.users.leo = {
     isNormalUser = true;
     description = "Leonardo Saito";
@@ -138,76 +71,21 @@ in
       "wheel"
       "docker"
     ];
-    packages = with pkgs; [
-    ];
+    shell = pkgs.zsh;
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim
-    # Dependências Gráficas do SDDM
-    libsForQt5.qt5.qtgraphicaleffects
-    libsForQt5.qt5.qtquickcontrols2
-    libsForQt5.qt5.qtsvg
-    sddmTheme
-  ];
+  services.blueman.enable = true;
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  networking.firewall = {
-    enable = true;
-
-    # Porta padrão do Terraria/tModLoader
-    allowedTCPPorts = [
-      7777
-      3306
-    ];
-    allowedUDPPorts = [ 7777 ];
-
-    # Faixa de portas usada pela Steam para P2P (Multiplayer via lista de amigos)
-    allowedUDPPortRanges = [
-      {
-        from = 27000;
-        to = 27050;
-      }
-    ];
-  };
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.05"; # Did you read the comment?
-
+  system.stateVersion = "25.05";
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
 
-  virtualisation.docker.enable = true;
-  programs.nix-ld.enable = true;
-
+  nixpkgs.config.allowUnfree = true;
   swapDevices = [
     {
       device = "/swapfile";

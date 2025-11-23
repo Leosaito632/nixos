@@ -51,6 +51,7 @@
         modules = commonModules ++ [
           ./hosts/desktop/hardware-configuration.nix
           homeManagerCommon
+          ./modules/nixos/amd-drivers.nix
           {
             home-manager.extraSpecialArgs.hostName = "desktop";
           }
@@ -61,6 +62,7 @@
         modules = commonModules ++ [
           ./hosts/laptop/hardware-configuration.nix
           homeManagerCommon
+          ./modules/nixos/intel-drivers.nix
           {
             home-manager.extraSpecialArgs.hostName = "laptop";
           }
