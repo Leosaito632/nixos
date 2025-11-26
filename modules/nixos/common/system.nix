@@ -28,14 +28,8 @@
     efiSupport = true;
     device = "nodev";
     useOSProber = true;
-    configurationLimit = 3;
+    configurationLimit = 5;
   };
-
-  #   fileSystems."/boot" = {
-  #     device = "/";
-  #     fsType = "none";
-  #     options = [ "bind" ];
-  #   };
 
   boot.tmp.cleanOnBoot = true;
 
@@ -118,6 +112,7 @@
       "networkmanager"
       "wheel"
       "docker"
+      "input"
     ];
     shell = pkgs.zsh;
   };
@@ -147,6 +142,14 @@
       device = "/swapfile";
       size = 8192;
     }
+  ];
+
+  ####
+  # udev rules for keychron keyboard
+  ####
+
+  services.udev.packages = [
+    pkgs.via
   ];
 
   ###
