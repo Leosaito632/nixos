@@ -64,9 +64,14 @@
       "networkmanager"
       "wheel"
       "docker"
+      "input"
+      "plugdev"
     ];
     shell = pkgs.zsh;
   };
+
+  # Habilita as regras de udev para o VIA/Keychron
+  services.udev.packages = [ pkgs.via ];
 
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;

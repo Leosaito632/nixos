@@ -49,15 +49,17 @@
     xclip
     wasistlos
     csvlens
+    yazi
 
     # --- Desktop Apps ---
     zapzap
     obsidian
-    planify
     libreoffice-qt6-fresh
     nautilus
     pinta
     discord
+    osu-lazer
+    ungoogled-chromium
 
     # --- Networking ---
     openfortivpn
