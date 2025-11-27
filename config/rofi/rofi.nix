@@ -1,10 +1,15 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
 {
   programs = {
     rofi = {
       enable = true;
-      package = pkgs.rofi-wayland;
+      package = pkgs.rofi;
       extraConfig = {
         modi = "drun,filebrowser,run";
         show-icons = true;
@@ -17,7 +22,7 @@
         display-filebrowser = " File";
         display-window = " Window";
       };
-      
+
       theme =
         let
           inherit (config.lib.formats.rasi) mkLiteral;

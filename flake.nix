@@ -2,7 +2,8 @@
   description = "NixOS com Home Manager e Hyprland copiado do github.com/vasujain275/rudra/";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    # nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     # nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
@@ -16,6 +17,12 @@
     };
 
     stylix.url = "github:danth/stylix";
+
+    # quickshell = {
+    #   url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+    #     inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
   };
 
   outputs =

@@ -41,15 +41,13 @@
 
       firefox.enable = false;
       zen-browser.enable = false;
-      waybar.enable = false;
+      waybar.enable = true;
       hyprland.enable = false;
-      rofi.enable = false;
+      rofi.enable = true;
       neovim.enable = false;
-      dunst.enable = false;
+      dunst.enable = true;
     };
   };
 
   home.file."Pictures/Wallpapers".source = ../../sddm-theme/Backgrounds;
-
-  fonts.fontconfig.enable = true;
 }

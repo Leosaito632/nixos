@@ -75,9 +75,9 @@
     # --- Desktop Interface ---
     waybar
     dunst
-    rofi-wayland
     wlogout
     swww
+    quickshell
 
     # --- System Utilities ---
     hyprshot
