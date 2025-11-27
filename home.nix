@@ -9,10 +9,12 @@
 {
   imports = [
     ./modules/home/hyprland.nix
-    ./modules/home/theme.nix
+    #     ./modules/home/theme.nix
     ./modules/home/programs.nix
     ./modules/home/shell.nix
-    ./modules/home/desktop.nix
+    #     ./modules/home/desktop.nix
+
+    ./modules/home/noctalia.nix
   ];
 
   home.username = "leo";

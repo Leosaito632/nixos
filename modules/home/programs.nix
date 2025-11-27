@@ -1,8 +1,8 @@
 { pkgs, inputs, ... }:
 {
   imports = [
-    ../../config/rofi/rofi.nix
-    ../../config/wlogout/wlogout.nix
+    # ../../config/rofi/rofi.nix
+    # ../../config/wlogout/wlogout.nix
     inputs.zen-browser.homeModules.twilight
   ];
 
@@ -77,7 +77,6 @@
     dunst
     wlogout
     swww
-    quickshell
 
     # --- System Utilities ---
     hyprshot

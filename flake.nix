@@ -1,5 +1,5 @@
 {
-  description = "NixOS com Home Manager e Hyprland copiado do github.com/vasujain275/rudra/";
+  description = "NixOS com Home Manager e Noctalia https://docs.noctalia.dev/";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
@@ -18,10 +18,10 @@
 
     stylix.url = "github:danth/stylix";
 
-    # quickshell = {
-    #   url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
-    #     inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   };
 
