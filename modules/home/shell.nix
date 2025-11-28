@@ -13,13 +13,6 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    plugins = [
-      {
-        name = "powerlevel10k";
-        src = pkgs.zsh-powerlevel10k;
-        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-      }
-    ];
     oh-my-zsh = {
       enable = true;
       plugins = [
@@ -29,10 +22,13 @@
         "docker-compose"
       ];
     };
-    initContent = ''
-      if [ -f "''${HOME}/.p10k.zsh" ]; then source "''${HOME}/.p10k.zsh"; fi
-    '';
   };
 
-  home.file.".p10k.zsh".source = ../../p10k.zsh;
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
+    settings = {
+      add_newline = false;
+    };
+  };
 }

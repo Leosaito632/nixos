@@ -27,6 +27,16 @@
 
   xdg.configFile."nvim".source = ../../config/nvim;
 
+  programs.yazi = {
+    enable = true;
+    enableZshIntegration = true;
+
+    theme = {
+      manager = {
+      };
+    };
+  };
+
   home.packages = with pkgs; [
     # --- Dev Tools ---
     cargo
@@ -56,7 +66,6 @@
     xclip
     wasistlos
     csvlens
-    yazi
 
     # --- Desktop Apps ---
     zapzap

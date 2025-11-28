@@ -16,8 +16,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    stylix.url = "github:danth/stylix";
-
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -31,7 +29,6 @@
       nixpkgs,
       home-manager,
       zen-browser,
-      stylix,
       ...
     }:
 
@@ -55,8 +52,8 @@
       nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = commonModules ++ [
-          ./hosts/desktop/configuration.nix
           homeManagerCommon
+          ./hosts/desktop/configuration.nix
           {
             home-manager.extraSpecialArgs.hostName = "desktop";
           }
@@ -65,8 +62,8 @@
       nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = commonModules ++ [
-          ./hosts/laptop/configuration.nix
           homeManagerCommon
+          ./hosts/laptop/configuration.nix
           {
             home-manager.extraSpecialArgs.hostName = "laptop";
           }
