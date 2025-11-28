@@ -35,17 +35,17 @@
     };
 
     targets = {
-      gtk.enable = true;
-      foot.enable = true;
-      yazi.enable = true;
+      gtk.enable = false;
+      foot.enable = false;
+      yazi.enable = false;
 
       firefox.enable = false;
       zen-browser.enable = false;
-      waybar.enable = true;
+      waybar.enable = false;
       hyprland.enable = false;
-      rofi.enable = true;
+      rofi.enable = false;
       neovim.enable = false;
-      dunst.enable = true;
+      dunst.enable = false;
     };
   };
 

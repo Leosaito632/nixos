@@ -11,8 +11,8 @@
       # configure noctalia here; defaults will
       # be deep merged with these attributes.
       bar = {
-        density = "compact";
-        position = "right";
+        density = "confortable";
+        position = "top";
         showCapsule = false;
         widgets = {
           left = [
@@ -63,4 +63,5 @@
     # this may also be a string or a path to a JSON file,
     # but in this case must include *all* settings.
   };
+
 }

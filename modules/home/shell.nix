@@ -10,10 +10,10 @@
   };
 
   home.sessionVariables = {
-    BROWSER = "firefox";
+    BROWSER = "zen";
     TERMINAL = "foot";
     TERM = "foot";
-    GTK_THEME = "Adwaita:dark";
+    # GTK_THEME = "Adwaita:dark";
     POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD = "true";
   };
 
