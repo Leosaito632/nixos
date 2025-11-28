@@ -4,12 +4,21 @@
     ../../config/rofi/rofi.nix
     # ../../config/wlogout/wlogout.nix
     inputs.zen-browser.homeModules.twilight
+    inputs.noctalia.homeModules.default
+
   ];
+  # Noctalia
+  programs.noctalia-shell.enable = true;
 
   programs.firefox.enable = true;
   programs.zen-browser.enable = true;
-  programs.foot.enable = true;
-  programs.alacritty.enable = true;
+
+  programs.foot = {
+    enable = true;
+    settings.main = {
+      font = "JetBrainsMono NF:size=12";
+    };
+  };
 
   programs.neovim = {
     enable = true;

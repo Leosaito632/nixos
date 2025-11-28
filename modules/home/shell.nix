@@ -8,15 +8,6 @@
     vpn = "openfortivpn-webview vpn.pucpr.br:443 | sudo openfortivpn vpn.pucpr.br:443 -u leonardo.saito --realm=saml --cookie-on-stdin";
     cls = "clear";
   };
-
-  home.sessionVariables = {
-    BROWSER = "zen";
-    TERMINAL = "foot";
-    TERM = "foot";
-    # GTK_THEME = "Adwaita:dark";
-    POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD = "true";
-  };
-
   programs.zsh = {
     enable = true;
     enableCompletion = true;

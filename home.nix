@@ -13,12 +13,19 @@
     ./modules/home/programs.nix
     ./modules/home/shell.nix
     ./modules/home/desktop.nix
-
-    ./modules/home/noctalia.nix
   ];
 
   home.username = "leo";
   home.homeDirectory = "/home/leo";
   home.stateVersion = "25.05";
   home.enableNixpkgsReleaseCheck = false;
+
+  home.sessionVariables = {
+    BROWSER = "zen";
+    TERMINAL = "foot";
+    TERM = "foot";
+    # GTK_THEME = "Adwaita:dark";
+    POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD = "true";
+  };
+
 }
