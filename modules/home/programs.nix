@@ -1,8 +1,6 @@
 { pkgs, inputs, ... }:
 {
   imports = [
-    ../../config/rofi/rofi.nix
-    # ../../config/wlogout/wlogout.nix
     inputs.zen-browser.homeModules.twilight
     inputs.noctalia.homeModules.default
 
@@ -81,12 +79,6 @@
     hypridle
     hyprpicker
 
-    # --- Desktop Interface ---
-    waybar
-    dunst
-    wlogout
-    swww
-
     # --- System Utilities ---
     hyprshot
     grim
@@ -112,10 +104,7 @@
     montserrat
 
     # --- Custom Scripts ---
-    # (import ../../scripts/wallsetter.nix { inherit pkgs; })
-    (import ../../scripts/rofi-launcher.nix { inherit pkgs; })
     # (import ../../scripts/screenshootin.nix { inherit pkgs; })
-    # (import ../../scripts/list-hypr-bindings.nix { inherit pkgs; })
     (import ../../scripts/quicknote.nix { inherit pkgs; })
   ];
 }
