@@ -87,7 +87,6 @@
 
     # --- Hyprland Core ---
     hyprland
-    hyprlock
     hypridle
     hyprpicker
 

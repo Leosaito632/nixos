@@ -14,7 +14,6 @@
   xdg.configFile."hypr/hyprland.conf".source = ../../config/hypr/hyprland.conf;
   xdg.configFile."hypr/keybindings.conf".source = ../../config/hypr/keybindings.conf;
   xdg.configFile."hypr/windowrules.conf".source = ../../config/hypr/windowrules.conf;
-  xdg.configFile."hypr/hyprlock.conf".source = ../../config/hypr/hyprlock.conf;
   xdg.configFile."hypr/hypridle.conf".source = ../../config/hypr/hypridle.conf;
 
   # Monitor dinâmico

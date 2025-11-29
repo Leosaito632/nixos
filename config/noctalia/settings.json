@@ -21,7 +21,7 @@
         "visualizerQuality": "high",
         "visualizerType": "linear",
         "volumeOverdrive": false,
-        "volumeStep": 5
+        "volumeStep": 1
     },
     "bar": {
         "backgroundOpacity": 0.59,
