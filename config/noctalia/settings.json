@@ -166,7 +166,7 @@
         "matugenSchemeType": "scheme-fruit-salad",
         "predefinedScheme": "Rosepine",
         "schedulingMode": "off",
-        "useWallpaperColors": false
+        "useWallpaperColors": true
     },
     "controlCenter": {
         "cards": [
@@ -421,7 +421,7 @@
         "overviewEnabled": false,
         "panelPosition": "follow_bar",
         "randomEnabled": true,
-        "randomIntervalSec": 600,
+        "randomIntervalSec": 300,
         "recursiveSearch": false,
         "setWallpaperOnAllMonitors": true,
         "transitionDuration": 1500,

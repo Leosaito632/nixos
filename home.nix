@@ -12,7 +12,7 @@
     ./modules/home/theme.nix
     ./modules/home/programs.nix
     ./modules/home/shell.nix
-    ./modules/home/desktop.nix
+    ./modules/home/desktop-shell.nix
   ];
 
   home.username = "leo";
@@ -23,9 +23,6 @@
   home.sessionVariables = {
     BROWSER = "zen";
     TERMINAL = "foot";
-    TERM = "foot";
-    # GTK_THEME = "Adwaita:dark";
-    POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD = "true";
   };
 
 }

@@ -1,4 +1,9 @@
-{ pkgs, inputs, ... }:
+{
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 {
   imports = [
     inputs.zen-browser.homeModules.twilight
@@ -10,13 +15,6 @@
 
   programs.firefox.enable = true;
   programs.zen-browser.enable = true;
-
-  programs.foot = {
-    enable = true;
-    settings.main = {
-      font = "JetBrainsMono NF:size=12";
-    };
-  };
 
   programs.neovim = {
     enable = true;

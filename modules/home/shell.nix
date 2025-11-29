@@ -1,4 +1,9 @@
-{ pkgs, hostName, ... }:
+{
+  lib,
+  pkgs,
+  hostName,
+  ...
+}:
 {
   home.shellAliases = {
     nshell = "nix-shell --command 'zsh'";
@@ -8,6 +13,17 @@
     vpn = "openfortivpn-webview vpn.pucpr.br:443 | sudo openfortivpn vpn.pucpr.br:443 -u leonardo.saito --realm=saml --cookie-on-stdin";
     cls = "clear";
   };
+
+  # Terminal
+  programs.foot = {
+    enable = true;
+    settings.main = {
+      font = lib.mkForce "JetBrainsMono NF:size=12";
+    };
+  };
+  xdg.configFile."foot/foot.ini".force = true;
+
+  # Shell
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -24,6 +40,7 @@
     };
   };
 
+  # Tema do shell
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
