@@ -13,6 +13,8 @@
     ./modules/home/programs.nix
     ./modules/home/shell.nix
     ./modules/home/desktop-shell.nix
+    ./modules/home/opener.nix
+
   ];
 
   home.username = "leo";
