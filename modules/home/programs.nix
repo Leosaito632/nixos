@@ -115,5 +115,7 @@
 
     # --- Custom Scripts ---
     (import ../../scripts/quicknote.nix { inherit pkgs; })
+    (import ../../scripts/toggle_monitor.nix { inherit pkgs; })
+
   ];
 }

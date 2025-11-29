@@ -112,9 +112,11 @@
                     "blacklist": [
                     ],
                     "colorizeIcons": false,
-                    "drawerEnabled": true,
+                    "drawerEnabled": false,
                     "id": "Tray",
                     "pinned": [
+                        "nm-applet",
+                        "ZapZap"
                     ]
                 },
                 {
