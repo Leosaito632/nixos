@@ -8,7 +8,6 @@
   imports = [
     inputs.zen-browser.homeModules.twilight
     inputs.noctalia.homeModules.default
-
   ];
   # Noctalia
   programs.noctalia-shell.enable = true;
@@ -79,6 +78,7 @@
     discord
     osu-lazer
     ungoogled-chromium
+    inkscape # pode ser util algum dia
 
     # --- Networking ---
     openfortivpn
@@ -115,7 +115,6 @@
     montserrat
 
     # --- Custom Scripts ---
-    # (import ../../scripts/screenshootin.nix { inherit pkgs; })
     (import ../../scripts/quicknote.nix { inherit pkgs; })
   ];
 }
