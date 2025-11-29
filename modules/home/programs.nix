@@ -28,9 +28,14 @@
   programs.yazi = {
     enable = true;
     enableZshIntegration = true;
+  };
 
-    theme = {
-      manager = {
+  programs.swappy = {
+    enable = true;
+    settings = {
+      Default = {
+        auto_save = true;
+        save_dir = "$HOME/Pictures/Screenshots";
       };
     };
   };
@@ -90,7 +95,6 @@
     hyprshot
     grim
     slurp
-    swappy
     wl-clipboard
     cliphist
     libnotify

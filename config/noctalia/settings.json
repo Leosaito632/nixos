@@ -55,12 +55,16 @@
                     "useDistroLogo": true
                 },
                 {
-                    "displayMode": "onhover",
-                    "id": "Battery",
-                    "warningThreshold": 30
+                    "colorizeIcons": false,
+                    "hideMode": "hidden",
+                    "id": "ActiveWindow",
+                    "maxWidth": 145,
+                    "scrollingMode": "hover",
+                    "showIcon": true,
+                    "useFixedWidth": false
                 },
                 {
-                    "displayMode": "onhover",
+                    "displayMode": "alwaysShow",
                     "id": "Volume"
                 },
                 {
@@ -75,29 +79,32 @@
                     "usePrimaryColor": false
                 },
                 {
-                    "colorizeIcons": false,
-                    "hideMode": "hidden",
-                    "id": "ActiveWindow",
-                    "maxWidth": 145,
-                    "scrollingMode": "hover",
-                    "showIcon": true,
-                    "useFixedWidth": false
-                },
-                {
                     "hideMode": "hidden",
                     "hideWhenIdle": false,
                     "id": "MediaMini",
                     "maxWidth": 145,
-                    "scrollingMode": "hover",
-                    "showAlbumArt": false,
+                    "scrollingMode": "always",
+                    "showAlbumArt": true,
                     "showArtistFirst": true,
                     "showProgressRing": true,
-                    "showVisualizer": false,
+                    "showVisualizer": true,
                     "useFixedWidth": false,
-                    "visualizerType": "linear"
+                    "visualizerType": "wave"
                 }
             ],
             "right": [
+                {
+                    "displayMode": "onhover",
+                    "id": "WiFi"
+                },
+                {
+                    "displayMode": "onhover",
+                    "id": "Bluetooth"
+                },
+                {
+                    "displayMode": "onhover",
+                    "id": "Microphone"
+                },
                 {
                     "id": "ScreenRecorder"
                 },
@@ -120,12 +127,21 @@
                     "id": "Brightness"
                 },
                 {
+                    "displayMode": "forceOpen",
+                    "id": "KeyboardLayout"
+                },
+                {
                     "customFont": "",
                     "formatHorizontal": "HH:mm ddd, MMM dd",
                     "formatVertical": "HH mm - dd MM",
                     "id": "Clock",
                     "useCustomFont": false,
                     "usePrimaryColor": true
+                },
+                {
+                    "displayMode": "onhover",
+                    "id": "Battery",
+                    "warningThreshold": 30
                 }
             ]
         }
@@ -164,7 +180,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "matugenSchemeType": "scheme-fruit-salad",
-        "predefinedScheme": "Rosepine",
+        "predefinedScheme": "Dracula",
         "schedulingMode": "off",
         "useWallpaperColors": true
     },
