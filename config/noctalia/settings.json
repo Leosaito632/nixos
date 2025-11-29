@@ -98,7 +98,7 @@
                     "id": "WiFi"
                 },
                 {
-                    "displayMode": "onhover",
+                    "displayMode": "alwaysShow",
                     "id": "Bluetooth"
                 },
                 {
@@ -125,7 +125,7 @@
                     "showUnreadBadge": true
                 },
                 {
-                    "displayMode": "onhover",
+                    "displayMode": "alwaysShow",
                     "id": "Brightness"
                 },
                 {
@@ -209,7 +209,7 @@
                 "id": "media-sysmon-card"
             }
         ],
-        "position": "close_to_bar_button",
+        "position": "center",
         "shortcuts": {
             "left": [
                 {

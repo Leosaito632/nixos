@@ -91,6 +91,7 @@
     hyprpicker
 
     # --- System Utilities ---
+    qt6Packages.qt6ct
     hyprshot
     grim
     slurp
@@ -112,6 +113,7 @@
     nerd-fonts.jetbrains-mono
     font-awesome
     montserrat
+    kdePackages.qtsvg
 
     # --- Custom Scripts ---
     (import ../../scripts/quicknote.nix { inherit pkgs; })

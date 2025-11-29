@@ -4,11 +4,12 @@
   pkgs,
   lib,
   hostName,
+  vars,
   ...
 }:
 {
   imports = [
-    ./modules/home/hyprland.nix
+    ./modules/home/hyprland
     ./modules/home/theme.nix
     ./modules/home/programs.nix
     ./modules/home/shell.nix
@@ -23,8 +24,15 @@
   home.enableNixpkgsReleaseCheck = false;
 
   home.sessionVariables = {
-    BROWSER = "zen";
-    TERMINAL = "foot";
+    BROWSER = vars.browser;
+    TERMINAL = vars.terminal;
+    EDITOR = vars.editor;
+
+    HYPRCURSOR_SIZE = builtins.toString vars.cursorSize;
+    XCURSOR_SIZE = builtins.toString vars.cursorSize;
+
+    XDG_SESSION_TYPE = "wayland";
+    QT_QPA_PLATFORMTHEME = "qt6ct";
   };
 
 }

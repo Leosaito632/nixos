@@ -34,6 +34,7 @@
 
     let
       system = "x86_64-linux";
+      userSettings = import ./variables.nix;
       commonModules = [
         home-manager.nixosModules.home-manager
       ];
@@ -44,7 +45,10 @@
           users.leo = import ./home.nix;
           backupFileExtension = "backup";
 
-          extraSpecialArgs = { inherit inputs; };
+          extraSpecialArgs = {
+            inherit inputs;
+            vars = userSettings;
+          };
         };
       };
     in
