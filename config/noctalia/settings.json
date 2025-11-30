@@ -2,7 +2,7 @@
     "appLauncher": {
         "customLaunchPrefix": "",
         "customLaunchPrefixEnabled": false,
-        "enableClipPreview": true,
+        "enableClipPreview": false,
         "enableClipboardHistory": true,
         "pinnedExecs": [
         ],
@@ -10,7 +10,7 @@
         "sortByMostUsed": true,
         "terminalCommand": "foot",
         "useApp2Unit": false,
-        "viewMode": "list"
+        "viewMode": "grid"
     },
     "audio": {
         "cavaFrameRate": 30,

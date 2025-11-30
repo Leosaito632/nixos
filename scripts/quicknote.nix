@@ -7,9 +7,17 @@ let
     APP_ID="quicknote_float"
     LOCK_FILE="/tmp/quicknote.lock"
 
+    if hyprctl activewindow | grep -q "class: $APP_ID"; then
+        hyprctl dispatch togglespecialworkspace quicknote
+        exit 0
+    fi
+
     if hyprctl clients | grep -q "$APP_ID"; then
       hyprctl dispatch togglespecialworkspace quicknote
-      fi
+      sleep 0.1
+      hyprctl dispatch centerwindow
+      exit 0
+    fi
 
     if [ -f "$LOCK_FILE" ]; then
         exit 0
