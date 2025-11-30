@@ -109,10 +109,13 @@
 
     # --- Fonts & Icons ---
     bibata-cursors
-    papirus-icon-theme
+    adwaita-icon-theme
+    adwaita-qt6
+
     nerd-fonts.jetbrains-mono
     font-awesome
     montserrat
+
     kdePackages.qtsvg
 
     # --- Custom Scripts ---

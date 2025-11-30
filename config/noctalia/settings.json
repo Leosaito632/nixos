@@ -25,7 +25,7 @@
     },
     "bar": {
         "backgroundOpacity": 0.59,
-        "capsuleOpacity": 0.35000000000000003,
+        "capsuleOpacity": 0.35,
         "density": "comfortable",
         "exclusive": true,
         "floating": true,
@@ -261,7 +261,7 @@
         "animationSpeed": 1,
         "avatarImage": "",
         "compactLockScreen": false,
-        "dimmerOpacity": 0.6,
+        "dimmerOpacity": 0.25,
         "enableShadows": true,
         "forceBlackScreenCorners": false,
         "language": "",

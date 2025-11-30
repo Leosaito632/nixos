@@ -32,7 +32,7 @@
     XCURSOR_SIZE = builtins.toString vars.cursorSize;
 
     XDG_SESSION_TYPE = "wayland";
-    QT_QPA_PLATFORMTHEME = "qt6ct";
+    QT_QPA_PLATFORMTHEME = "gtk3";
   };
 
 }
