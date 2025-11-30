@@ -8,7 +8,6 @@ in
 {
   wayland.windowManager.hyprland.settings = {
     "$mainMod" = mainMod;
-
     bind = [
       # Layout
       "$mainMod, SPACE, exec, hyprctl switchxkblayout all next"
@@ -91,9 +90,7 @@ in
       ", XF86AudioRaiseVolume, exec, noctalia-shell ipc call volume increase"
       ", XF86AudioLowerVolume, exec, noctalia-shell ipc call volume decrease"
       ", XF86AudioMute, exec, noctalia-shell ipc call volume muteOutput"
-      ", XF86AudioPlay, exec, noctalia-shell ipc call media play"
-      ", XF86AudioPause, exec, noctalia-shell ipc call media pause"
-      ", XF86AudioPlayPause, exec, noctalia-shell ipc call media playPause"
+      ", XF86AudioPlay, exec, noctalia-shell ipc call media playPause"
       ", XF86AudioNext, exec, noctalia-shell ipc call media next"
       ", XF86AudioPrev, exec, noctalia-shell ipc call media previous"
       ", XF86AudioMicMute, exec, noctalia-shell ipc call volume muteInput"
