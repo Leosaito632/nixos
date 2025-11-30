@@ -2,7 +2,7 @@
 
 let
   overlay = self: super: {
-    vaapiIntel = super.vaapiIntel.overrideAttrs (old: {
+    vaapiIntel = super.intel-vaapi-driver.overrideAttrs (old: {
       passthru = old.passthru or { };
     });
   };
@@ -14,8 +14,8 @@ in
     enable = true;
     extraPackages = with pkgs; [
       intel-media-driver
-      vaapiIntel
-      vaapiVdpau
+      intel-vaapi-driver
+      libva-vdpau-driver
       libvdpau-va-gl
     ];
   };
