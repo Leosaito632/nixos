@@ -71,6 +71,7 @@
     discord
     osu-lazer
     inkscape # pode ser util algum dia
+    spotify
 
     # --- Networking ---
     openfortivpn
