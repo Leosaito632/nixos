@@ -39,85 +39,69 @@
         "widgets": {
             "center": [
                 {
-                    "characterCount": 2,
-                    "followFocusedScreen": false,
+                    "colorizeIcons": false,
                     "hideUnoccupied": false,
-                    "id": "Workspace",
-                    "labelMode": "index"
+                    "id": "TaskbarGrouped",
+                    "labelMode": "index",
+                    "showLabelsOnlyWhenOccupied": false
                 }
             ],
             "left": [
                 {
-                    "colorizeDistroLogo": false,
-                    "customIconPath": "",
-                    "icon": "noctalia",
-                    "id": "ControlCenter",
-                    "useDistroLogo": true
+                    "customFont": "",
+                    "formatHorizontal": "HH:mm - ddd, dd/MM",
+                    "formatVertical": "HH mm - dd MM",
+                    "id": "Clock",
+                    "useCustomFont": false,
+                    "usePrimaryColor": true
                 },
                 {
-                    "colorizeIcons": false,
                     "hideMode": "hidden",
-                    "id": "ActiveWindow",
-                    "maxWidth": 145,
+                    "hideWhenIdle": false,
+                    "id": "MediaMini",
+                    "maxWidth": 300,
                     "scrollingMode": "hover",
-                    "showIcon": true,
-                    "useFixedWidth": false
+                    "showAlbumArt": true,
+                    "showArtistFirst": false,
+                    "showProgressRing": true,
+                    "showVisualizer": true,
+                    "useFixedWidth": false,
+                    "visualizerType": "linear"
+                },
+                {
+                    "displayMode": "onhover",
+                    "id": "Brightness"
                 },
                 {
                     "displayMode": "alwaysShow",
                     "id": "Volume"
                 },
                 {
-                    "diskPath": "/",
-                    "id": "SystemMonitor",
-                    "showCpuTemp": true,
-                    "showCpuUsage": true,
-                    "showDiskUsage": false,
-                    "showMemoryAsPercent": false,
-                    "showMemoryUsage": true,
-                    "showNetworkStats": false,
-                    "usePrimaryColor": false
-                },
-                {
-                    "hideMode": "hidden",
-                    "hideWhenIdle": false,
-                    "id": "MediaMini",
-                    "maxWidth": 145,
-                    "scrollingMode": "always",
-                    "showAlbumArt": true,
-                    "showArtistFirst": true,
-                    "showProgressRing": true,
-                    "showVisualizer": true,
-                    "useFixedWidth": false,
-                    "visualizerType": "wave"
+                    "id": "PowerProfile"
                 }
             ],
             "right": [
+                {
+                    "blacklist": [
+                    ],
+                    "colorizeIcons": false,
+                    "drawerEnabled": true,
+                    "id": "Tray",
+                    "pinned": [
+                        "ZapZap"
+                    ]
+                },
                 {
                     "displayMode": "onhover",
                     "id": "WiFi"
                 },
                 {
-                    "displayMode": "alwaysShow",
+                    "displayMode": "onhover",
                     "id": "Bluetooth"
                 },
                 {
-                    "displayMode": "onhover",
-                    "id": "Microphone"
-                },
-                {
-                    "id": "ScreenRecorder"
-                },
-                {
-                    "blacklist": [
-                    ],
-                    "colorizeIcons": false,
-                    "drawerEnabled": false,
-                    "id": "Tray",
-                    "pinned": [
-                        "nm-applet",
-                        "ZapZap"
-                    ]
+                    "displayMode": "forceOpen",
+                    "id": "KeyboardLayout"
                 },
                 {
                     "hideWhenZero": true,
@@ -125,25 +109,13 @@
                     "showUnreadBadge": true
                 },
                 {
-                    "displayMode": "alwaysShow",
-                    "id": "Brightness"
-                },
-                {
-                    "displayMode": "forceOpen",
-                    "id": "KeyboardLayout"
-                },
-                {
-                    "customFont": "",
-                    "formatHorizontal": "HH:mm ddd, MMM dd",
-                    "formatVertical": "HH mm - dd MM",
-                    "id": "Clock",
-                    "useCustomFont": false,
-                    "usePrimaryColor": true
-                },
-                {
                     "displayMode": "onhover",
                     "id": "Battery",
                     "warningThreshold": 30
+                },
+                {
+                    "colorName": "error",
+                    "id": "SessionMenu"
                 }
             ]
         }
