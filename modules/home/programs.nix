@@ -12,9 +12,12 @@
   # Noctalia
   programs.noctalia-shell.enable = true;
 
+  # Browsers
   programs.firefox.enable = true;
   programs.zen-browser.enable = true;
+  programs.chromium.enable = true;
 
+  # CLI
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -27,16 +30,6 @@
   programs.yazi = {
     enable = true;
     enableZshIntegration = true;
-  };
-
-  programs.swappy = {
-    enable = true;
-    settings = {
-      Default = {
-        auto_save = true;
-        save_dir = "$HOME/Pictures/Screenshots";
-      };
-    };
   };
 
   home.packages = with pkgs; [
@@ -77,13 +70,11 @@
     pinta
     discord
     osu-lazer
-    ungoogled-chromium
     inkscape # pode ser util algum dia
 
     # --- Networking ---
     openfortivpn
     openfortivpn-webview
-    blueman
 
     # --- Hyprland Core ---
     hyprland
@@ -93,15 +84,9 @@
     # --- System Utilities ---
     qt6Packages.qt6ct
     hyprshot
-    grim
-    slurp
     wl-clipboard
-    cliphist
     libnotify
-    imagemagick
     pavucontrol
-    playerctl
-    brightnessctl
     networkmanagerapplet
     power-profiles-daemon
     killall
