@@ -10,7 +10,7 @@
         "sortByMostUsed": true,
         "terminalCommand": "foot",
         "useApp2Unit": false,
-        "viewMode": "grid"
+        "viewMode": "list"
     },
     "audio": {
         "cavaFrameRate": 30,
@@ -26,7 +26,7 @@
     "bar": {
         "backgroundOpacity": 0.59,
         "capsuleOpacity": 0.35,
-        "density": "comfortable",
+        "density": "default",
         "exclusive": true,
         "floating": true,
         "marginHorizontal": 0.25,
@@ -239,7 +239,7 @@
         "language": "",
         "lockOnSuspend": true,
         "radiusRatio": 1,
-        "scaleRatio": 1,
+        "scaleRatio": 0.8,
         "screenRadiusRatio": 1,
         "shadowDirection": "bottom_right",
         "shadowOffsetX": 2,
