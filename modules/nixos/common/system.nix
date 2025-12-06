@@ -127,6 +127,9 @@
     powerOnBoot = true;
   };
 
+  # Funcionar controle por bluetooth na steam
+  hardware.steam-hardware.enable = true;
+
   services.blueman.enable = true;
 
   ###
