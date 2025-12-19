@@ -39,13 +39,14 @@
     nodejs
     git
     gh
-    vscode
+    zed-editor
     gnumake
     unzip
     ripgrep
     fd
     tree
     lua
+    jetbrains.rider
 
     # --- Formatters ---
     stylua
