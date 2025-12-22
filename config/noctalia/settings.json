@@ -117,10 +117,10 @@
                 },
                 {
                     "deviceNativePath": "",
-                    "displayMode": "onhover",
+                    "displayMode": "alwaysShow",
                     "id": "Battery",
-                    "showNoctaliaPerformance": false,
-                    "showPowerProfiles": false,
+                    "showNoctaliaPerformance": true,
+                    "showPowerProfiles": true,
                     "warningThreshold": 30
                 },
                 {
@@ -186,6 +186,10 @@
             {
                 "enabled": true,
                 "id": "media-sysmon-card"
+            },
+            {
+                "enabled": false,
+                "id": "brightness-card"
             }
         ],
         "position": "center",
@@ -270,6 +274,8 @@
     "hooks": {
         "darkModeChange": "",
         "enabled": false,
+        "performanceModeDisabled": "",
+        "performanceModeEnabled": "",
         "screenLock": "",
         "screenUnlock": "",
         "wallpaperChange": ""
@@ -468,6 +474,7 @@
         "wallhavenOrder": "desc",
         "wallhavenPurity": "100",
         "wallhavenQuery": "frieren",
+        "wallhavenRatios": "",
         "wallhavenResolutionHeight": "",
         "wallhavenResolutionMode": "atleast",
         "wallhavenResolutionWidth": "",

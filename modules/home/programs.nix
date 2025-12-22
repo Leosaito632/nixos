@@ -15,7 +15,7 @@
   # Browsers
   programs.firefox.enable = true;
   programs.zen-browser.enable = true;
-  programs.chromium.enable = true;
+  # programs.chromium.enable = true;
 
   # CLI
   programs.neovim = {
