@@ -31,7 +31,7 @@
         "volumeStep": 1
     },
     "bar": {
-        "backgroundOpacity": 0.93,
+        "backgroundOpacity": 1,
         "barType": "floating",
         "capsuleOpacity": 0.35,
         "density": "default",
@@ -41,14 +41,14 @@
         "frameThickness": 8,
         "hideOnOverview": false,
         "marginHorizontal": 5,
-        "marginVertical": 5,
+        "marginVertical": 9,
         "monitors": [
         ],
         "outerCorners": false,
         "position": "top",
         "screenOverrides": [
         ],
-        "showCapsule": true,
+        "showCapsule": false,
         "showOutline": false,
         "useSeparateOpacity": false,
         "widgets": {
@@ -111,25 +111,6 @@
                 },
                 {
                     "id": "PowerProfile"
-                },
-                {
-                    "defaultSettings": {
-                        "completedCount": 0,
-                        "count": 0,
-                        "current_page_id": 0,
-                        "isExpanded": false,
-                        "pages": [
-                            {
-                                "id": 0,
-                                "name": "General"
-                            }
-                        ],
-                        "showBackground": true,
-                        "showCompleted": true,
-                        "todos": [
-                        ]
-                    },
-                    "id": "plugin:todo"
                 }
             ],
             "right": [
@@ -232,7 +213,7 @@
         "monitorForColors": "",
         "predefinedScheme": "Ayu",
         "schedulingMode": "off",
-        "useWallpaperColors": true
+        "useWallpaperColors": false
     },
     "controlCenter": {
         "cards": [
@@ -292,9 +273,43 @@
         }
     },
     "desktopWidgets": {
-        "enabled": false,
-        "gridSnap": false,
+        "enabled": true,
+        "gridSnap": true,
         "monitorWidgets": [
+            {
+                "name": "DP-1",
+                "widgets": [
+                    {
+                        "defaultSettings": {
+                            "completedCount": 0,
+                            "count": 0,
+                            "current_page_id": 0,
+                            "isExpanded": false,
+                            "pages": [
+                                {
+                                    "id": 0,
+                                    "name": "General"
+                                }
+                            ],
+                            "priorityColors": {
+                                "high": "#f44336",
+                                "low": "#9e9e9e",
+                                "medium": "#2196f3"
+                            },
+                            "showBackground": true,
+                            "showCompleted": true,
+                            "todos": [
+                            ],
+                            "useCustomColors": false
+                        },
+                        "id": "plugin:todo",
+                        "scale": 1,
+                        "showBackground": true,
+                        "x": 20,
+                        "y": 60
+                    }
+                ]
+            }
         ]
     },
     "dock": {
@@ -325,7 +340,7 @@
         "compactLockScreen": false,
         "dimmerOpacity": 0.25,
         "enableLockScreenCountdown": true,
-        "enableShadows": true,
+        "enableShadows": false,
         "forceBlackScreenCorners": false,
         "iRadiusRatio": 1,
         "language": "",
@@ -526,7 +541,7 @@
     "ui": {
         "bluetoothDetailsViewMode": "grid",
         "bluetoothHideUnnamedDevices": false,
-        "boxBorderEnabled": false,
+        "boxBorderEnabled": true,
         "fontDefault": "Roboto",
         "fontDefaultScale": 1,
         "fontFixed": "JetBrainsMono Nerd Font Mono",
