@@ -12,6 +12,7 @@
     nrs = "sudo nixos-rebuild switch --flake ~/.dotfiles#${hostName}";
     vpn = "openfortivpn-webview vpn.pucpr.br:443 | sudo openfortivpn vpn.pucpr.br:443 -u leonardo.saito --realm=saml --cookie-on-stdin";
     cls = "clear";
+    run-rider = "nohup rider > /dev/null 2>&1 &"; # Roda rider em background
   };
 
   # Terminal

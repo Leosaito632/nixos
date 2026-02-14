@@ -21,8 +21,6 @@
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
   };
 
   xdg.configFile."nvim".source = ../../config/nvim;
@@ -47,6 +45,8 @@
     tree
     lua
     jetbrains.rider
+    nil
+    javaPackages.compiler.openjdk21
 
     # --- Formatters ---
     stylua
@@ -73,6 +73,7 @@
     osu-lazer
     inkscape # pode ser util algum dia
     spotify
+    # prismlauncher # Launcher de mine
 
     # --- Networking ---
     openfortivpn

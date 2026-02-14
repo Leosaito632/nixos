@@ -1,12 +1,10 @@
 { pkgs, ... }:
-
-let
-  sddmAstronautCustom = pkgs.callPackage ./themes/sddm-astronaut-custom.nix { };
-in
-
 {
   environment.systemPackages = [
-    sddmAstronautCustom
+    (pkgs.catppuccin-sddm.override {
+      flavor = "mocha";
+      accent = "mauve";
+    })
   ];
 
   services.displayManager.sddm = {
@@ -14,14 +12,6 @@ in
     wayland.enable = true;
     autoNumlock = true;
 
-    package = pkgs.kdePackages.sddm;
-
-    extraPackages = with pkgs; [
-      kdePackages.qtsvg
-      kdePackages.qtmultimedia
-      kdePackages.qtvirtualkeyboard
-    ];
-
-    theme = "${sddmAstronautCustom}/share/sddm/themes/sddm-astronaut-theme";
+    theme = "catppuccin-mocha-mauve";
   };
 }
