@@ -32,6 +32,7 @@
 
   home.packages = with pkgs; [
     # --- Dev Tools ---
+    gcc
     cargo
     rustc
     nodejs
@@ -52,7 +53,7 @@
     stylua
     shfmt
     nodePackages.prettier
-    nixfmt-rfc-style
+    nixfmt
 
     # --- CLI Utils ---
     wget

@@ -3,7 +3,7 @@ return {
 	-- Comando para instalar e atualizar os "parsers" (as gramáticas das linguagens)
 	build = ":TSUpdate",
 	config = function()
-		require("nvim-treesitter.configs").setup({
+		require("nvim-treesitter").setup({
 			-- Lista de linguagens para instalar os parsers.
 			-- Comece com estas, você pode adicionar mais depois (ex: "javascript", "html")
 			ensure_installed = { "python", "lua", "vim", "vimdoc" },
