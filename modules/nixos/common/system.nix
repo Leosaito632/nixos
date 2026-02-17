@@ -16,11 +16,11 @@
   # BOOT
   ####
 
-  boot.loader.systemd-boot.enable = lib.mkForce false;
+  boot.loader.systemd-boot.enable = false;
 
   boot.loader.efi = {
     canTouchEfiVariables = true;
-    efiSysMountPoint = "/boot/efi";
+    efiSysMountPoint = "/boot";
   };
 
   boot.loader.grub = {
@@ -141,12 +141,12 @@
   # SWAP
   ####
 
-  swapDevices = [
-    {
-      device = "/swapfile";
-      size = 8192;
-    }
-  ];
+  #swapDevices = [
+  #  {
+  #    device = "/swapfile";
+  #    size = 8192;
+  #  }
+  #];
 
   ####
   # udev rules for keychron keyboard
