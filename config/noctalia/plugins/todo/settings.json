@@ -6,8 +6,45 @@
     }
   ],
   "current_page_id": 0,
-  "todos": [],
-  "count": 0,
+  "todos": [
+    {
+      "id": 1771478904239,
+      "text": "Fazer um plugin do meu quicknote pro noctalia??",
+      "completed": false,
+      "createdAt": "2026-02-19T05:28:24.239Z",
+      "pageId": 0,
+      "priority": "medium",
+      "details": ""
+    },
+    {
+      "id": 1771478885414,
+      "text": "Migrar do meu quicknote para TODO?",
+      "completed": false,
+      "createdAt": "2026-02-19T05:28:05.414Z",
+      "pageId": 0,
+      "priority": "medium",
+      "details": ""
+    },
+    {
+      "id": 1771478874714,
+      "text": "Fazer commit e push dos TODO automaticamente",
+      "completed": false,
+      "createdAt": "2026-02-19T05:27:54.714Z",
+      "pageId": 0,
+      "priority": "medium",
+      "details": ""
+    },
+    {
+      "id": 1771478819825,
+      "text": "Colocar tamanho do quicknote como % (possivelmente em window rules)",
+      "completed": false,
+      "createdAt": "2026-02-19T05:26:59.825Z",
+      "pageId": 0,
+      "priority": "high",
+      "details": ""
+    }
+  ],
+  "count": 4,
   "completedCount": 0,
   "isExpanded": false,
   "useCustomColors": false,
