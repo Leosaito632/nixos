@@ -1,27 +1,25 @@
 { ... }:
 {
   wayland.windowManager.hyprland.settings = {
-    windowrulev2 = [
-      "suppressevent maximize, class:.*"
-
+    windowrule = [
       # Transparência e Opacidade
-      "opacity 0.90 override 0.90 override, class:^(foot)$"
-      "opacity 1.0 override 1.0 override, class:^(zen-twilight)$"
+      "opacity 0.9 0.9, match:class foot"
+      "opacity 1.0 override 1.0 override, match:class zen-twilight"
 
       # --- Quicknote ---
-      "float, class:^(quicknote_float)$"
-      "size 45% 50%, class:^(quicknote_float)$"
-      "center, class:^(quicknote_float)$"
-      "workspace special:quicknote, class:^(quicknote_float)$"
-      "opacity 0.85 override 0.85 override, class:^(quicknote_float)$"
-      "workspace 1, unset, onworkspace:special:quicknote"
+      "float on, match:class quicknote_float"
+      "size 1200 750, match:class quicknote_float"
+      "center on, match:class quicknote_float"
+      "workspace special:quicknote, match:class quicknote_float"
+      "opacity 0.85 override 0.85 override, match:class quicknote_float"
+      #"workspace 1, match:workspace special:quicknote"
 
       # --- ZapZap ---
-      "workspace 10 silent, class:^(ZapZap)$"
+      "workspace 10 silent, match:class com.rtosta.zapzap"
 
       # --- Picture in Picture ---
-      "float, title:^(Picture-in-Picture)$"
-      "pin, title:^(Picture-in-Picture)$"
+      "float on, match:title Picture-in-Picture"
+      "pin on, match:title Picture-in-Picture"
     ];
   };
 }
