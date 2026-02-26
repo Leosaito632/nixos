@@ -8,7 +8,7 @@
 
       # --- Quicknote ---
       "float on, match:class quicknote_float"
-      "size 1200 750, match:class quicknote_float"
+      "size 50% 50%, match:class quicknote_float"
       "center on, match:class quicknote_float"
       "workspace special:quicknote, match:class quicknote_float"
       "opacity 0.85 override 0.85 override, match:class quicknote_float"
