@@ -38,10 +38,10 @@
       "dmask=0077"
     ];
   };
-  fileSystems."/home/leo/Disco2" = {
-    device = "/dev/disk/by-uuid/9efbde97-d931-4c10-905b-cb7d0ac4b871";
-    fsType = "ext4";
-  };
+#  fileSystems."/home/leo/Disco2" = {
+#    device = "/dev/disk/by-uuid/9efbde97-d931-4c10-905b-cb7d0ac4b871";
+#    fsType = "ext4";
+#  };
 
   swapDevices = [
     { device = "/dev/disk/by-uuid/736d7b19-4983-4551-81ac-360a092a522c"; }

@@ -75,6 +75,7 @@
     inkscape # pode ser util algum dia
     spotify
     # prismlauncher # Launcher de mine
+    blender
 
     # --- Networking ---
     openfortivpn

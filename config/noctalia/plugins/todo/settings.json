@@ -8,6 +8,15 @@
   "current_page_id": 0,
   "todos": [
     {
+      "id": 1772173240610,
+      "text": "Reinstalar NixOS no notebook a partir do flake (só pelo meme)",
+      "completed": false,
+      "createdAt": "2026-02-27T06:20:40.610Z",
+      "pageId": 0,
+      "priority": "medium",
+      "details": ""
+    },
+    {
       "id": 1772133483325,
       "text": "Declarar email e usuario do git no home.nix (?)",
       "completed": false,
@@ -80,7 +89,7 @@
       "details": ""
     }
   ],
-  "count": 8,
+  "count": 9,
   "completedCount": 1,
   "isExpanded": false,
   "useCustomColors": false,
