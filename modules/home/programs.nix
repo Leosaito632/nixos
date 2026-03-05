@@ -28,6 +28,7 @@
   programs.yazi = {
     enable = true;
     enableZshIntegration = true;
+    shellWrapperName = "y";
   };
 
   home.packages = with pkgs; [

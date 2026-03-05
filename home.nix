@@ -25,6 +25,7 @@
 
   home.sessionVariables = {
     BROWSER = vars.browser;
+    DEFAULT_BROWSER = vars.browser;
     TERMINAL = vars.terminal;
     EDITOR = vars.editor;
 

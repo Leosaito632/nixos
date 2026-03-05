@@ -1,6 +1,6 @@
 {
   terminal = "foot";
-  browser = "zen";
+  browser = "zen-twilight";
   editor = "nvim";
   file = "yazi";
 
