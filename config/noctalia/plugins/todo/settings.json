@@ -8,19 +8,19 @@
   "current_page_id": 0,
   "todos": [
     {
-      "id": 1772173240610,
-      "text": "Reinstalar NixOS no notebook a partir do flake (só pelo meme)",
+      "id": 1772133483325,
+      "text": "Declarar email e usuario do git no home.nix (?)",
       "completed": false,
-      "createdAt": "2026-02-27T06:20:40.610Z",
+      "createdAt": "2026-02-26T19:18:03.325Z",
       "pageId": 0,
       "priority": "medium",
       "details": ""
     },
     {
-      "id": 1772133483325,
-      "text": "Declarar email e usuario do git no home.nix (?)",
+      "id": 1772133328849,
+      "text": "Pegar o disco no hardware-config a partir de label e não ID (?)",
       "completed": false,
-      "createdAt": "2026-02-26T19:18:03.325Z",
+      "createdAt": "2026-02-26T19:15:28.849Z",
       "pageId": 0,
       "priority": "medium",
       "details": ""
@@ -35,10 +35,10 @@
       "details": ""
     },
     {
-      "id": 1772133328849,
-      "text": "Pegar o disco no hardware-config a partir de label e não ID (?)",
+      "id": 1772173240610,
+      "text": "Reinstalar NixOS no notebook a partir do flake (só pelo meme)",
       "completed": false,
-      "createdAt": "2026-02-26T19:15:28.849Z",
+      "createdAt": "2026-02-27T06:20:40.610Z",
       "pageId": 0,
       "priority": "medium",
       "details": ""
@@ -72,7 +72,7 @@
     },
     {
       "id": 1771478874714,
-      "text": "Fazer commit e push dos TODO automaticamente",
+      "text": "Fazer commit e push dos TODO automaticamente????",
       "completed": false,
       "createdAt": "2026-02-19T05:27:54.714Z",
       "pageId": 0,
@@ -87,10 +87,19 @@
       "pageId": 0,
       "priority": "high",
       "details": ""
+    },
+    {
+      "id": 1772683652610,
+      "text": "Arrumar zen-browser como padrão",
+      "completed": true,
+      "createdAt": "2026-03-05T04:07:32.610Z",
+      "pageId": 0,
+      "priority": "medium",
+      "details": ""
     }
   ],
-  "count": 9,
-  "completedCount": 1,
+  "count": 10,
+  "completedCount": 2,
   "isExpanded": false,
   "useCustomColors": false,
   "priorityColors": {
