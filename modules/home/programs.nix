@@ -38,7 +38,7 @@
     nodejs
     git
     gh
-    zed-editor
+    #zed-editor
     gnumake
     unzip
     ripgrep
