@@ -8,12 +8,12 @@
   "current_page_id": 0,
   "todos": [
     {
-      "id": 1772133483325,
-      "text": "Declarar email e usuario do git no home.nix (?)",
+      "id": 1772930656317,
+      "text": "ARRUMAR TELESCOPE LIVE_GREP!!!",
       "completed": false,
-      "createdAt": "2026-02-26T19:18:03.325Z",
+      "createdAt": "2026-03-08T00:44:16.317Z",
       "pageId": 0,
-      "priority": "medium",
+      "priority": "high",
       "details": ""
     },
     {
@@ -21,6 +21,15 @@
       "text": "Pegar o disco no hardware-config a partir de label e não ID (?)",
       "completed": false,
       "createdAt": "2026-02-26T19:15:28.849Z",
+      "pageId": 0,
+      "priority": "high",
+      "details": ""
+    },
+    {
+      "id": 1771478885414,
+      "text": "Migrar do meu quicknote para TODO?",
+      "completed": false,
+      "createdAt": "2026-02-19T05:28:05.414Z",
       "pageId": 0,
       "priority": "medium",
       "details": ""
@@ -44,15 +53,6 @@
       "details": ""
     },
     {
-      "id": 1772133312424,
-      "text": "Adicionar um host simples/minimal",
-      "completed": false,
-      "createdAt": "2026-02-26T19:15:12.424Z",
-      "pageId": 0,
-      "priority": "medium",
-      "details": ""
-    },
-    {
       "id": 1771478904239,
       "text": "Fazer um plugin do meu quicknote pro noctalia??",
       "completed": false,
@@ -62,19 +62,28 @@
       "details": ""
     },
     {
-      "id": 1771478885414,
-      "text": "Migrar do meu quicknote para TODO?",
+      "id": 1771478874714,
+      "text": "Fazer commit e push dos TODO automaticamente????",
       "completed": false,
-      "createdAt": "2026-02-19T05:28:05.414Z",
+      "createdAt": "2026-02-19T05:27:54.714Z",
       "pageId": 0,
       "priority": "medium",
       "details": ""
     },
     {
-      "id": 1771478874714,
-      "text": "Fazer commit e push dos TODO automaticamente????",
+      "id": 1772133483325,
+      "text": "Declarar email e usuario do git no home.nix (?)",
       "completed": false,
-      "createdAt": "2026-02-19T05:27:54.714Z",
+      "createdAt": "2026-02-26T19:18:03.325Z",
+      "pageId": 0,
+      "priority": "medium",
+      "details": ""
+    },
+    {
+      "id": 1772133312424,
+      "text": "Adicionar um host simples/minimal",
+      "completed": false,
+      "createdAt": "2026-02-26T19:15:12.424Z",
       "pageId": 0,
       "priority": "medium",
       "details": ""
@@ -98,52 +107,18 @@
       "details": ""
     }
   ],
-  "count": 10,
+  "count": 11,
   "completedCount": 2,
-  "isExpanded": false,
+  "isExpanded": true,
   "useCustomColors": false,
   "priorityColors": {
-    "high": {
-      "r": 1,
-      "g": 0.7058823704719543,
-      "b": 0.6705882549285889,
-      "a": 1,
-      "hsvHue": 0.01786111108958721,
-      "hsvSaturation": 0.3294117748737335,
-      "hsvValue": 1,
-      "hslHue": 0.01786111108958721,
-      "hslSaturation": 1,
-      "hslLightness": 0.8352941274642944,
-      "valid": true
-    },
-    "medium": {
-      "r": 0.6549019813537598,
-      "g": 0.7843137383460999,
-      "b": 1,
-      "a": 1,
-      "hsvHue": 0.6041666865348816,
-      "hsvSaturation": 0.3450980484485626,
-      "hsvValue": 1,
-      "hslHue": 0.6041666865348816,
-      "hslSaturation": 1,
-      "hslLightness": 0.8274509906768799,
-      "valid": true
-    },
-    "low": {
-      "r": 0.7686274647712708,
-      "g": 0.7764706015586853,
-      "b": 0.8117647171020508,
-      "a": 1,
-      "hsvHue": 0.6363611221313477,
-      "hsvSaturation": 0.053147174417972565,
-      "hsvValue": 0.8117647171020508,
-      "hslHue": 0.6363611221313477,
-      "hslSaturation": 0.10280003398656845,
-      "hslLightness": 0.7902036905288696,
-      "valid": true
-    }
+    "high": "#f16c75",
+    "medium": "#37f499",
+    "low": "#abb4da"
   },
   "exportPath": "~/Documents",
   "exportFormat": "markdown",
-  "exportEmptySections": false
+  "exportEmptySections": true,
+  "showCompleted": true,
+  "showBackground": true
 }

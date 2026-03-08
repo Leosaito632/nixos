@@ -98,6 +98,7 @@
     power-profiles-daemon
     killall
     gparted
+    gpu-screen-recorder
 
     # --- Fonts & Icons ---
     bibata-cursors
