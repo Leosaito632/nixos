@@ -2,7 +2,6 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	-- Comando para instalar e atualizar os "parsers" (as gramáticas das linguagens)
 	build = ":TSUpdate",
-	tag = "v0.10.0",
 	lazy = false,
 	config = function()
 		require("nvim-treesitter").setup({
