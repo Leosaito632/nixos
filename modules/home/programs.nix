@@ -39,14 +39,14 @@
     nodejs
     git
     gh
-    #zed-editor
+    # zed-editor
     gnumake
     unzip
     ripgrep
     fd
     tree
     lua
-    jetbrains.rider
+    # jetbrains.rider
     nil
     javaPackages.compiler.openjdk21
 
@@ -62,7 +62,6 @@
     microfetch
     btop
     xclip
-    wasistlos
     csvlens
 
     # --- Desktop Apps ---
@@ -72,25 +71,25 @@
     nautilus
     pinta
     discord
-    osu-lazer
-    inkscape # pode ser util algum dia
+    # osu-lazer
+    # inkscape # pode ser util algum dia
     spotify
     # prismlauncher # Launcher de mine
     blender
 
     # --- Networking ---
-    openfortivpn
-    openfortivpn-webview
+    # openfortivpn
+    # openfortivpn-webview
 
     # --- Hyprland Core ---
     hyprland
     hypridle
     hyprpicker
+    hyprshot
 
     # --- System Utilities ---
     kdePackages.qt6ct
     libsForQt5.qt5ct
-    hyprshot
     wl-clipboard
     libnotify
     pavucontrol
