@@ -8,15 +8,6 @@
   "current_page_id": 0,
   "todos": [
     {
-      "id": 1772930656317,
-      "text": "ARRUMAR TELESCOPE LIVE_GREP!!!",
-      "completed": false,
-      "createdAt": "2026-03-08T00:44:16.317Z",
-      "pageId": 0,
-      "priority": "high",
-      "details": ""
-    },
-    {
       "id": 1772133328849,
       "text": "Pegar o disco no hardware-config a partir de label e não ID (?)",
       "completed": false,
@@ -105,10 +96,19 @@
       "pageId": 0,
       "priority": "medium",
       "details": ""
+    },
+    {
+      "id": 1772930656317,
+      "text": "ARRUMAR TELESCOPE LIVE_GREP!!!",
+      "completed": true,
+      "createdAt": "2026-03-08T00:44:16.317Z",
+      "pageId": 0,
+      "priority": "high",
+      "details": ""
     }
   ],
   "count": 11,
-  "completedCount": 2,
+  "completedCount": 3,
   "isExpanded": true,
   "useCustomColors": false,
   "priorityColors": {
