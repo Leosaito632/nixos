@@ -3,7 +3,7 @@ let
   mainMod = "SUPER";
   terminal = "${vars.terminal}";
   browser = "${vars.browser}";
-  fileManager = "${vars.terminal} ${vars.file}";
+  fileManager = "${vars.terminal} -e ${vars.file}";
 in
 {
   wayland.windowManager.hyprland.settings = {
@@ -20,7 +20,7 @@ in
       "$mainMod, I, exec, noctalia-shell ipc call settings toggle"
       "$mainMod, BACKSPACE, exec, noctalia-shell ipc call sessionMenu toggle"
       "$mainMod, L, exec, noctalia-shell ipc call lockScreen lock"
-      "CTRL SHIFT, Escape, exec, ${terminal} btop"
+      "CTRL SHIFT, Escape, exec, ${terminal} -e btop"
 
       # Notas
       "$mainMod, N, exec, quicknote"

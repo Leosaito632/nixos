@@ -8,6 +8,24 @@
   "current_page_id": 0,
   "todos": [
     {
+      "id": 1773201453703,
+      "text": "quicknote não aparece como janela ativa no noctalia",
+      "completed": false,
+      "createdAt": "2026-03-11T03:57:33.703Z",
+      "pageId": 0,
+      "priority": "medium",
+      "details": ""
+    },
+    {
+      "id": 1773201415876,
+      "text": "Arrumar Icones estranhos no Alacritty (Ver Documentos no Yazi)",
+      "completed": false,
+      "createdAt": "2026-03-11T03:56:55.876Z",
+      "pageId": 0,
+      "priority": "medium",
+      "details": ""
+    },
+    {
       "id": 1772133328849,
       "text": "Pegar o disco no hardware-config a partir de label e não ID (?)",
       "completed": false,
@@ -107,7 +125,7 @@
       "details": ""
     }
   ],
-  "count": 11,
+  "count": 13,
   "completedCount": 3,
   "isExpanded": true,
   "useCustomColors": false,

@@ -17,13 +17,21 @@
   };
 
   # Terminal
-  programs.foot = {
+  #  programs.foot = {
+  #    enable = true;
+  #    settings.main = {
+  #      font = lib.mkForce "JetBrainsMono NF:size=12";
+  #    };
+  #  };
+  #  xdg.configFile."foot/foot.ini".force = true;
+
+  programs.alacritty = {
     enable = true;
-    settings.main = {
-      font = lib.mkForce "JetBrainsMono NF:size=12";
-    };
+    #  font.normal = {
+    #    family = "JetBrainsMono";
+    #    style = "Regular";
+    #  };
   };
-  xdg.configFile."foot/foot.ini".force = true;
 
   # Shell
   programs.zsh = {

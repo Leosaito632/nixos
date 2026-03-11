@@ -43,6 +43,7 @@ pkgs.writeShellScriptBin "quicknote" ''
   }
 
   sync_pull
-  ${pkgs.foot}/bin/foot --app-id="$APP_ID" --title="QuickNote" nvim "$NOTE_FILE"
+  # ${pkgs.foot}/bin/foot --app-id="$APP_ID" --title="QuickNote" nvim "$NOTE_FILE"
+  $TERMINAL --class "$APP_ID" --title "QuickNote" -e nvim "$NOTE_FILE"
   sync_push
 ''

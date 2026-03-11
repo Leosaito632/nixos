@@ -1,5 +1,5 @@
 {
-  terminal = "foot";
+  terminal = "alacritty";
   browser = "zen-twilight";
   editor = "nvim";
   file = "yazi";
