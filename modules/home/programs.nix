@@ -76,6 +76,7 @@
     spotify
     # prismlauncher # Launcher de mine
     blender
+    mendeley
 
     # --- Networking ---
     # openfortivpn
