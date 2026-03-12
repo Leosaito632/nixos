@@ -9,18 +9,9 @@
   "todos": [
     {
       "id": 1773201453703,
-      "text": "quicknote não aparece como janela ativa no noctalia",
+      "text": "Aplicativos nos Special Workspace não aparecem como janela ativa no noctalia",
       "completed": false,
       "createdAt": "2026-03-11T03:57:33.703Z",
-      "pageId": 0,
-      "priority": "medium",
-      "details": ""
-    },
-    {
-      "id": 1773201415876,
-      "text": "Arrumar Icones estranhos no Alacritty (Ver Documentos no Yazi)",
-      "completed": false,
-      "createdAt": "2026-03-11T03:56:55.876Z",
       "pageId": 0,
       "priority": "medium",
       "details": ""
@@ -123,10 +114,19 @@
       "pageId": 0,
       "priority": "high",
       "details": ""
+    },
+    {
+      "id": 1773201415876,
+      "text": "Arrumar Icones estranhos no Alacritty (Ver Documentos no Yazi)",
+      "completed": true,
+      "createdAt": "2026-03-11T03:56:55.876Z",
+      "pageId": 0,
+      "priority": "medium",
+      "details": ""
     }
   ],
   "count": 13,
-  "completedCount": 3,
+  "completedCount": 4,
   "isExpanded": true,
   "useCustomColors": false,
   "priorityColors": {

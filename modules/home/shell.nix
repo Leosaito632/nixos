@@ -27,10 +27,12 @@
 
   programs.alacritty = {
     enable = true;
+    #settings = {
     #  font.normal = {
-    #    family = "JetBrainsMono";
+    #    family = "JetBrainsMono Nerd Font";
     #    style = "Regular";
     #  };
+    #};
   };
 
   # Shell

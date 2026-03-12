@@ -40,4 +40,11 @@
     [General]
     theme=KvGnomeDark 
   '';
+
+  # Fonte do Sistema
+  fonts.fontconfig.defaultFonts = {
+    monospace = [ "JetBrainsMono Nerd Font" ];
+    serif = [ "JetBrainsMono Nerd Font" ];
+    sansSerif = [ "JetBrainsMono Nerd Font" ];
+  };
 }

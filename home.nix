@@ -26,8 +26,7 @@
   home.sessionVariables = {
     BROWSER = vars.browser;
     DEFAULT_BROWSER = vars.browser;
-    # TERMINAL = vars.terminal;
-    TERMINAL = "alacritty";
+    TERMINAL = vars.terminal;
     EDITOR = vars.editor;
 
     HYPRCURSOR_SIZE = builtins.toString vars.cursorSize;
