@@ -3,7 +3,7 @@
   wayland.windowManager.hyprland.settings = {
     windowrule = [
       # Transparência e Opacidade
-      "opacity 0.9 0.9, match:class Alacritty"
+      "opacity 0.9 0.9, match:class kitty"
       "opacity 1.0 override 1.0 override, match:class zen-twilight"
 
       # --- Quicknote ---

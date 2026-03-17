@@ -49,6 +49,7 @@
     # jetbrains.rider
     nil
     javaPackages.compiler.openjdk21
+    povray
 
     # --- Formatters ---
     stylua

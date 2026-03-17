@@ -2,6 +2,7 @@
   lib,
   pkgs,
   hostName,
+  config,
   ...
 }:
 {
@@ -25,14 +26,20 @@
   #  };
   #  xdg.configFile."foot/foot.ini".force = true;
 
-  programs.alacritty = {
+  #  programs.alacritty = {
+  #    enable = true;
+  #settings = {
+  #  font.normal = {
+  #    family = "JetBrainsMono Nerd Font";
+  #    style = "Regular";
+  #  };
+  #};
+  #   };
+
+  programs.kitty = {
     enable = true;
-    #settings = {
-    #  font.normal = {
-    #    family = "JetBrainsMono Nerd Font";
-    #    style = "Regular";
-    #  };
-    #};
+    font.name = "JetBrainsMono Nerd Font";
+    extraConfig = "include $HOME/.config/kitty/themes/noctalia.conf";
   };
 
   # Shell
