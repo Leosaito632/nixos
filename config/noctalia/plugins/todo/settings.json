@@ -8,6 +8,15 @@
   "current_page_id": 0,
   "todos": [
     {
+      "id": 1773790174433,
+      "text": "Fazer beyblado pro trabalho 3d",
+      "completed": false,
+      "createdAt": "2026-03-17T23:29:34.433Z",
+      "pageId": 0,
+      "priority": "medium",
+      "details": ""
+    },
+    {
       "id": 1773201453703,
       "text": "Aplicativos nos Special Workspace não aparecem como janela ativa no noctalia",
       "completed": false,
@@ -125,7 +134,7 @@
       "details": ""
     }
   ],
-  "count": 13,
+  "count": 14,
   "completedCount": 4,
   "isExpanded": true,
   "useCustomColors": false,
