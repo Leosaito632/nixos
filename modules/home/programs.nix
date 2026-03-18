@@ -50,6 +50,8 @@
     nil
     javaPackages.compiler.openjdk21
     povray
+    python3
+    black
 
     # --- Formatters ---
     stylua
