@@ -18,13 +18,13 @@
   };
 
   # Terminal
-  #  programs.foot = {
-  #    enable = true;
-  #    settings.main = {
-  #      font = lib.mkForce "JetBrainsMono NF:size=12";
-  #    };
+  #programs.foot = {
+  #  enable = true;
+  #  settings.main = {
+  #    font = lib.mkForce "JetBrainsMono NF:size=12";
   #  };
-  #  xdg.configFile."foot/foot.ini".force = true;
+  #};
+  #xdg.configFile."foot/foot.ini".force = true;
 
   #  programs.alacritty = {
   #    enable = true;

@@ -38,7 +38,7 @@
 
   xdg.configFile."Kvantum/kvantum.kvconfig".text = ''
     [General]
-    theme=KvGnomeDark 
+    theme=KvGnomeDark
   '';
 
   # Fonte do Sistema

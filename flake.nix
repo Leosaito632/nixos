@@ -21,6 +21,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # illogical-flake = {
+    #   url = "github:soymou/illogical-flake";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
   };
 
   outputs =
@@ -43,7 +48,7 @@
           useUserPackages = true;
           useGlobalPkgs = true;
           users.leo = import ./home.nix;
-          backupFileExtension = "backup";
+          backupFileExtension = "bkp";
 
           extraSpecialArgs = {
             inherit inputs;

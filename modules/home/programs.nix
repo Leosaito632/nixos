@@ -56,7 +56,7 @@
     # --- Formatters ---
     stylua
     shfmt
-    nodePackages.prettier
+    # nodePackages.prettier
     nixfmt
 
     # --- CLI Utils ---

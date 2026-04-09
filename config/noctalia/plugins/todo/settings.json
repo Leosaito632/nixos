@@ -1,11 +1,4 @@
 {
-  "pages": [
-    {
-      "id": 0,
-      "name": "General"
-    }
-  ],
-  "current_page_id": 0,
   "todos": [
     {
       "id": 1773790174433,
@@ -134,8 +127,17 @@
       "details": ""
     }
   ],
+  "pages": [
+    {
+      "id": 0,
+      "name": "General"
+    }
+  ],
+  "current_page_id": 0,
   "count": 14,
   "completedCount": 4,
+  "showCompleted": true,
+  "showBackground": true,
   "isExpanded": true,
   "useCustomColors": false,
   "priorityColors": {
@@ -145,7 +147,5 @@
   },
   "exportPath": "~/Documents",
   "exportFormat": "markdown",
-  "exportEmptySections": true,
-  "showCompleted": true,
-  "showBackground": true
+  "exportEmptySections": true
 }
