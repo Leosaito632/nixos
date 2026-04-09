@@ -39,7 +39,7 @@
     nodejs
     git
     gh
-    # zed-editor
+    zed-editor
     gnumake
     unzip
     ripgrep
@@ -52,6 +52,7 @@
     povray
     python3
     black
+    processing
 
     # --- Formatters ---
     stylua
