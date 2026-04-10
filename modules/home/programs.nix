@@ -31,13 +31,18 @@
     shellWrapperName = "y";
   };
 
+  programs.git = {
+    enable = true;
+    userName = "Leonardo Saito";
+    userEmail = "leosaito632@gmail.com";
+  };
+
   home.packages = with pkgs; [
     # --- Dev Tools ---
     gcc
     cargo
     rustc
     nodejs
-    git
     gh
     zed-editor
     gnumake
@@ -53,6 +58,7 @@
     python3
     black
     processing
+    vscode
 
     # --- Formatters ---
     stylua
