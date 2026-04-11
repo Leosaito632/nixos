@@ -17,25 +17,6 @@
     zen-browser = "zen-twilight";
   };
 
-  # Terminal
-  #programs.foot = {
-  #  enable = true;
-  #  settings.main = {
-  #    font = lib.mkForce "JetBrainsMono NF:size=12";
-  #  };
-  #};
-  #xdg.configFile."foot/foot.ini".force = true;
-
-  #  programs.alacritty = {
-  #    enable = true;
-  #settings = {
-  #  font.normal = {
-  #    family = "JetBrainsMono Nerd Font";
-  #    style = "Regular";
-  #  };
-  #};
-  #   };
-
   programs.kitty = {
     enable = true;
     font.name = "JetBrainsMono Nerd Font";

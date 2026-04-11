@@ -7,11 +7,7 @@
 {
   imports = [
     inputs.zen-browser.homeModules.twilight
-    inputs.noctalia.homeModules.default
   ];
-  # Noctalia
-  programs.noctalia-shell.enable = true;
-
   # Browsers
   programs.firefox.enable = true;
   programs.zen-browser.enable = true;
@@ -33,6 +29,11 @@
 
   programs.git = {
     enable = true;
+    settings = {
+      init = {
+        defaultBranch = "main";
+      };
+    };
     userName = "Leonardo Saito";
     userEmail = "leosaito632@gmail.com";
   };
