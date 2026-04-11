@@ -33,9 +33,11 @@
       init = {
         defaultBranch = "main";
       };
+      user = {
+        name = "Leonardo Saito";
+        email = "leosaito632@gmail.com";
+      };
     };
-    userName = "Leonardo Saito";
-    userEmail = "leosaito632@gmail.com";
   };
 
   home.packages = with pkgs; [
