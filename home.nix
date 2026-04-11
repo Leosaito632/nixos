@@ -20,7 +20,7 @@
 
   home.username = "leo";
   home.homeDirectory = "/home/leo";
-  home.stateVersion = "26.05";
+  home.stateVersion = "25.05";
   home.enableNixpkgsReleaseCheck = false;
 
   home.sessionVariables = {

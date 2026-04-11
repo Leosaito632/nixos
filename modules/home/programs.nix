@@ -17,6 +17,10 @@
   programs.neovim = {
     enable = true;
     defaultEditor = true;
+
+    # home-manager warnings
+    withPython3 = false;
+    withRuby = false;
   };
 
   xdg.configFile."nvim".source = ../../config/nvim;

@@ -21,6 +21,11 @@
   # Temas da interface grafica
   gtk = {
     enable = true;
+
+    # home-manager warnings
+    gtk4 = {
+      theme = null;
+    };
   };
 
   qt = {
