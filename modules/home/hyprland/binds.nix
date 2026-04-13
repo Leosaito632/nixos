@@ -21,6 +21,7 @@ in
       "$mainMod, BACKSPACE, exec, noctalia-shell ipc call sessionMenu toggle"
       "$mainMod, L, exec, noctalia-shell ipc call lockScreen lock"
       "CTRL SHIFT, Escape, exec, ${terminal} -e btop"
+      "$mainMod, P, exec, hyprpicker -a"
 
       # Notas
       "$mainMod, N, exec, quicknote"

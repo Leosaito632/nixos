@@ -1,15 +1,6 @@
 {
   "todos": [
     {
-      "id": 1773790174433,
-      "text": "Fazer beyblado pro trabalho 3d",
-      "completed": false,
-      "createdAt": "2026-03-17T23:29:34.433Z",
-      "pageId": 0,
-      "priority": "medium",
-      "details": ""
-    },
-    {
       "id": 1773201453703,
       "text": "Aplicativos nos Special Workspace não aparecem como janela ativa no noctalia",
       "completed": false,
@@ -73,15 +64,6 @@
       "details": ""
     },
     {
-      "id": 1772133483325,
-      "text": "Declarar email e usuario do git no home.nix (?)",
-      "completed": false,
-      "createdAt": "2026-02-26T19:18:03.325Z",
-      "pageId": 0,
-      "priority": "medium",
-      "details": ""
-    },
-    {
       "id": 1772133312424,
       "text": "Adicionar um host simples/minimal",
       "completed": false,
@@ -125,6 +107,15 @@
       "pageId": 0,
       "priority": "medium",
       "details": ""
+    },
+    {
+      "id": 1772133483325,
+      "text": "Declarar email e usuario do git no home.nix (?)",
+      "completed": true,
+      "createdAt": "2026-02-26T19:18:03.325Z",
+      "pageId": 0,
+      "priority": "medium",
+      "details": ""
     }
   ],
   "pages": [
@@ -134,8 +125,8 @@
     }
   ],
   "current_page_id": 0,
-  "count": 14,
-  "completedCount": 4,
+  "count": 13,
+  "completedCount": 5,
   "showCompleted": true,
   "showBackground": true,
   "isExpanded": true,
