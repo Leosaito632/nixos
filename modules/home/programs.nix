@@ -107,7 +107,6 @@
 
     # --- System Utilities ---
     kdePackages.qt6ct
-    libsForQt5.qt5ct
     wl-clipboard
     libnotify
     pavucontrol

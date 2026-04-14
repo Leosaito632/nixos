@@ -1,10 +1,7 @@
 { pkgs, ... }:
 {
   environment.systemPackages = [
-    (pkgs.catppuccin-sddm.override {
-      flavor = "mocha";
-      accent = "mauve";
-    })
+    (pkgs.sddm-astronaut.override { embeddedTheme = "japanese_aesthetic"; })
   ];
 
   services.displayManager.sddm = {
@@ -12,6 +9,12 @@
     wayland.enable = true;
     autoNumlock = true;
 
-    theme = "catppuccin-mocha-mauve";
+    theme = "sddm-astronaut-theme";
+
+    # Não sei por que mas precisa estar aqui.
+    # No environment.systemPackages não funciona.
+    extraPackages = [
+      pkgs.kdePackages.qtmultimedia
+    ];
   };
 }
