@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   environment.systemPackages = [
-    (pkgs.sddm-astronaut.override { embeddedTheme = "purple_leaves"; })
+    (pkgs.sddm-astronaut.override { embeddedTheme = "pixel_sakura_static"; })
   ];
 
   services.displayManager.sddm = {
