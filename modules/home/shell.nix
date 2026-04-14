@@ -42,8 +42,9 @@
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
-    settings = {
-      add_newline = false;
-    };
+    settings = lib.mkMerge [
+      (builtins.fromTOML (builtins.readFile "${pkgs.starship}/share/starship/presets/pure-preset.toml"))
+      { }
+    ];
   };
 }
