@@ -19,15 +19,6 @@
       "details": ""
     },
     {
-      "id": 1771478885414,
-      "text": "Migrar do meu quicknote para TODO?",
-      "completed": false,
-      "createdAt": "2026-02-19T05:28:05.414Z",
-      "pageId": 0,
-      "priority": "medium",
-      "details": ""
-    },
-    {
       "id": 1772133377026,
       "text": "Deixar tudo certo pra poder dar um nixos-install a partir do flake",
       "completed": false,
@@ -41,24 +32,6 @@
       "text": "Reinstalar NixOS no notebook a partir do flake (só pelo meme)",
       "completed": false,
       "createdAt": "2026-02-27T06:20:40.610Z",
-      "pageId": 0,
-      "priority": "medium",
-      "details": ""
-    },
-    {
-      "id": 1771478904239,
-      "text": "Fazer um plugin do meu quicknote pro noctalia??",
-      "completed": false,
-      "createdAt": "2026-02-19T05:28:24.239Z",
-      "pageId": 0,
-      "priority": "medium",
-      "details": ""
-    },
-    {
-      "id": 1771478874714,
-      "text": "Fazer commit e push dos TODO automaticamente????",
-      "completed": false,
-      "createdAt": "2026-02-19T05:27:54.714Z",
       "pageId": 0,
       "priority": "medium",
       "details": ""
@@ -125,7 +98,7 @@
     }
   ],
   "current_page_id": 0,
-  "count": 13,
+  "count": 10,
   "completedCount": 5,
   "showCompleted": true,
   "showBackground": true,
