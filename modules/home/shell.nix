@@ -20,7 +20,6 @@
   programs.kitty = {
     enable = true;
     font.name = "JetBrainsMono Nerd Font";
-    extraConfig = "include $HOME/.config/kitty/themes/noctalia.conf";
   };
 
   # Shell
@@ -42,9 +41,8 @@
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
-    settings = lib.mkMerge [
-      (builtins.fromTOML (builtins.readFile "${pkgs.starship}/share/starship/presets/pure-preset.toml"))
-      { }
-    ];
+    settings = (
+      builtins.fromTOML (builtins.readFile "${pkgs.starship}/share/starship/presets/pure-preset.toml")
+    );
   };
 }
