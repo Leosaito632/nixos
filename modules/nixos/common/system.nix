@@ -11,7 +11,7 @@
     ./gaming.nix
     ./sddm.nix
   ];
-
+  programs.dconf.enable = true;
   ####
   # BOOT
   ####
