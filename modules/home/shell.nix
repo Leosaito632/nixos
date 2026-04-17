@@ -38,11 +38,15 @@
   };
 
   # Tema do shell
-  programs.starship = {
+  #  programs.starship = {
+  #    enable = true;
+  #    enableZshIntegration = true;
+  #    settings = (
+  #      builtins.fromTOML (builtins.readFile "${pkgs.starship}/share/starship/presets/pure-preset.toml")
+  #    );
+  #  };
+  programs.oh-my-posh = {
     enable = true;
     enableZshIntegration = true;
-    settings = (
-      builtins.fromTOML (builtins.readFile "${pkgs.starship}/share/starship/presets/pure-preset.toml")
-    );
   };
 }
