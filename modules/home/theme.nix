@@ -30,4 +30,18 @@
     serif = [ "JetBrainsMono Nerd Font" ];
     sansSerif = [ "JetBrainsMono Nerd Font" ];
   };
+
+  # Portals
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gnome
+    ];
+    config = {
+      hyprland = {
+        # FileChooser do gnome (Nautilus)
+        "org.freedesktop.impl.portal.FileChooser" = [ "gnome" ];
+      };
+    };
+  };
 }

@@ -37,15 +37,4 @@
     # QT_QPA_PLATFORMTHEME = "qt6ct";
   };
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gnome
-    ];
-    config = {
-      hyprland = {
-        "org.freedesktop.impl.portal.FileChooser" = [ "gnome" ];
-      };
-    };
-  };
 }
