@@ -3,7 +3,6 @@
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
-      "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
       "image/png" = [ "pinta.desktop" ];
       "image/jpeg" = [ "pinta.desktop" ];
       "image/jpg" = [ "pinta.desktop" ];
