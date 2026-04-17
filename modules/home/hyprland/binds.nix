@@ -121,5 +121,18 @@ in
       "$mainMod, mouse:272, movewindow"
       "$mainMod, mouse:273, resizewindow"
     ];
+
+    bindl = [
+      # Media Keys
+      ", XF86MonBrightnessUp, exec, noctalia-shell ipc call brightness increase"
+      ", XF86MonBrightnessDown, exec, noctalia-shell ipc call brightness decrease"
+      ", XF86AudioRaiseVolume, exec, noctalia-shell ipc call volume increase"
+      ", XF86AudioLowerVolume, exec, noctalia-shell ipc call volume decrease"
+      ", XF86AudioMute, exec, noctalia-shell ipc call volume muteOutput"
+      ", XF86AudioPlay, exec, noctalia-shell ipc call media playPause"
+      ", XF86AudioNext, exec, noctalia-shell ipc call media next"
+      ", XF86AudioPrev, exec, noctalia-shell ipc call media previous"
+      ", XF86AudioMicMute, exec, noctalia-shell ipc call volume muteInput"
+    ];
   };
 }
