@@ -36,5 +36,7 @@
     QT_QPA_PLATFORM = "wayland";
 
     QT_QPA_PLATFORMTHEME = "kde";
+
+    XDG_DATA_DIRS = "$XDG_DATA_DIRS:${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}";
   };
 }
