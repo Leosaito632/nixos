@@ -34,6 +34,17 @@
     };
   };
 
+  # Qt config
+  qt = {
+    enable = true;
+    platformTheme.name = "kde";
+  };
+
+  xdg.configFile."kdeglobals".text = ''
+    [Icons]
+    Theme=Adwaita
+  '';
+
   # Fonte do Sistema
   fonts.fontconfig.defaultFonts = {
     monospace = [ "JetBrainsMono Nerd Font" ];
@@ -46,6 +57,7 @@
     enable = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-gnome
+      xdg-desktop-portal-gtk
     ];
     config = {
       hyprland = {
