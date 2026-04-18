@@ -11,6 +11,7 @@
       "center on, match:class quicknote_float"
       "workspace special:quicknote, match:class quicknote_float"
       "opacity 0.85 override 0.85 override, match:class quicknote_float"
+      "workspace 1, match:workspace special:quicknote" # Only quicknote in quicknote workspace
 
       # --- ZapZap ---
       "workspace 10 silent, match:class com.rtosta.zapzap"
