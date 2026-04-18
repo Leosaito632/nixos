@@ -116,19 +116,8 @@
     gparted
     gpu-screen-recorder
 
-    # --- Fonts & Icons ---
-    bibata-cursors
-
-    papirus-icon-theme
-    adwaita-icon-theme
-
+    # --- Fonts ---
     nerd-fonts.jetbrains-mono
-    font-awesome
-    montserrat
-
-    kdePackages.qtsvg
-    kdePackages.qtstyleplugin-kvantum
-    libsForQt5.qtstyleplugin-kvantum
 
     # --- Custom Scripts ---
     (import ../../scripts/quicknote.nix { inherit pkgs; })

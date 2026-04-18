@@ -11,7 +11,6 @@
     ./gaming.nix
     ./sddm.nix
   ];
-  # programs.dconf.enable = true;
   ####
   # BOOT
   ####
@@ -75,6 +74,7 @@
     };
   };
 
+  programs.dconf.enable = true;
   ####
   # AUDIO
   ####

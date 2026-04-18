@@ -2,6 +2,7 @@
   vars,
   pkgs,
   inputs,
+  config,
   ...
 }:
 {
@@ -14,15 +15,24 @@
     size = vars.cursorSize;
   };
 
-  qt = {
-    enable = true;
-    platformTheme.name = "qtct";
+  dconf = {
+    settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+      };
+    };
   };
 
-  xdg.configFile."qt6ct/qt6ct.conf".text = "
-  [Appearance]
-  icon_theme=Adwaita
-  ";
+  gtk = {
+    enable = true;
+
+    gtk4.theme = null;
+
+    iconTheme = {
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
+    };
+  };
 
   # Fonte do Sistema
   fonts.fontconfig.defaultFonts = {

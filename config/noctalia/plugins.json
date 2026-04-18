@@ -1,16 +1,12 @@
 {
     "sources": [
         {
-            "enabled": true,
+            "enabled": false,
             "name": "Noctalia Plugins",
             "url": "https://github.com/noctalia-dev/noctalia-plugins"
         }
     ],
     "states": {
-        "todo": {
-            "enabled": true,
-            "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
-        }
     },
     "version": 2
 }
