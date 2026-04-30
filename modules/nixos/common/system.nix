@@ -98,7 +98,10 @@
   # GUI
   ####
 
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    withUWSM = true;
+    enable = true;
+  };
   services.xserver.enable = true;
 
   ####

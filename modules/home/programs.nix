@@ -98,6 +98,7 @@
     # prismlauncher # Launcher de mine
     blender
     mendeley
+    loupe
 
     # --- Networking ---
     # openfortivpn
