@@ -10,6 +10,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
+    configType = "hyprlang";
 
     # plugins = [ ... ];
 
@@ -73,7 +74,6 @@
       };
 
       dwindle = {
-        pseudotile = true;
         preserve_split = true;
         special_scale_factor = 0.9;
       };

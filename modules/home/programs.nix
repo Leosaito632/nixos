@@ -51,8 +51,8 @@
   home.packages = with pkgs; [
     # --- Dev Tools ---
     gcc
-    cargo
-    rustc
+    #    cargo
+    #    rustc
     nodejs
     gh
     zed-editor
