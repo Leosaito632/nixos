@@ -51,8 +51,6 @@
   home.packages = with pkgs; [
     # --- Dev Tools ---
     gcc
-    #    cargo
-    #    rustc
     nodejs
     gh
     zed-editor
@@ -63,6 +61,7 @@
     tree
     lua
     # jetbrains.rider
+    jetbrains.clion
     nil
     javaPackages.compiler.openjdk21
     povray
