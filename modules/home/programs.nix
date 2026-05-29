@@ -110,6 +110,7 @@
     hyprshot
 
     # --- System Utilities ---
+    kdePackages.qtwayland
     kdePackages.qt6ct
     wl-clipboard
     libnotify

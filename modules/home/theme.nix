@@ -37,7 +37,7 @@
   # Qt config
   qt = {
     enable = true;
-    platformTheme.name = "kde";
+    # platformTheme.name = "gtk";
   };
 
   xdg.configFile."kdeglobals".text = ''
@@ -60,8 +60,11 @@
       xdg-desktop-portal-gtk
     ];
     config = {
+      # FileChooser do gnome (Nautilus)
+      common = {
+        "org.freedesktop.impl.portal.FileChooser" = [ "gnome" ];
+      };
       hyprland = {
-        # FileChooser do gnome (Nautilus)
         "org.freedesktop.impl.portal.FileChooser" = [ "gnome" ];
       };
     };

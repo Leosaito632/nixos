@@ -33,9 +33,9 @@
     XCURSOR_SIZE = builtins.toString vars.cursorSize;
 
     XDG_SESSION_TYPE = "wayland";
-    QT_QPA_PLATFORM = "wayland";
+    QT_QPA_PLATFORM = "wayland;xcb";
 
-    QT_QPA_PLATFORMTHEME = "kde";
+    QT_QPA_PLATFORMTHEME = "xdgdesktopportal";
 
     XDG_DATA_DIRS = "$XDG_DATA_DIRS:${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}";
   };
