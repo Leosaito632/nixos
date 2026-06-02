@@ -85,10 +85,6 @@ in
       "$mainMod ALT, S, movetoworkspace, special:magic"
 
       # Media Keys
-      ", XF86MonBrightnessUp, exec, noctalia-shell ipc call brightness increase"
-      ", XF86MonBrightnessDown, exec, noctalia-shell ipc call brightness decrease"
-      ", XF86AudioRaiseVolume, exec, noctalia-shell ipc call volume increase"
-      ", XF86AudioLowerVolume, exec, noctalia-shell ipc call volume decrease"
       ", XF86AudioMute, exec, noctalia-shell ipc call volume muteOutput"
       ", XF86AudioPlay, exec, noctalia-shell ipc call media playPause"
       ", XF86AudioNext, exec, noctalia-shell ipc call media next"
