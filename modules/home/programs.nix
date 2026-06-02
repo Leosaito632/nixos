@@ -85,6 +85,7 @@
     csvlens
 
     # --- Desktop Apps ---
+    bambu-studio
     zapzap
     obsidian
     libreoffice-qt6-fresh
