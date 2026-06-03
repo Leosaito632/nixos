@@ -20,12 +20,12 @@
       ### AUTOSTART ###
       #################
       exec-once = [
-        "nm-applet &"
-        "noctalia-shell &"
+        "nm-applet"
+        "noctalia-shell"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
+        "whatsie"
         "quicknote"
-        "zapzap"
       ];
 
       ##############

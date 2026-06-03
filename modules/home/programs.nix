@@ -50,7 +50,7 @@
 
   programs.vscode = {
     enable = true;
-    extensions = with pkgs.vscode-extensions; [
+    profiles.default.extensions = with pkgs.vscode-extensions; [
       ms-python.python
       ms-toolsai.jupyter
     ];
@@ -95,7 +95,8 @@
     # --- Desktop Apps ---
     # bambu-studio
     orca-slicer
-    zapzap
+    # zapzap
+    whatsie
     obsidian
     libreoffice-qt6-fresh
     nautilus
