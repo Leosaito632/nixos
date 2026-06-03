@@ -48,6 +48,14 @@
     };
   };
 
+  programs.vscode = {
+    enable = true;
+    extensions = with pkgs.vscode-extensions; [
+      ms-python.python
+      ms-toolsai.jupyter
+    ];
+  };
+
   home.packages = with pkgs; [
     # --- Dev Tools ---
     gcc
@@ -68,7 +76,7 @@
     python3
     black
     processing
-    vscode
+    # vscode
 
     # --- Formatters ---
     stylua
