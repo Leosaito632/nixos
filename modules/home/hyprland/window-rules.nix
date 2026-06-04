@@ -23,6 +23,11 @@
       # --- Picture in Picture ---
       "float on, match:title Picture-in-Picture"
       "pin on, match:title Picture-in-Picture"
+
+      # --- Noctalia ---
+      "float on, match:class dev.noctalia.Noctalia.Settings"
+      "center on, match:class dev.noctalia.Noctalia.Settings"
+
     ];
   };
 }

@@ -16,10 +16,10 @@ in
       "$mainMod, T, exec, ${terminal}"
       "$mainMod, E, exec, ${fileManager}"
       "$mainMod, W, exec, ${browser}"
-      "$mainMod, A, exec, noctalia-shell ipc call launcher toggle"
-      "$mainMod, I, exec, noctalia-shell ipc call settings toggle"
-      "$mainMod, BACKSPACE, exec, noctalia-shell ipc call sessionMenu toggle"
-      "$mainMod, L, exec, noctalia-shell ipc call lockScreen lock"
+      "$mainMod, A, exec, noctalia msg panel-toggle launcher"
+      "$mainMod, I, exec, noctalia msg settings-toggle"
+      "$mainMod, BACKSPACE, exec, noctalia msg panel-toggle session"
+      "$mainMod, L, exec, noctalia msg session lock"
       "CTRL SHIFT, Escape, exec, ${terminal} -e btop"
       "$mainMod, P, exec, hyprpicker -a"
 
@@ -31,13 +31,8 @@ in
       "$mainMod, F, fullscreen"
       "$mainMod ALT, SPACE, togglefloating"
       # "$mainMod, P, pseudo"
-      "$mainMod, Tab, exec, noctalia-shell ipc call overview toggle"
 
       # Foco
-      "$mainMod, h, movefocus, l"
-      "$mainMod, l, movefocus, r"
-      "$mainMod, j, movefocus, u"
-      "$mainMod, k, movefocus, d"
       "$mainMod, left, movefocus, l"
       "$mainMod, right, movefocus, r"
       "$mainMod, up, movefocus, u"
@@ -85,14 +80,14 @@ in
       "$mainMod ALT, S, movetoworkspace, special:magic"
 
       # Media Keys
-      ", XF86AudioMute, exec, noctalia-shell ipc call volume muteOutput"
-      ", XF86AudioPlay, exec, noctalia-shell ipc call media playPause"
-      ", XF86AudioNext, exec, noctalia-shell ipc call media next"
-      ", XF86AudioPrev, exec, noctalia-shell ipc call media previous"
-      ", XF86AudioMicMute, exec, noctalia-shell ipc call volume muteInput"
+      ", XF86AudioMute, exec, noctalia msg volume-mute"
+      ", XF86AudioPlay, exec, noctalia msg media toggle"
+      ", XF86AudioNext, exec, noctalia msg media next"
+      ", XF86AudioPrev, exec, noctalia msg media previous"
+      ", XF86AudioMicMute, exec, noctalia msg mic-mute"
 
       # Extras
-      "$mainMod, V, exec, noctalia-shell ipc call launcher clipboard"
+      "$mainMod, V, exec, noctalia msg panel-toggle clipboard"
       "$mainMod SHIFT, M, exec, toggle_monitor"
 
       # Screenshots
@@ -103,7 +98,7 @@ in
 
     # Binds que repetem (bindr), binds de mouse (bindm), etc
     bindr = [
-      "$mainMod, SUPER_L, exec, noctalia-shell ipc call controlCenter toggle"
+      "$mainMod, SUPER_L, exec, noctalia msg panel-toggle control-center"
     ];
 
     binde = [
@@ -111,15 +106,15 @@ in
       "ALT, Tab, cyclenext"
       "ALT, Tab, bringactivetotop"
       # Media Keys
-      ", XF86MonBrightnessUp, exec, noctalia-shell ipc call brightness increase"
-      ", XF86MonBrightnessDown, exec, noctalia-shell ipc call brightness decrease"
-      ", XF86AudioRaiseVolume, exec, noctalia-shell ipc call volume increase"
-      ", XF86AudioLowerVolume, exec, noctalia-shell ipc call volume decrease"
-      ", XF86AudioMute, exec, noctalia-shell ipc call volume muteOutput"
-      ", XF86AudioPlay, exec, noctalia-shell ipc call media playPause"
-      ", XF86AudioNext, exec, noctalia-shell ipc call media next"
-      ", XF86AudioPrev, exec, noctalia-shell ipc call media previous"
-      ", XF86AudioMicMute, exec, noctalia-shell ipc call volume muteInput"
+      ", XF86MonBrightnessUp, exec, noctalia msg brightness-up"
+      ", XF86MonBrightnessDown, exec, noctalia msg brightness-down"
+      ", XF86AudioRaiseVolume, exec, noctalia msg volume-up"
+      ", XF86AudioLowerVolume, exec, noctalia msg volume-down"
+      ", XF86AudioMute, exec, noctalia msg volume-mute"
+      ", XF86AudioPlay, exec, noctalia msg media toggle"
+      ", XF86AudioNext, exec, noctalia msg media next"
+      ", XF86AudioPrev, exec, noctalia msg media previous"
+      ", XF86AudioMicMute, exec, noctalia msg mic-mute"
 
     ];
 
@@ -130,15 +125,15 @@ in
 
     bindl = [
       # Media Keys
-      ", XF86MonBrightnessUp, exec, noctalia-shell ipc call brightness increase"
-      ", XF86MonBrightnessDown, exec, noctalia-shell ipc call brightness decrease"
-      ", XF86AudioRaiseVolume, exec, noctalia-shell ipc call volume increase"
-      ", XF86AudioLowerVolume, exec, noctalia-shell ipc call volume decrease"
-      ", XF86AudioMute, exec, noctalia-shell ipc call volume muteOutput"
-      ", XF86AudioPlay, exec, noctalia-shell ipc call media playPause"
-      ", XF86AudioNext, exec, noctalia-shell ipc call media next"
-      ", XF86AudioPrev, exec, noctalia-shell ipc call media previous"
-      ", XF86AudioMicMute, exec, noctalia-shell ipc call volume muteInput"
+      ", XF86MonBrightnessUp, exec, noctalia msg brightness-up"
+      ", XF86MonBrightnessDown, exec, noctalia msg brightness-down"
+      ", XF86AudioRaiseVolume, exec, noctalia msg volume-up"
+      ", XF86AudioLowerVolume, exec, noctalia msg volume-down"
+      ", XF86AudioMute, exec, noctalia msg volume-mute"
+      ", XF86AudioPlay, exec, noctalia msg media toggle"
+      ", XF86AudioNext, exec, noctalia msg media next"
+      ", XF86AudioPrev, exec, noctalia msg media previous"
+      ", XF86AudioMicMute, exec, noctalia msg mic-mute"
     ];
   };
 }
