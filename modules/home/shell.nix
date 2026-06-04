@@ -21,6 +21,11 @@
   programs.kitty = {
     enable = true;
     font.name = "JetBrainsMono Nerd Font";
+    enableGitIntegration = true;
+    shellIntegration.enableZshIntegration = true;
+    settings = {
+      confirm_os_window_close = 0;
+    };
   };
 
   # Shell
