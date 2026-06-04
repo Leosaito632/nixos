@@ -91,9 +91,12 @@ in
       "$mainMod SHIFT, M, exec, toggle_monitor"
 
       # Screenshots
-      ", Print, exec, hyprshot -z -m output -m active -o ~/Pictures/Screenshots/"
-      "$mainMod, Print, exec, hyprshot -z -m window -o ~/Pictures/Screenshots/"
-      "$mainMod SHIFT, S, exec, hyprshot -z -m region -o ~/Pictures/Screenshots/"
+      # Captura a tela
+      ", Print, exec, noctalia msg screenshot-fullscreen"
+      # Captura todas as telas
+      "$mainMod, Print, exec, noctalia msg screenshot-fullscreen all"
+      # Captura região
+      "$mainMod SHIFT, S, exec, noctalia msg screenshot-region"
     ];
 
     # Binds que repetem (bindr), binds de mouse (bindm), etc
@@ -105,16 +108,8 @@ in
       # Binds que repetem ao segurar
       "ALT, Tab, cyclenext"
       "ALT, Tab, bringactivetotop"
-      # Media Keys
-      ", XF86MonBrightnessUp, exec, noctalia msg brightness-up"
-      ", XF86MonBrightnessDown, exec, noctalia msg brightness-down"
-      ", XF86AudioRaiseVolume, exec, noctalia msg volume-up"
-      ", XF86AudioLowerVolume, exec, noctalia msg volume-down"
-      ", XF86AudioMute, exec, noctalia msg volume-mute"
-      ", XF86AudioPlay, exec, noctalia msg media toggle"
-      ", XF86AudioNext, exec, noctalia msg media next"
-      ", XF86AudioPrev, exec, noctalia msg media previous"
-      ", XF86AudioMicMute, exec, noctalia msg mic-mute"
+      "$mainMod SHIFT, period, resizeactive, 20 0"
+      "$mainMod SHIFT, comma, resizeactive, -20 0"
 
     ];
 
