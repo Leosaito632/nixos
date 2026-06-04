@@ -27,6 +27,7 @@
       # --- Noctalia ---
       "float on, match:class dev.noctalia.Noctalia.Settings"
       "center on, match:class dev.noctalia.Noctalia.Settings"
+      "size (monitor_w*0.5) (monitor_h*0.8), match:class dev.noctalia.Noctalia.Settings"
 
     ];
   };
