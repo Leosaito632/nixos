@@ -53,6 +53,8 @@
   # SISTEMA
   ####
 
+  hardware.graphics.enable = true;
+
   networking.networkmanager.enable = true;
   time.timeZone = "America/Sao_Paulo";
   i18n = {
