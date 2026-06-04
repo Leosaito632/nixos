@@ -88,7 +88,8 @@
     wget
     fastfetch
     microfetch
-    btop
+    #btop
+    (btop.override { rocmSupport = true; })
     xclip
     csvlens
 
