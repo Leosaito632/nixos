@@ -79,13 +79,6 @@ in
       "$mainMod, S, togglespecialworkspace, magic"
       "$mainMod ALT, S, movetoworkspace, special:magic"
 
-      # Media Keys
-      ", XF86AudioMute, exec, noctalia msg volume-mute"
-      ", XF86AudioPlay, exec, noctalia msg media toggle"
-      ", XF86AudioNext, exec, noctalia msg media next"
-      ", XF86AudioPrev, exec, noctalia msg media previous"
-      ", XF86AudioMicMute, exec, noctalia msg mic-mute"
-
       # Extras
       "$mainMod, V, exec, noctalia msg panel-toggle clipboard"
       "$mainMod SHIFT, M, exec, toggle_monitor"
