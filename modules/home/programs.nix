@@ -81,7 +81,6 @@
     # --- Formatters ---
     stylua
     shfmt
-    # nodePackages.prettier
     nixfmt
 
     # --- CLI Utils ---
@@ -94,9 +93,6 @@
     csvlens
 
     # --- Desktop Apps ---
-    # bambu-studio
-    orca-slicer
-    # zapzap
     whatsie
     obsidian
     libreoffice-qt6-fresh
