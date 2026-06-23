@@ -24,11 +24,6 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelParams = [ "acpi=force" ];
-  boot.blacklistedKernelModules = [
-    "intel_oc_wdt"
-    "iTCO_wdt"
-  ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
