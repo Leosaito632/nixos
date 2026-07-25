@@ -25,9 +25,9 @@
       "pin on, match:title Picture-in-Picture"
 
       # --- Noctalia ---
-      "float on, match:class dev.noctalia.Noctalia.Settings"
-      "center on, match:class dev.noctalia.Noctalia.Settings"
-      "size (monitor_w*0.5) (monitor_h*0.8), match:class dev.noctalia.Noctalia.Settings"
+      "float on, match:class dev.noctalia.Noctalia"
+      "center on, match:class dev.noctalia.Noctalia"
+      "size (monitor_w*0.5) (monitor_h*0.8), match:class dev.noctalia.Noctalia"
 
     ];
   };
