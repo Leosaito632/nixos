@@ -10,6 +10,7 @@
 
   # Mouse pointer cursor theme
   home.pointerCursor = {
+    enable = true;
     package = pkgs.bibata-cursors;
     name = vars.cursorTheme;
     size = vars.cursorSize;
