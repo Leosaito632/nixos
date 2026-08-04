@@ -48,6 +48,13 @@
     };
   };
 
+  programs.gh = {
+    enable = true;
+    gitCredentialHelper = {
+      enable = true;
+    };
+  };
+
   programs.vscode = {
     enable = true;
     profiles.default.extensions = with pkgs.vscode-extensions; [
@@ -59,8 +66,8 @@
   home.packages = with pkgs; [
     # --- Dev Tools ---
     gcc
+    cargo
     nodejs
-    gh
     zed-editor
     gnumake
     unzip
@@ -69,13 +76,13 @@
     tree
     lua
     # jetbrains.rider
-    jetbrains.clion
+    # jetbrains.clion
     nil
     javaPackages.compiler.openjdk21
-    povray
+    # povray
     python3
     black
-    processing
+    # processing
     # vscode
 
     # --- Formatters ---
@@ -94,17 +101,17 @@
 
     # --- Desktop Apps ---
     whatsie
-    obsidian
+    # obsidian
     libreoffice-qt6-fresh
     nautilus
     pinta
     discord
     # osu-lazer
     # inkscape # pode ser util algum dia
-    spotify
+    # spotify
     # prismlauncher # Launcher de mine
-    blender
-    mendeley
+    # blender
+    # mendeley
     loupe
 
     # --- Networking ---
