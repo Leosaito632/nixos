@@ -135,6 +135,8 @@
 
   # Funcionar controle por bluetooth na steam
   hardware.steam-hardware.enable = true;
+  # Funcionar controle do siwtch
+  services.joycond.enable = true;
 
   services.blueman.enable = true;
 

@@ -109,7 +109,7 @@
     # osu-lazer
     # inkscape # pode ser util algum dia
     # spotify
-    # prismlauncher # Launcher de mine
+    prismlauncher # Launcher de mine
     # blender
     # mendeley
     loupe
