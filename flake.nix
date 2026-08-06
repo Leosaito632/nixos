@@ -20,6 +20,10 @@
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-minecraft = {
+      url = "github:Infinidoge/nix-minecraft";
+    };
   };
 
   outputs =
@@ -27,7 +31,7 @@
       self,
       nixpkgs,
       home-manager,
-      zen-browser,
+      nix-minecraft,
       ...
     }:
 
@@ -36,18 +40,6 @@
       userSettings = import ./variables.nix;
       commonModules = [
         home-manager.nixosModules.home-manager
-        {
-          nixpkgs.overlays = [
-            (final: prev: {
-              hyprland = prev.hyprland.overrideAttrs (oldAttrs: {
-                postPatch = ''
-                  substituteInPlace CMakeLists.txt --replace-fail "glaze 7...<8" "glaze"
-                ''
-                + (oldAttrs.postPatch or "");
-              });
-            })
-          ];
-        }
       ];
       homeManagerCommon = {
         home-manager = {
@@ -65,6 +57,7 @@
     in
     {
       nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
         inherit system;
         modules = commonModules ++ [
 
