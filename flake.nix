@@ -36,6 +36,18 @@
       userSettings = import ./variables.nix;
       commonModules = [
         home-manager.nixosModules.home-manager
+        {
+          nixpkgs.overlays = [
+            (final: prev: {
+              hyprland = prev.hyprland.overrideAttrs (oldAttrs: {
+                postPatch = ''
+                  substituteInPlace CMakeLists.txt --replace-fail "glaze 7...<8" "glaze"
+                ''
+                + (oldAttrs.postPatch or "");
+              });
+            })
+          ];
+        }
       ];
       homeManagerCommon = {
         home-manager = {
@@ -55,6 +67,7 @@
       nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = commonModules ++ [
+
           homeManagerCommon
           ./hosts/desktop/configuration.nix
           {
