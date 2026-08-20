@@ -13,8 +13,8 @@
     nrs = "sudo nixos-rebuild switch --flake ~/.dotfiles#${hostName}";
     # vpn = "openfortivpn-webview vpn.pucpr.br:443 | sudo openfortivpn vpn.pucpr.br:443 -u leonardo.saito --realm=saml --cookie-on-stdin";
     cls = "clear";
-    # run-rider = "nohup rider > /dev/null 2>&1 &"; # Roda rider em background
-    run-clion = "nohup clion > /dev/null 2>&1 &"; # Roda clion em background
+    run-rider = "nohup rider > /dev/null 2>&1 &"; # Roda rider em background
+    # run-clion = "nohup clion > /dev/null 2>&1 &"; # Roda clion em background
     zen-browser = "zen-twilight";
   };
 
@@ -44,13 +44,6 @@
   };
 
   # Tema do shell
-  #  programs.starship = {
-  #    enable = true;
-  #    enableZshIntegration = true;
-  #    settings = (
-  #      builtins.fromTOML (builtins.readFile "${pkgs.starship}/share/starship/presets/pure-preset.toml")
-  #    );
-  #  };
   programs.oh-my-posh = {
     enable = true;
     enableZshIntegration = true;
