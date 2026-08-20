@@ -8,7 +8,6 @@
 {
   imports = [
     ./development.nix
-    ./gaming.nix
     ./sddm.nix
   ];
   ####
@@ -163,6 +162,13 @@
   services.udev.packages = [
     pkgs.via
   ];
+
+  ####
+  # Tailscale
+  ####
+  services.tailscale = {
+    enable = true;
+  };
 
   ###
   # STATE VERSION
