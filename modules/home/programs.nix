@@ -3,8 +3,24 @@
   pkgs,
   inputs,
   config,
+  hostName,
   ...
 }:
+let
+  uniqueApps =
+    if hostName == "Desktop" then
+      with pkgs;
+      [
+        osu-lazer
+        spotify
+        prismlauncher
+        discord
+      ]
+    else
+      with pkgs;
+      [
+      ];
+in
 {
   imports = [
     inputs.zen-browser.homeModules.twilight
@@ -63,85 +79,80 @@
   #   ];
   # };
 
-  home.packages = with pkgs; [
-    # --- Dev Tools ---
-    gcc
-    cargo
-    nodejs
-    zed-editor
-    gnumake
-    unzip
-    ripgrep
-    fd
-    tree
-    lua
-    # jetbrains.rider
-    # jetbrains.clion
-    nil
-    javaPackages.compiler.openjdk21
-    # povray
-    python3
-    black
-    # processing
-    # vscode
+  home.packages =
+    with pkgs;
+    [
+      # Gera Gerall
+      # --- Dev Tools ---
+      gcc
+      cargo
+      nodejs
+      zed-editor
+      gnumake
+      unzip
+      ripgrep
+      fd
+      tree
+      lua
+      # jetbrains.rider
+      # jetbrains.clion
+      nil
+      javaPackages.compiler.openjdk21
+      python3
+      black
+      glib
 
-    # --- Formatters ---
-    stylua
-    shfmt
-    nixfmt
+      # --- Formatters ---
+      stylua
+      shfmt
+      nixfmt
 
-    # --- CLI Utils ---
-    wget
-    fastfetch
-    microfetch
-    #btop
-    (btop.override { rocmSupport = true; })
-    xclip
-    csvlens
+      # --- CLI Utils ---
+      wget
+      microfetch
+      (btop.override { rocmSupport = true; })
+      xclip
+      csvlens
+      bitwarden-cli
+      git-crypt
 
-    # --- Desktop Apps ---
-    whatsie
-    # obsidian
-    libreoffice-qt6-fresh
-    nautilus
-    pinta
-    discord
-    # osu-lazer
-    # inkscape # pode ser util algum dia
-    # spotify
-    prismlauncher # Launcher de mine
-    # blender
-    # mendeley
-    loupe
+      # --- Desktop Apps ---
+      whatsie
+      libreoffice-qt6-fresh
+      nautilus
+      pinta
+      blender
+      # mendeley
+      loupe
 
-    # --- Networking ---
-    # openfortivpn
-    # openfortivpn-webview
+      # --- Networking ---
+      # openfortivpn
+      # openfortivpn-webview
 
-    # --- Hyprland Core ---
-    hyprland
-    hypridle
-    hyprpicker
-    hyprshot
+      # --- Hyprland Core ---
+      hyprland
+      hypridle
+      hyprpicker
+      hyprshot
 
-    # --- System Utilities ---
-    kdePackages.qtwayland
-    kdePackages.qt6ct
-    wl-clipboard
-    libnotify
-    pavucontrol
-    networkmanagerapplet
-    power-profiles-daemon
-    killall
-    gparted
-    gpu-screen-recorder
+      # --- System Utilities ---
+      kdePackages.qtwayland
+      kdePackages.qt6ct
+      wl-clipboard
+      libnotify
+      pavucontrol
+      networkmanagerapplet
+      power-profiles-daemon
+      killall
+      gparted
+      gpu-screen-recorder
 
-    # --- Fonts ---
-    nerd-fonts.jetbrains-mono
+      # --- Fonts ---
+      nerd-fonts.jetbrains-mono
 
-    # --- Custom Scripts ---
-    (import ../../scripts/quicknote.nix { inherit pkgs; })
-    (import ../../scripts/toggle_monitor.nix { inherit pkgs; })
-
-  ];
+      # --- Custom Scripts ---
+      (import ../../scripts/quicknote.nix { inherit pkgs; })
+      (import ../../scripts/toggle_monitor.nix { inherit pkgs; })
+    ]
+    ++ uniqueApps;
 }
