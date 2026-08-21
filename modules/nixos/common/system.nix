@@ -119,6 +119,7 @@
       "wheel"
       "docker"
       "input"
+      "minecraft"
     ];
     shell = pkgs.zsh;
   };
