@@ -9,13 +9,12 @@
 }:
 {
   imports = [
-    ./modules/home/hyprland
+    ./modules/home/window_manager
     ./modules/home/theme.nix
     ./modules/home/programs.nix
     ./modules/home/shell.nix
     ./modules/home/desktop-shell.nix
     ./modules/home/opener.nix
-
   ];
 
   home.username = "leo";

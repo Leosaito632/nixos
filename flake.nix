@@ -24,6 +24,11 @@
     nix-minecraft = {
       url = "github:Infinidoge/nix-minecraft";
     };
+
+    mangowm = {
+      url = "github:mangowm/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -32,6 +37,7 @@
       nixpkgs,
       home-manager,
       nix-minecraft,
+      mangowm,
       ...
     }:
 
@@ -40,6 +46,7 @@
       userSettings = import ./variables.nix;
       commonModules = [
         home-manager.nixosModules.home-manager
+        mangowm.nixosModules.mango
       ];
       homeManagerCommon = {
         home-manager = {
