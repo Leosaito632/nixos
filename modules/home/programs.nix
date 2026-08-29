@@ -8,7 +8,7 @@
 }:
 let
   uniqueApps =
-    if hostName == "Desktop" then
+    if hostName == "desktop" then
       with pkgs;
       [
         osu-lazer
@@ -19,6 +19,7 @@ let
     else
       with pkgs;
       [
+        power-profiles-daemon
       ];
 in
 {
@@ -92,20 +93,21 @@ in
       unzip
       ripgrep
       fd
-      tree
       lua
       # jetbrains.rider
       # jetbrains.clion
-      nil
       javaPackages.compiler.openjdk21
       python3
-      black
       glib
 
-      # --- Formatters ---
+      # --- Formatters / LSP / Type checker ---
       stylua
       shfmt
       nixfmt
+      nil
+      pyright
+      black
+      prettier
 
       # --- CLI Utils ---
       wget
@@ -114,7 +116,7 @@ in
       xclip
       csvlens
       bitwarden-cli
-      git-crypt
+      tree
 
       # --- Desktop Apps ---
       whatsie
@@ -142,7 +144,6 @@ in
       libnotify
       pavucontrol
       networkmanagerapplet
-      power-profiles-daemon
       killall
       gparted
       gpu-screen-recorder

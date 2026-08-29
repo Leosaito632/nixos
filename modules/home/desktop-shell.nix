@@ -6,7 +6,6 @@
 {
   imports = [
     inputs.noctalia.homeModules.default
-
   ];
   programs.kitty.extraConfig = "include $HOME/.config/kitty/themes/noctalia.conf";
 
@@ -14,5 +13,4 @@
   programs.noctalia = {
     enable = true;
   };
-
 }

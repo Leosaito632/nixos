@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }:
 
@@ -103,6 +104,11 @@
     withUWSM = true;
     enable = true;
   };
+
+  programs.mango = {
+    enable = true;
+  };
+
   services.xserver.enable = true;
 
   ####
