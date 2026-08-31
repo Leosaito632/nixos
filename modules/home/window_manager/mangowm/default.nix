@@ -127,8 +127,8 @@ in
       # keyboard
       repeat_rate=25
       repeat_delay=600
-      numlockon=0
-      xkb_rules_layout=us,br
+      numlockon=1
+      xkb_rules_layout=br,us
 
       # Trackpad
       # need relogin to make it apply
