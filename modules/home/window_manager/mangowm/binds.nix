@@ -122,6 +122,16 @@ in
       "ctrl + shift, Escape, spawn, ${terminal} -e btop"
       "SUPER, p, spawn, hyprpicker -a"
       "SUPER, e, spawn, ${fileManager}"
+
+      "none, XF86MonBrightnessUp, spawn, noctalia msg brightness-up"
+      "none, XF86MonBrightnessDown, spawn, noctalia msg brightness-down"
+      "none, XF86AudioRaiseVolume, spawn, noctalia msg volume-up"
+      "none, XF86AudioLowerVolume, spawn, noctalia msg volume-down"
+      "none, XF86AudioMute, spawn, noctalia msg volume-mute"
+      "none, XF86AudioPlay, spawn, noctalia msg media toggle"
+      "none, XF86AudioNext, spawn, noctalia msg media next"
+      "none, XF86AudioPrev, spawn, noctalia msg media previous"
+      "none, XF86AudioMicMute, spawn, noctalia msg mic-mute"
     ];
   };
 }
