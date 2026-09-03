@@ -27,7 +27,13 @@
     efiSupport = true;
     device = "nodev";
     useOSProber = true;
-    configurationLimit = 5;
+    configurationLimit = 10;
+    memtest86.enable = true;
+    extraEntries = ''
+      menuentry "BIOS" {
+        fwsetup
+      }
+    '';
   };
 
   boot.tmp.cleanOnBoot = true;
@@ -100,11 +106,6 @@
   # GUI
   ####
 
-  programs.hyprland = {
-    withUWSM = true;
-    enable = true;
-  };
-
   programs.mango = {
     enable = true;
   };
@@ -176,6 +177,11 @@
   services.tailscale = {
     enable = true;
   };
+
+  ###
+  # SSH
+  ###
+  services.openssh.enable = true;
 
   ###
   # STATE VERSION
