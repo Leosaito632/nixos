@@ -6,12 +6,6 @@ pkgs.writeShellScriptBin "quicknote" ''
   APP_ID="quicknote_float"
   LOCK_FILE="/tmp/quicknote.lock"
 
-  if hyprctl clients | grep -q "$APP_ID"; then
-    hyprctl dispatch togglespecialworkspace quicknote
-    sleep 0.1
-    hyprctl dispatch centerwindow
-  fi
-
   if [ -f "$LOCK_FILE" ]; then
       exit 0
   fi
