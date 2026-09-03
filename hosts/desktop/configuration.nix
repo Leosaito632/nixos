@@ -1,4 +1,4 @@
-{ hostName, ... }:
+{ ... }:
 {
   imports = [
     ../../modules/nixos/common/system.nix
@@ -7,5 +7,5 @@
 
     ./hardware-configuration.nix
   ];
-  networking.hostName = hostName;
+  networking.hostName = "desktop";
 }

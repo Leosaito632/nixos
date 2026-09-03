@@ -1,4 +1,4 @@
-{ hostName, ... }:
+{ ... }:
 {
   imports = [
     ../../modules/nixos/common/system.nix
