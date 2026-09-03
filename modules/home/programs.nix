@@ -15,6 +15,8 @@ let
         spotify
         prismlauncher
         discord
+        orca-slicer
+        stoat-desktop
       ]
     else
       with pkgs;
@@ -72,13 +74,13 @@ in
     };
   };
 
-  # programs.vscode = {
-  #   enable = true;
-  #   profiles.default.extensions = with pkgs.vscode-extensions; [
-  #     ms-python.python
-  #     ms-toolsai.jupyter
-  #   ];
-  # };
+  programs.vscode = {
+    enable = true;
+    profiles.default.extensions = with pkgs.vscode-extensions; [
+      ms-python.python
+      ms-toolsai.jupyter
+    ];
+  };
 
   home.packages =
     with pkgs;
@@ -126,6 +128,7 @@ in
       blender
       # mendeley
       loupe
+      unityhub
 
       # --- Networking ---
       # openfortivpn
