@@ -96,7 +96,7 @@ in
       ripgrep
       fd
       lua
-      # jetbrains.rider
+      jetbrains.rider
       # jetbrains.clion
       javaPackages.compiler.openjdk21
       python3
@@ -122,7 +122,7 @@ in
 
       # --- Desktop Apps ---
       whatsie
-      libreoffice-qt6-fresh
+      libreoffice-qt-stable
       nautilus
       pinta
       blender
@@ -135,7 +135,7 @@ in
       # openfortivpn-webview
 
       # --- Hyprland Core ---
-      hyprland
+      # hyprland
       hypridle
       hyprpicker
       hyprshot
