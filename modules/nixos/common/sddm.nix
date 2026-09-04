@@ -21,10 +21,10 @@
   services.greetd = {
     enable = true;
     settings = {
-      initial_session = {
-        command = "mango";
-        user = "leo"; # auto-login on first start, no password required
-      };
+      # initial_session = {
+      #   command = "mango";
+      #   user = "leo"; # auto-login on first start, no password required
+      # };
       default_session = {
         command = lib.getExe' pkgs.tuigreet "tuigreet --cmd mango";
         user = "greeter";
