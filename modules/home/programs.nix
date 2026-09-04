@@ -17,6 +17,7 @@ let
         discord
         orca-slicer
         stoat-desktop
+        pkgsRocm.blender
       ]
     else
       with pkgs;
@@ -125,7 +126,6 @@ in
       libreoffice-qt-stable
       nautilus
       pinta
-      blender
       # mendeley
       loupe
       unityhub
