@@ -8,7 +8,6 @@ in
   wayland.windowManager.mango.settings = {
 
     bind = [
-
       # Core
       "SUPER, w, spawn, ${browser}"
       "SUPER, t, spawn, ${terminal}"
@@ -16,7 +15,7 @@ in
       "ctrl + shift, Escape, spawn, ${terminal} -e btop"
       "SUPER, space, switch_keyboard_layout"
 
-      "SUPER, n, toggle_named_scratchpad, quicknote_float, quicknote"
+      "SUPER, n, toggle_named_scratchpad, quicknote_float, none, ${terminal} --class=quicknote_float quicknote"
       "SUPER, m, spawn, toggle_monitor"
 
       # Hypr/Wayland
@@ -43,7 +42,7 @@ in
       # Mangowm IPC
       "SUPER, r, reload_config"
 
-      "SUPER, m, quit"
+      # "SUPER, m, quit"
       "SUPER, q, killclient"
 
       "SUPER, Tab, focusstack, next"
