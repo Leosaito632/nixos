@@ -8,18 +8,44 @@ in
   wayland.windowManager.mango.settings = {
 
     bind = [
-      # reload config
+
+      # Core
+      "SUPER, w, spawn, ${browser}"
+      "SUPER, t, spawn, ${terminal}"
+      "SUPER, e, spawn, ${fileManager}"
+      "ctrl + shift, Escape, spawn, ${terminal} -e btop"
+      "SUPER, space, switch_keyboard_layout"
+
+      "SUPER, n, toggle_named_scratchpad, quicknote_float, quicknote"
+      "SUPER, m, spawn, toggle_monitor"
+
+      # Hypr/Wayland
+      "SUPER, p, spawn, hyprpicker -a"
+
+      # Noctalia
+      "SUPER, v, spawn, noctalia msg panel-toggle clipboard"
+      "SUPER, i, spawn, noctalia msg settings-toggle"
+      "SUPER, BackSpace, spawn, noctalia msg panel-toggle session"
+      "SUPER, l, spawn, noctalia msg session lock"
+      "SUPER, a, spawn, noctalia msg panel-toggle launcher"
+
+      # Media Keys
+      "none, XF86MonBrightnessUp, spawn, noctalia msg brightness-up"
+      "none, XF86MonBrightnessDown, spawn, noctalia msg brightness-down"
+      "none, XF86AudioRaiseVolume, spawn, noctalia msg volume-up"
+      "none, XF86AudioLowerVolume, spawn, noctalia msg volume-down"
+      "none, XF86AudioMute, spawn, noctalia msg volume-mute"
+      "none, XF86AudioPlay, spawn, noctalia msg media toggle"
+      "none, XF86AudioNext, spawn, noctalia msg media next"
+      "none, XF86AudioPrev, spawn, noctalia msg media previous"
+      "none, XF86AudioMicMute, spawn, noctalia msg mic-mute"
+
+      # Mangowm IPC
       "SUPER, r, reload_config"
 
-      # menu and terminal
-      "SUPER, a, spawn, noctalia msg panel-toggle launcher"
-      "SUPER, t, spawn, ${terminal}"
-
-      # exit
       "SUPER, m, quit"
       "SUPER, q, killclient"
 
-      # switch window focus"
       "SUPER, Tab, focusstack, next"
       "ALT, Left, focusdir, left"
       "ALT, Right, focusdir, right"
@@ -38,7 +64,6 @@ in
       "SUPER + alt, space, togglefloating"
       "ALT, f, togglemaximizescreen, "
       "SUPER, f, togglefullscreen, "
-      # "ALT + SHIFT, f, togglefakefullscreen, "
       "SUPER, Down, minimized"
       "SUPER, o, toggleoverlay, "
       "SUPER, Up, restore_minimized"
@@ -56,7 +81,7 @@ in
       "alt + shift, Return, dwindle_toggle_split_direction"
 
       # switch layout
-      "SUPER, n, switch_layout"
+      "SUPER + ALT, n, switch_layout"
 
       # tag switch
       "SUPER, Left, viewtoleft, 0"
@@ -92,46 +117,26 @@ in
       # monitor switch
       "alt + shift, Left, focusmon, left"
       "alt + shift, Right, focusmon, right"
-      "SUPER + Alt, Left, tagmon, left"
-      "SUPER + Alt, Right, tagmon, right"
 
       # gaps
-      "ALT + SHIFT, X, incgaps, 1"
-      "ALT + SHIFT, Z, incgaps, -1"
-      "ALT + SHIFT, R, togglegaps"
+      #"ALT + SHIFT, X, incgaps, 1"
+      #"ALT + SHIFT, Z, incgaps, -1"
+      #"ALT + SHIFT, R, togglegaps"
 
       # movewin
-      "CTRL + SHIFT, Up, movewin, +0, -50"
-      "CTRL + SHIFT, Down, movewin, +0, +50"
-      "CTRL + SHIFT, Left, movewin, -50, +0"
-      "CTRL + SHIFT, Right, movewin, +50, +0"
+      # "SUPER + SHIFT, Up, movewin, +0, -50"
+      # "SUPER + SHIFT, Down, movewin, +0, +50"
+      # "SUPER + SHIFT, Left, movewin, -50, +0"
+      # "SUPER + SHIFT, Right, movewin, +50, +0"
 
       # resizewin
       "CTRL + ALT, Up, resizewin, +0, -50"
       "CTRL + ALT, Down, resizewin, +0, +50"
       "CTRL + ALT, Left, resizewin, -50, +0"
       "CTRL + ALT, Right, resizewin, +50, +0"
-
-      "SUPER + shift, n, spawn, ${terminal} -e quicknote"
-      "SUPER, v, spawn, noctalia msg panel-toggle clipboard"
-      "SUPER, space, switch_keyboard_layout"
-      "SUPER, w, spawn, ${browser}"
-      "SUPER, i, spawn, noctalia msg settings-toggle"
-      "SUPER, BackSpace, spawn, noctalia msg panel-toggle session"
-      "SUPER, l, spawn, noctalia msg session lock"
-      "ctrl + shift, Escape, spawn, ${terminal} -e btop"
-      "SUPER, p, spawn, hyprpicker -a"
-      "SUPER, e, spawn, ${fileManager}"
-
-      "none, XF86MonBrightnessUp, spawn, noctalia msg brightness-up"
-      "none, XF86MonBrightnessDown, spawn, noctalia msg brightness-down"
-      "none, XF86AudioRaiseVolume, spawn, noctalia msg volume-up"
-      "none, XF86AudioLowerVolume, spawn, noctalia msg volume-down"
-      "none, XF86AudioMute, spawn, noctalia msg volume-mute"
-      "none, XF86AudioPlay, spawn, noctalia msg media toggle"
-      "none, XF86AudioNext, spawn, noctalia msg media next"
-      "none, XF86AudioPrev, spawn, noctalia msg media previous"
-      "none, XF86AudioMicMute, spawn, noctalia msg mic-mute"
     ];
+
+    bindr = [ "SUPER, SUPER_L, spawn, noctalia msg panel-toggle control-center" ];
+
   };
 }
