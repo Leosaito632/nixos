@@ -133,6 +133,13 @@ in
       "CTRL + ALT, Down, resizewin, +0, +50"
       "CTRL + ALT, Left, resizewin, -50, +0"
       "CTRL + ALT, Right, resizewin, +50, +0"
+
+      # Screenshot
+      "NONE, Print, spawn, noctalia msg screenshot-fullscreen"
+      # Captura todas as telas
+      "SUPER, Print, spawn, noctalia msg screenshot-fullscreen all"
+      # Captura região
+      "SUPER + SHIFT, S, spawn, noctalia msg screenshot-region"
     ];
 
     bindr = [ "SUPER, SUPER_L, spawn, noctalia msg panel-toggle control-center" ];
