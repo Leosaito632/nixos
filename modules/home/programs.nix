@@ -23,13 +23,13 @@ let
       with pkgs;
       [
         power-profiles-daemon
+        blender
       ];
 in
 {
   imports = [
     inputs.zen-browser.homeModules.twilight
-  ];
-  # Browsers
+  ]; # Browsers
   programs.firefox = {
     enable = true;
     configPath = "${config.xdg.configHome}/mozilla/firefox";
