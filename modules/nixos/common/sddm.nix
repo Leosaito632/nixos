@@ -21,14 +21,20 @@
   services.greetd = {
     enable = true;
     settings = {
-      # initial_session = {
-      #   command = "mango";
-      #   user = "leo"; # auto-login on first start, no password required
-      # };
       default_session = {
-        command = lib.getExe' pkgs.tuigreet "tuigreet --cmd mango";
-        user = "greeter";
+        command = lib.getExe' pkgs.tuigreet "tuigreet --cmd mango --remember --time";
       };
     };
+  };
+
+  systemd.services.greetd.serviceConfig = {
+    Type = "idle";
+    StandardInput = "tty";
+    StandardOutput = "tty";
+    StandardError = "journal"; # Without this errors will spam on screen
+    # Without these bootlogs will spam on screen
+    TTYReset = true;
+    TTYVHangup = true;
+    TTYVTDisallocate = true;
   };
 }
