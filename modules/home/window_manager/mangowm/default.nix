@@ -31,7 +31,7 @@
       blur_optimized = 1;
       blur_params = {
         num_passes = 2;
-        radius = 5;
+        radius = 6;
         noise = 0.02;
         brightness = 0.9;
         contrast = 0.9;
@@ -54,12 +54,12 @@
       mouse_accel_profile = 0;
 
       # Border
-      border_radius = 6;
+      border_radius = 4;
       no_radius_when_single = 0;
 
       # Focus Opacity
       focused_opacity = 1.0;
-      unfocused_opacity = 0.8;
+      unfocused_opacity = 0.7;
       # Animation Configuration(support type:zoom,slide)
       # tag_animation_direction: 1-horizontal,0-vertical
       animations = 1;
@@ -103,7 +103,7 @@
       new_is_master = 1;
       default_master_factor = 0.55;
       default_master_count = 1;
-      tag_num = 9;
+      tag_num = 10;
       smart_gaps = 0;
 
       # Dwindle Layout Setting
@@ -157,7 +157,7 @@
       gap_outer_vertical = 3;
       scratchpad_width_ratio = 0.8;
       scratchpad_height_ratio = 0.9;
-      border_px = 4;
+      border_px = 2;
       root_color = "0x201b14ff";
       border_color = "0x444444ff";
       drop_color = "0x8FBA7C55";
@@ -206,7 +206,11 @@
         "animation_type_close:zoom,layer_name:rofi"
       ];
 
-      window_rule = "is_named_scratchpad:1, width: 1200, height:800, app_id:quicknote_float";
+      window_rule = [
+        "is_named_scratchpad:1, width: 1200, height:800, app_id:quicknote_float"
+        "unfocused_opacity:1,app_id:zen-twilight"
+        "focused_opacity:0.9,app_id:kitty"
+      ];
     };
   };
 }
