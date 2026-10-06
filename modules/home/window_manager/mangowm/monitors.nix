@@ -44,6 +44,6 @@ in
 {
 
   wayland.windowManager.mango.settings = {
-    monitorrule = monitors;
+    monitor_rule = monitors;
   };
 }
