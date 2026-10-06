@@ -12,11 +12,8 @@
     autostart_sh = ''
       noctalia &
       nm-applet &
-      noctalia &
       wl-paste --type text --watch cliphist store &
       wl-paste --type image --watch cliphist store &
-      whatsie &
-      quicknote &
     '';
 
     settings = {
