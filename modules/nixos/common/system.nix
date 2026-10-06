@@ -9,7 +9,7 @@
 {
   imports = [
     ./development.nix
-    ./sddm.nix
+    ./greeter.nix
   ];
   ####
   # BOOT
