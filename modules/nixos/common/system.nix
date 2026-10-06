@@ -116,7 +116,7 @@
   # USUÁRIO
   ####
 
-  programs.zsh.enable = true;
+  programs.fish.enable = true;
 
   users.users.leo = {
     isNormalUser = true;
@@ -128,7 +128,7 @@
       "input"
       "minecraft"
     ];
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
   };
 
   ####

@@ -51,7 +51,8 @@ in
 
   programs.yazi = {
     enable = true;
-    enableZshIntegration = true;
+    # enableZshIntegration = true;
+    enableFishIntegration = true;
     shellWrapperName = "y";
   };
 
@@ -81,6 +82,11 @@ in
       ms-python.python
       ms-toolsai.jupyter
     ];
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableFishIntegration = true;
   };
 
   home.packages =
@@ -120,6 +126,7 @@ in
       csvlens
       bitwarden-cli
       tree
+      grc
 
       # --- Desktop Apps ---
       whatsie

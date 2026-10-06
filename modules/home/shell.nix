@@ -7,7 +7,7 @@
 }:
 {
   home.shellAliases = {
-    nshell = "nix-shell --command 'zsh'";
+    nshell = "nix-shell --command 'fish'";
     hme = "nvim ~/.dotfiles/home.nix";
     nre = "nvim ~/.dotfiles/";
     nrs = "sudo nixos-rebuild switch --flake ~/.dotfiles#${hostName}";
@@ -22,31 +22,40 @@
     enable = true;
     font.name = "JetBrainsMono Nerd Font";
     enableGitIntegration = true;
-    shellIntegration.enableZshIntegration = true;
+    shellIntegration.enableFishIntegration = true;
     settings = {
       confirm_os_window_close = 0;
     };
   };
 
   # Shell
-  programs.zsh = {
+  programs.fish = {
+
     enable = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-    oh-my-zsh = {
-      enable = true;
-      plugins = [
-        "git"
-        "docker"
-        "docker-compose"
-      ];
-    };
+    interactiveShellInit = ''
+      set fish_greeting # Disable greeting
+    '';
+    plugins = [
+      {
+        name = "grc";
+        src = pkgs.fishPlugins.grc.src;
+      }
+      {
+        name = "fzf-fish";
+        src = pkgs.fishPlugins.fzf-fish;
+      }
+      {
+        name = "plugin-git";
+        src = pkgs.fishPlugins.plugin-git.src;
+      }
+    ];
   };
 
   # Tema do shell
   programs.oh-my-posh = {
     enable = true;
     enableZshIntegration = true;
+    enableFishIntegration = true;
     useTheme = "gruvbox";
   };
 }
