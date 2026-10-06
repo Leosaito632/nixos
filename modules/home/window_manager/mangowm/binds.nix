@@ -99,6 +99,7 @@ in
       "SUPER, 7, view, 7, 0"
       "SUPER, 8, view, 8, 0"
       "SUPER, 9, view, 9, 0"
+      "SUPER, 0, view, 10, 0"
 
       # tag: move client to the tag and focus it
       # tagsilent: move client to the tag and not focus it
@@ -112,6 +113,7 @@ in
       "SUPER + Alt, 7, tag, 7, 0"
       "SUPER + Alt, 8, tag, 8, 0"
       "SUPER + Alt, 9, tag, 9, 0"
+      "SUPER + Alt, 0, tag, 10, 0"
 
       # monitor switch
       "alt + shift, Left, focusmon, left"
