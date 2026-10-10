@@ -54,7 +54,7 @@
       mouse_accel_profile = 0;
 
       # Border
-      border_radius = 4;
+      border_radius = 12;
       no_radius_when_single = 0;
 
       # Focus Opacity
@@ -209,7 +209,8 @@
       window_rule = [
         "is_named_scratchpad:1, width: 1200, height:800, app_id:quicknote_float"
         "unfocused_opacity:1,app_id:zen-twilight"
-        "focused_opacity:0.9,app_id:kitty"
+        "focused_opacity:0.8,app_id:kitty"
+        "unfocused_opacity:0.6,app_id:kitty"
       ];
     };
   };
