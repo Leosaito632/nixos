@@ -1,4 +1,5 @@
 {
+  shell = "fish";
   terminal = "kitty";
   browser = "zen-twilight";
   editor = "nvim";

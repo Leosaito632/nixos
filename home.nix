@@ -27,6 +27,8 @@
     DEFAULT_BROWSER = vars.browser;
     TERMINAL = vars.terminal;
     EDITOR = vars.editor;
+    VISUAL = vars.editor;
+    SHELL = vars.shell;
 
     HYPRCURSOR_SIZE = builtins.toString vars.cursorSize;
     XCURSOR_SIZE = builtins.toString vars.cursorSize;

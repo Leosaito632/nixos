@@ -18,6 +18,7 @@ let
         orca-slicer
         stoat-desktop
         pkgsRocm.blender
+        claude-code
       ]
     else
       with pkgs;
@@ -35,7 +36,7 @@ in
     configPath = "${config.xdg.configHome}/mozilla/firefox";
   };
   programs.zen-browser.enable = true;
-  # programs.chromium.enable = true;
+  programs.chromium.enable = true;
 
   # CLI
   programs.neovim = {
@@ -51,7 +52,6 @@ in
 
   programs.yazi = {
     enable = true;
-    # enableZshIntegration = true;
     enableFishIntegration = true;
     shellWrapperName = "y";
   };
@@ -127,6 +127,7 @@ in
       bitwarden-cli
       tree
       grc
+      bat
 
       # --- Desktop Apps ---
       whatsie
@@ -135,7 +136,7 @@ in
       pinta
       # mendeley
       loupe
-      unityhub
+      krita
 
       # --- Networking ---
       # openfortivpn
