@@ -36,7 +36,7 @@ in
     enable = true;
     configPath = "${config.xdg.configHome}/mozilla/firefox";
   };
-    programs.zen-browser.enable = true;
+  programs.zen-browser.enable = true;
   programs.chromium.enable = true;
 
   # CLI
@@ -45,7 +45,7 @@ in
     chadrcConfig = ''
       local M = {}
       M.base46 = {
-        theme = "ayu_dark",
+        theme = "gruvbox",
       }
       return M
     '';
@@ -58,19 +58,63 @@ in
             end
          end,
       })
+      require("nvim-treesitter").install { "python", "lua", "vim", "vimdoc", "nix" }
+    '';
+    extraPlugins = ''
+      return {
+        {
+          "neovim/nvim-lspconfig",
+          config = function()
+            require "configs.lspconfig"
+
+            local flake = '(builtins.getFlake "${config.home.homeDirectory}/.dotfiles")'
+            local nixos = flake .. ".nixosConfigurations." .. vim.uv.os_gethostname()
+            vim.lsp.config("nixd", {
+              settings = {
+                nixd = {
+                  nixpkgs = { expr = "import " .. flake .. ".inputs.nixpkgs { }" },
+                  options = {
+                    nixos = { expr = nixos .. ".options" },
+                    ["home-manager"] = {
+                      expr = nixos .. ".options.home-manager.users.type.getSubOptions []",
+                    },
+                  },
+                },
+              },
+            })
+
+            vim.lsp.enable { "nixd", "pyright" }
+          end,
+        },
+        {
+          "stevearc/conform.nvim",
+          event = { "BufWritePre" },
+          cmd = { "ConformInfo" },
+          opts = {
+            formatters_by_ft = {
+              lua = { "stylua" },
+              python = { "black" },
+              javascript = { "prettier" },
+              typescript = { "prettier" },
+              javascriptreact = { "prettier" },
+              typescriptreact = { "prettier" },
+              html = { "prettier" },
+              css = { "prettier" },
+              json = { "prettier" },
+              jsonc = { "prettier" },
+              nix = { "nixfmt" },
+              sh = { "shfmt" },
+              bash = { "shfmt" },
+            },
+            format_on_save = {
+              timeout_ms = 500,
+              lsp_fallback = true,
+            },
+          },
+        },
+      }
     '';
   };
-
-  #programs.neovim = {
-  #  enable = true;
-  #  defaultEditor = true;
-
-  #  # home-manager warnings
-  #  withPython3 = false;
-  #  withRuby = false;
-  #};
-
-  # xdg.configFile."nvim".source = ../../config/nvim;
 
   programs.yazi = {
     enable = true;
@@ -135,7 +179,7 @@ in
       stylua
       shfmt
       nixfmt
-        nil
+      nixd
       pyright
       black
       prettier
