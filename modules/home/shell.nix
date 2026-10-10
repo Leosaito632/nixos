@@ -7,7 +7,7 @@
 }:
 {
   home.shellAliases = {
-    nshell = "nix-shell --command 'fish'";
+    nshell = "nix-shell --command fish";
     hme = "nvim ~/.dotfiles/home.nix";
     nre = "nvim ~/.dotfiles/";
     nrs = "sudo nixos-rebuild switch --flake ~/.dotfiles#${hostName}";
@@ -30,7 +30,6 @@
 
   # Shell
   programs.fish = {
-
     enable = true;
     interactiveShellInit = ''
       set fish_greeting # Disable greeting
@@ -50,6 +49,9 @@
         src = pkgs.fishPlugins.plugin-git.src;
       }
     ];
+    shellAbbrs = {
+      nd = "nix develop -c $SHELL";
+    };
   };
 
   # Tema do shell

@@ -118,9 +118,6 @@
 
   programs.fish = {
     enable = true;
-    shellAbbrs = {
-      nd = "nix develop -c $SHELL";
-    };
   };
 
   users.users.leo = {
