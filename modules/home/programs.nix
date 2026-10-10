@@ -30,25 +30,47 @@ in
 {
   imports = [
     inputs.zen-browser.homeModules.twilight
+    inputs.nix4nvchad.homeManagerModules.default
   ]; # Browsers
   programs.firefox = {
     enable = true;
     configPath = "${config.xdg.configHome}/mozilla/firefox";
   };
-  programs.zen-browser.enable = true;
+    programs.zen-browser.enable = true;
   programs.chromium.enable = true;
 
   # CLI
-  programs.neovim = {
+  programs.nvchad = {
     enable = true;
-    defaultEditor = true;
-
-    # home-manager warnings
-    withPython3 = false;
-    withRuby = false;
+    chadrcConfig = ''
+      local M = {}
+      M.base46 = {
+        theme = "ayu_dark",
+      }
+      return M
+    '';
+    extraConfig = ''
+      local autocmd = vim.api.nvim_create_autocmd
+      autocmd("BufEnter", {
+         callback = function()
+            if vim.api.nvim_buf_get_option(0, "buftype") ~= "terminal" then
+               vim.cmd "lcd %:p:h"
+            end
+         end,
+      })
+    '';
   };
 
-  xdg.configFile."nvim".source = ../../config/nvim;
+  #programs.neovim = {
+  #  enable = true;
+  #  defaultEditor = true;
+
+  #  # home-manager warnings
+  #  withPython3 = false;
+  #  withRuby = false;
+  #};
+
+  # xdg.configFile."nvim".source = ../../config/nvim;
 
   programs.yazi = {
     enable = true;
@@ -113,10 +135,11 @@ in
       stylua
       shfmt
       nixfmt
-      nil
+        nil
       pyright
       black
       prettier
+      tree-sitter
 
       # --- CLI Utils ---
       wget
