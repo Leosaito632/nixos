@@ -63,10 +63,13 @@ in
       "SUPER + alt, space, togglefloating"
       "ALT, f, togglemaximizescreen, "
       "SUPER, f, togglefullscreen, "
-      "SUPER, Down, minimized"
-      "SUPER, o, toggleoverlay, "
-      "SUPER, Up, restore_minimized"
-      "SUPER, s, toggle_scratchpad"
+      # "SUPER, Down, minimized"
+      # "SUPER, o, toggleoverlay, "
+      # "SUPER, Up, restore_minimized"
+      # "SUPER, s, toggle_scratchpad"
+
+      "SUPER + ALT, s, tag_special_silent"
+      "SUPER, s, toggle_special_tag"
 
       # scroller layout
       "ALT, e, set_proportion, 1.0"

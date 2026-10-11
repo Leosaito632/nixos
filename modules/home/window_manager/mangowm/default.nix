@@ -39,7 +39,7 @@
       };
 
       # Shadows
-      shadows = 0;
+      shadows = 1;
       layer_shadows = 0;
       shadow_only_floating = 1;
       shadows_size = 10;
@@ -54,7 +54,7 @@
       mouse_accel_profile = 0;
 
       # Border
-      border_radius = 12;
+      border_radius = 15;
       no_radius_when_single = 0;
 
       # Focus Opacity
@@ -151,23 +151,46 @@
       swipe_min_threshold = 1;
 
       # Appearance
-      gap_inner_horizontal = 5;
-      gap_inner_vertical = 5;
-      gap_outer_horizontal = 3;
-      gap_outer_vertical = 3;
+      gap_inner_horizontal = 9;
+      gap_inner_vertical = 7;
+      gap_outer_horizontal = 7;
+      gap_outer_vertical = 5;
       scratchpad_width_ratio = 0.8;
       scratchpad_height_ratio = 0.9;
-      border_px = 2;
-      root_color = "0x201b14ff";
-      border_color = "0x444444ff";
-      drop_color = "0x8FBA7C55";
-      split_color = "0xEB441EFF";
-      focus_color = "0xc9b890ff";
-      maximized_screen_color = "0x89aa61ff";
-      urgent_color = "0xad401fff";
-      scratchpad_color = "0x516c93ff";
-      global_color = "0xb153a7ff";
-      overlay_color = "0x14a57cff";
+      border_px = 1;
+
+      # Colors
+      root_color = "0x282828ff";
+      border_color = "0x000000ff";
+      drop_color = "0xb8bb2680";
+      split_color = "0x83a598ff";
+      focus_color = "0x786f6bff";
+      maximized_screen_color = "0xfabd2fff";
+      urgent_color = "0xfb4934ff";
+      scratchpad_color = "0x83a598ff";
+      global_color = "0x444507ff";
+      overlay_color = "0x765300ff";
+
+      group_bar_decorate_bg_color = "0x474240ff";
+      group_bar_decorate_border_color = "0x786f6bff";
+      group_bar_decorate_fg_color = "0xfbf1c7ff";
+      group_bar_decorate_focus_bg_color = "0xb8bb26ff";
+      group_bar_decorate_focus_fg_color = "0x282828ff";
+      jump_label_decorate_bg_color = "0x474240ff";
+      jump_label_decorate_border_color = "0x786f6bff";
+      jump_label_decorate_fg_color = "0xfbf1c7ff";
+      jump_label_decorate_focus_bg_color = "0xb8bb26ff";
+      jump_label_decorate_focus_fg_color = "0x282828ff";
+
+      # Special Workspace
+      # Background dim level when special workspace is active (0.0 to 1.0, default 0.5)
+      special_dim = 0.0;
+
+      # Inner and outer gaps for windows on the special workspace
+      special_gap_inner_horizontal = 15;
+      special_gap_inner_vertical = 12;
+      special_gap_outer_horizontal = 40;
+      special_gap_outer_vertical = 40;
 
       # layout support:
       # tile,scroller,grid,deck,monocle,center_tile,vertical_tile,vertical_scroller
