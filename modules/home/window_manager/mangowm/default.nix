@@ -184,7 +184,7 @@
 
       # Special Workspace
       # Background dim level when special workspace is active (0.0 to 1.0, default 0.5)
-      special_dim = 0.0;
+      special_dim = 0.1;
 
       # Inner and outer gaps for windows on the special workspace
       special_gap_inner_horizontal = 15;
