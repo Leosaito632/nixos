@@ -78,7 +78,7 @@ in
       ripgrep
       fd
       lua
-      jetbrains.rider
+      # jetbrains.rider
       # jetbrains.clion
       javaPackages.compiler.openjdk21
       python3

@@ -7,13 +7,13 @@
 }:
 {
   home.shellAliases = {
-    nshell = "nix-shell --command fish";
+    nshell = "nix-shell --command $SHELL";
     hme = "nvim ~/.dotfiles/home.nix";
     nre = "nvim ~/.dotfiles/";
     nrs = "sudo nixos-rebuild switch --flake ~/.dotfiles#${hostName}";
     # vpn = "openfortivpn-webview vpn.pucpr.br:443 | sudo openfortivpn vpn.pucpr.br:443 -u leonardo.saito --realm=saml --cookie-on-stdin";
     cls = "clear";
-    run-rider = "nohup rider > /dev/null 2>&1 &"; # Roda rider em background
+    # run-rider = "nohup rider > /dev/null 2>&1 &"; # Roda rider em background
     # run-clion = "nohup clion > /dev/null 2>&1 &"; # Roda clion em background
     zen-browser = "zen-twilight";
   };
