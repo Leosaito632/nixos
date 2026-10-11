@@ -30,7 +30,7 @@ in
 {
   imports = [
     ./programs/editor.nix
-    ./programs/editor.nix
+    ./programs/browser.nix
   ];
 
   # CLI

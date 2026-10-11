@@ -1,4 +1,4 @@
-{ inputs, config }:
+{ inputs, config, ... }:
 {
   imports = [
     inputs.zen-browser.homeModules.twilight
