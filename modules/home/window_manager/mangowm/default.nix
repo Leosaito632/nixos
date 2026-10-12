@@ -1,4 +1,18 @@
-{ inputs, vars, ... }:
+{
+  inputs,
+  vars,
+  hostName,
+  ...
+}:
+let
+  whatsie_rule =
+    if hostName == "desktop" then
+      [ "tags:10,monitor:HDMI-A-1,app_id:com.ktechpit.whatsie" ]
+    else
+      [
+        "tags:10,app_id:com.ktechpit.whatsie"
+      ];
+in
 {
   imports = [
     inputs.mangowm.hmModules.mango
@@ -235,7 +249,8 @@
         "focused_opacity:0.8,app_id:kitty"
         "unfocused_opacity:0.6,app_id:kitty"
         "is_overlay:1,is_floating:1,width:0.7,height:0.6,app_id:org.gnome.Nautilus"
-      ];
+      ]
+      ++ whatsie_rule;
     };
   };
 }
