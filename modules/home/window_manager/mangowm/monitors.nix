@@ -13,37 +13,38 @@ let
       ];
 
   # Mapeamento dos workspaces
-  workspaces =
+  tag_rule =
     if hostName == "desktop" then
       [
-        "1, monitor:DP-1"
-        "2, monitor:DP-1"
-        "3, monitor:DP-1"
-        "4, monitor:DP-1"
-        "5, monitor:DP-1"
-        "6, monitor:HDMI-A-1"
-        "7, monitor:HDMI-A-1"
-        "8, monitor:HDMI-A-1"
-        "9, monitor:HDMI-A-1"
-        "10, monitor:HDMI-A-1"
+        "id:1, monitor_name:DP-1,no_hide:1"
+        "id:2, monitor_name:DP-1,no_hide:1"
+        "id:3, monitor_name:DP-1,no_hide:1"
+        "id:4, monitor_name:DP-1,no_hide:1"
+        "id:5, monitor_name:DP-1,no_hide:1"
+        "id:6, monitor_name:HDMI-A-1,no_hide:1"
+        "id:7, monitor_name:HDMI-A-1,no_hide:1"
+        "id:8, monitor_name:HDMI-A-1,no_hide:1"
+        "id:9, monitor_name:HDMI-A-1,no_hide:1"
+        "id:10, monitor_name:HDMI-A-1,no_hide:1"
       ]
     else
       [
-        "1, monitor:eDP-1"
-        "2, monitor:eDP-1"
-        "3, monitor:eDP-1"
-        "4, monitor:eDP-1"
-        "5, monitor:eDP-1"
-        "6, monitor:eDP-1"
-        "7, monitor:eDP-1"
-        "8, monitor:eDP-1"
-        "9, monitor:eDP-1"
-        "10, monitor:eDP-1"
+        "id:1, monitor_name:eDP-1, no_hide:1"
+        "id:2, monitor_name:eDP-1, no_hide:1"
+        "id:3, monitor_name:eDP-1, no_hide:1"
+        "id:4, monitor_name:eDP-1, no_hide:1"
+        "id:5, monitor_name:eDP-1, no_hide:1"
+        "id:6, monitor_name:eDP-1, no_hide:1"
+        "id:7, monitor_name:eDP-1, no_hide:1"
+        "id:8, monitor_name:eDP-1, no_hide:1"
+        "id:9, monitor_name:eDP-1, no_hide:1"
+        "id:10, monitor_name:eDP-1, no_hide:1"
       ];
 in
 {
 
   wayland.windowManager.mango.settings = {
     monitor_rule = monitors;
+    tag_rule = tag_rule;
   };
 }

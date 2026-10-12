@@ -1,8 +1,57 @@
-{ vars, ... }:
+{ vars, hostName, ... }:
 let
   terminal = "${vars.terminal}";
   browser = "${vars.browser}";
   fileManager = "${vars.terminal} -e ${vars.file}";
+  tag_binds =
+    if hostName == "desktop" then
+      [
+        "SUPER, 1, viewcrossmon, 1, name:DP-1"
+        "SUPER, 2, viewcrossmon, 2, name:DP-1"
+        "SUPER, 3, viewcrossmon, 3, name:DP-1"
+        "SUPER, 4, viewcrossmon, 4, name:DP-1"
+        "SUPER, 5, viewcrossmon, 5, name:DP-1"
+        "SUPER, 6, viewcrossmon, 6, name:HDMI-A-1"
+        "SUPER, 7, viewcrossmon, 7, name:HDMI-A-1"
+        "SUPER, 8, viewcrossmon, 8, name:HDMI-A-1"
+        "SUPER, 9, viewcrossmon, 9, name:HDMI-A-1"
+        "SUPER, 0, viewcrossmon, 10, name:HDMI-A-1"
+
+        "SUPER + Alt, 1, tagcrossmon, 1, name:DP-1"
+        "SUPER + Alt, 2, tagcrossmon, 2, name:DP-1"
+        "SUPER + Alt, 3, tagcrossmon, 3, name:DP-1"
+        "SUPER + Alt, 4, tagcrossmon, 4, name:DP-1"
+        "SUPER + Alt, 5, tagcrossmon, 5, name:DP-1"
+        "SUPER + Alt, 6, tagcrossmon, 6, name:HDMI-A-1"
+        "SUPER + Alt, 7, tagcrossmon, 7, name:HDMI-A-1"
+        "SUPER + Alt, 8, tagcrossmon, 8, name:HDMI-A-1"
+        "SUPER + Alt, 9, tagcrossmon, 9, name:HDMI-A-1"
+        "SUPER + Alt, 0, tagcrossmon, 10, name:HDMI-A-1"
+      ]
+    else
+      [
+        "SUPER, 1, view, 1, 0"
+        "SUPER, 2, view, 2, 0"
+        "SUPER, 3, view, 3, 0"
+        "SUPER, 4, view, 4, 0"
+        "SUPER, 5, view, 5, 0"
+        "SUPER, 6, view, 6, 0"
+        "SUPER, 7, view, 7, 0"
+        "SUPER, 8, view, 8, 0"
+        "SUPER, 9, view, 9, 0"
+        "SUPER, 0, view, 10, 0"
+
+        "SUPER + Alt, 1, tag, 1, 0"
+        "SUPER + Alt, 2, tag, 2, 0"
+        "SUPER + Alt, 3, tag, 3, 0"
+        "SUPER + Alt, 4, tag, 4, 0"
+        "SUPER + Alt, 5, tag, 5, 0"
+        "SUPER + Alt, 6, tag, 6, 0"
+        "SUPER + Alt, 7, tag, 7, 0"
+        "SUPER + Alt, 8, tag, 8, 0"
+        "SUPER + Alt, 9, tag, 9, 0"
+        "SUPER + Alt, 0, tag, 10, 0"
+      ];
 in
 {
   wayland.windowManager.mango.settings = {
@@ -92,32 +141,6 @@ in
       "SUPER + CTRL, Right, viewtoright_have_client, 0"
       "ALT + SUPER, Left, tagtoleft, 0"
       "ALT + SUPER, Right, tagtoright, 0"
-
-      "SUPER, 1, view, 1, 0"
-      "SUPER, 2, view, 2, 0"
-      "SUPER, 3, view, 3, 0"
-      "SUPER, 4, view, 4, 0"
-      "SUPER, 5, view, 5, 0"
-      "SUPER, 6, view, 6, 0"
-      "SUPER, 7, view, 7, 0"
-      "SUPER, 8, view, 8, 0"
-      "SUPER, 9, view, 9, 0"
-      "SUPER, 0, view, 10, 0"
-
-      # tag: move client to the tag and focus it
-      # tagsilent: move client to the tag and not focus it
-      # "Alt, 1, tagsilent, 1
-      "SUPER + Alt, 1, tag, 1, 0"
-      "SUPER + Alt, 2, tag, 2, 0"
-      "SUPER + Alt, 3, tag, 3, 0"
-      "SUPER + Alt, 4, tag, 4, 0"
-      "SUPER + Alt, 5, tag, 5, 0"
-      "SUPER + Alt, 6, tag, 6, 0"
-      "SUPER + Alt, 7, tag, 7, 0"
-      "SUPER + Alt, 8, tag, 8, 0"
-      "SUPER + Alt, 9, tag, 9, 0"
-      "SUPER + Alt, 0, tag, 10, 0"
-
       # monitor switch
       "alt + shift, Left, focusmon, left"
       "alt + shift, Right, focusmon, right"
@@ -145,7 +168,8 @@ in
       "SUPER, Print, spawn, noctalia msg screenshot-fullscreen all"
       # Captura região
       "SUPER + SHIFT, S, spawn, noctalia msg screenshot-region"
-    ];
+    ]
+    ++ tag_binds;
 
     bindr = [ "SUPER, SUPER_L, spawn, noctalia msg panel-toggle control-center" ];
 
