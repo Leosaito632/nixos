@@ -9,19 +9,19 @@
   wayland.windowManager.mango = {
     enable = true;
 
-    #    autostart_sh = ''
-    #      noctalia &
-    #      nm-applet &
-    #      wl-paste --type text --watch cliphist store &
-    #      wl-paste --type image --watch cliphist store &
-    #    '';
-
-    extraConfig = ''
-      exec_once = noctalia
-      exec_once = nm-applet
-      exec_once = wl-paste --type text --watch cliphist store
-      exec_once = wl-paste --type image --watch cliphist store
+    autostart_sh = ''
+      noctalia &
+      nm-applet &
+      wl-paste --type text --watch cliphist store &
+      wl-paste --type image --watch cliphist store &
     '';
+
+    #extraConfig = ''
+    #  exec_once = noctalia
+    #  exec_once = nm-applet
+    #  exec_once = wl-paste --type text --watch cliphist store
+    #  exec_once = wl-paste --type image --watch cliphist store
+    #'';
 
     settings = {
 
