@@ -1,6 +1,5 @@
 {
   inputs,
-  vars,
   hostName,
   ...
 }:
@@ -36,6 +35,10 @@ in
     #  exec_once = wl-paste --type text --watch cliphist store
     #  exec_once = wl-paste --type image --watch cliphist store
     #'';
+
+    extraConfig = ''
+      source_optional = ~/.config/mango/noctalia.conf
+    '';
 
     settings = {
 
@@ -174,16 +177,16 @@ in
       border_px = 1;
 
       # Colors
-      root_color = "0x282828ff";
-      border_color = "0x000000ff";
-      drop_color = "0xb8bb2680";
-      split_color = "0x83a598ff";
-      focus_color = "0x786f6bff";
-      maximized_screen_color = "0xfabd2fff";
-      urgent_color = "0xfb4934ff";
-      scratchpad_color = "0x83a598ff";
-      global_color = "0x444507ff";
-      overlay_color = "0x765300ff";
+      # root_color = "0x282828ff";
+      # border_color = "0x000000ff";
+      # drop_color = "0xb8bb2680";
+      # split_color = "0x83a598ff";
+      # focus_color = "0x786f6bff";
+      # maximized_screen_color = "0xfabd2fff";
+      # urgent_color = "0xfb4934ff";
+      # scratchpad_color = "0x83a598ff";
+      # global_color = "0x444507ff";
+      # overlay_color = "0x765300ff";
 
       group_bar_decorate_bg_color = "0x474240ff";
       group_bar_decorate_border_color = "0x786f6bff";
