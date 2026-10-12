@@ -22,6 +22,10 @@
   home.stateVersion = "25.05";
   home.enableNixpkgsReleaseCheck = false;
 
+  # Secret Service
+  services.gnome-keyring.enable = true;
+  home.packages = [ pkgs.gcr_4 ]; # Provides org.gnome.keyring.SystemPrompter
+
   home.sessionVariables = {
     BROWSER = vars.browser;
     DEFAULT_BROWSER = vars.browser;
@@ -30,8 +34,8 @@
     VISUAL = vars.editor;
     SHELL = vars.shell;
 
-    HYPRCURSOR_SIZE = builtins.toString vars.cursorSize;
-    XCURSOR_SIZE = builtins.toString vars.cursorSize;
+    HYPRCURSOR_SIZE = toString vars.cursorSize;
+    XCURSOR_SIZE = toString vars.cursorSize;
 
     XDG_SESSION_TYPE = "wayland";
     QT_QPA_PLATFORM = "wayland;xcb";
