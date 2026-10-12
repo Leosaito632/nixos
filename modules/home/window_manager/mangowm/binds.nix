@@ -80,8 +80,8 @@ in
       # Media Keys
       "none, XF86MonBrightnessUp, spawn, noctalia msg brightness-up"
       "none, XF86MonBrightnessDown, spawn, noctalia msg brightness-down"
-      "none, XF86AudioRaiseVolume, spawn, noctalia msg volume-up"
-      "none, XF86AudioLowerVolume, spawn, noctalia msg volume-down"
+      "none, XF86AudioRaiseVolume, spawn, noctalia msg volume-up 2"
+      "none, XF86AudioLowerVolume, spawn, noctalia msg volume-down 2"
       "none, XF86AudioMute, spawn, noctalia msg volume-mute"
       "none, XF86AudioPlay, spawn, noctalia msg media toggle"
       "none, XF86AudioNext, spawn, noctalia msg media next"
