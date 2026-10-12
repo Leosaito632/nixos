@@ -104,6 +104,8 @@ in
       tree
       grc
       bat
+      wlr-randr
+      wl-mirror
 
       # --- Desktop Apps ---
       whatsie
