@@ -9,7 +9,7 @@ let
       ]
     else
       [
-        "name:eDP-1, width:1366, height:768, x:0, y:0"
+        "name:eDP-1, width:1366, height:768, refresh:60, x:0, y:0"
       ];
 
   # Mapeamento dos workspaces
