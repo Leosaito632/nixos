@@ -39,7 +39,7 @@
               end
            end,
         })
-        require("nvim-treesitter").install { "python", "lua", "vim", "vimdoc", "nix" }
+        require("nvim-treesitter").install { "python", "lua", "vim", "vimdoc", "nix", "rust" }
 
         -- MARKDOWN
         -- Função para alternar checkbox
@@ -101,7 +101,16 @@
               },
             })
 
-            vim.lsp.enable { "nixd", "pyright" }
+            vim.lsp.config("rust_analyzer", {
+              settings = {
+                ['rust-analyzer'] = {
+                  diagnostics = {
+                    enable = true;
+                  }
+                }
+              }
+            })
+            vim.lsp.enable { "nixd", "pyright", "rust-analyzer" }
           end,
         },
         {
@@ -123,6 +132,7 @@
               nix = { "nixfmt" },
               sh = { "shfmt" },
               bash = { "shfmt" },
+              rust = { "rustfmt" }
             },
             format_on_save = {
               timeout_ms = 500,
