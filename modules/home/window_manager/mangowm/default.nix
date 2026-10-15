@@ -4,12 +4,12 @@
   ...
 }:
 let
-  whatsie_rule =
+  whatsapp_rule =
     if hostName == "desktop" then
-      [ "tags:10,monitor:HDMI-A-1,app_id:com.ktechpit.whatsie" ]
+      [ "tags:10,monitor:HDMI-A-1,app_id:zapfast" ]
     else
       [
-        "tags:10,app_id:com.ktechpit.whatsie"
+        "tags:10,app_id:zapfast"
       ];
 in
 {
@@ -253,7 +253,7 @@ in
         "unfocused_opacity:0.6,app_id:kitty"
         "is_overlay:1,is_floating:1,width:0.7,height:0.6,app_id:org.gnome.Nautilus"
       ]
-      ++ whatsie_rule;
+      ++ whatsapp_rule;
     };
   };
 }

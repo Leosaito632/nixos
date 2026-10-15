@@ -111,9 +111,11 @@ in
       bat
       wlr-randr
       wl-mirror
+      zenity
 
       # --- Desktop Apps ---
-      whatsie
+      # whatsie
+      zapfast
       libreoffice-qt-stable
       nautilus
       pinta
