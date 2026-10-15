@@ -110,7 +110,7 @@
                 }
               }
             })
-            vim.lsp.enable { "nixd", "pyright", "rust-analyzer" }
+            vim.lsp.enable { "nixd", "pyright", "rust_analyzer" }
           end,
         },
         {
