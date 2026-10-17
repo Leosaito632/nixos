@@ -251,7 +251,7 @@ in
         "unfocused_opacity:1,app_id:zen-twilight"
         "focused_opacity:0.8,app_id:kitty"
         "unfocused_opacity:0.6,app_id:kitty"
-        "is_overlay:1,is_floating:1,width:0.7,height:0.6,app_id:org.gnome.Nautilus"
+        "is_overlay:1,is_floating:1,width:0.65,height:0.75,app_id:org.gnome.Nautilus"
       ]
       ++ whatsapp_rule;
     };
