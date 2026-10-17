@@ -5,7 +5,9 @@
   inputs,
   ...
 }:
-
+let
+  esp = config.boot.loader.efi.efiSysMountPoint;
+in
 {
   imports = [
     ./development.nix
@@ -33,6 +35,12 @@
       menuentry "BIOS" {
         fwsetup
       }
+    '';
+    # Copia grubx64.efi para BOOTx64.EFI (fallback)
+    extraInstallCommands = ''
+      ${pkgs.coreutils}/bin/install -D -m 0644 \
+        ${esp}/EFI/NixOS-boot/grubx64.efi \
+        ${esp}/EFI/BOOT/BOOTX64.EFI
     '';
   };
 
