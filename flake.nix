@@ -18,11 +18,7 @@
 
     noctalia = {
       url = "github:noctalia-dev/noctalia/cachix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nix-minecraft = {
-      url = "github:Infinidoge/nix-minecraft";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
 
     mangowm = {
@@ -41,7 +37,6 @@
       self,
       nixpkgs,
       home-manager,
-      nix-minecraft,
       mangowm,
       ...
     }:
