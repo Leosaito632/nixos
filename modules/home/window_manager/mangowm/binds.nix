@@ -15,7 +15,7 @@ let
         "SUPER, 7, viewcrossmon, 7, name:HDMI-A-1"
         "SUPER, 8, viewcrossmon, 8, name:HDMI-A-1"
         "SUPER, 9, viewcrossmon, 9, name:HDMI-A-1"
-        "SUPER, 0, viewcrossmon, 10, name:HDMI-A-1"
+        "SUPER, 0, spawn, zapfast"
 
         "SUPER + Alt, 1, tagcrossmon, 1, name:DP-1"
         "SUPER + Alt, 2, tagcrossmon, 2, name:DP-1"
