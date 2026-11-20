@@ -166,7 +166,7 @@ in
       drag_lock = 1;
       trackpad_natural_scrolling = 1;
       swipe_min_threshold = 1;
-
+      trackpad_disable_while_typing = 0;
       # Appearance
       gap_inner_horizontal = 9;
       gap_inner_vertical = 7;

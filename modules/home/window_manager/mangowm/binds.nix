@@ -39,7 +39,7 @@ let
         "SUPER, 7, view, 7, 0"
         "SUPER, 8, view, 8, 0"
         "SUPER, 9, view, 9, 0"
-        "SUPER, 0, view, 10, 0"
+        "SUPER, 0, spawn, zapfast, 0"
 
         "SUPER + Alt, 1, tag, 1, 0"
         "SUPER + Alt, 2, tag, 2, 0"
