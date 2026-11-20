@@ -29,13 +29,6 @@ in
       wl-paste --type image --watch cliphist store &
     '';
 
-    #extraConfig = ''
-    #  exec_once = noctalia
-    #  exec_once = nm-applet
-    #  exec_once = wl-paste --type text --watch cliphist store
-    #  exec_once = wl-paste --type image --watch cliphist store
-    #'';
-
     extraConfig = ''
       source_optional = ~/.config/mango/noctalia.conf
     '';
@@ -76,7 +69,7 @@ in
 
       # Focus Opacity
       focused_opacity = 1.0;
-      unfocused_opacity = 0.7;
+      unfocused_opacity = 1.0;
       # Animation Configuration(support type:zoom,slide)
       # tag_animation_direction: 1-horizontal,0-vertical
       animations = 1;
@@ -248,7 +241,7 @@ in
 
       window_rule = [
         "is_named_scratchpad:1, width: 1200, height:800, app_id:quicknote_float"
-        "unfocused_opacity:1,app_id:zen-twilight"
+        # "unfocused_opacity:1,app_id:zen-twilight"
         "focused_opacity:0.8,app_id:kitty"
         "unfocused_opacity:0.6,app_id:kitty"
         "is_overlay:1,is_floating:1,width:0.65,height:0.75,app_id:org.gnome.Nautilus"
