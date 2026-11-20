@@ -11,20 +11,13 @@ let
     if hostName == "desktop" then
       with pkgs;
       [
-        osu-lazer
         spotify
-        prismlauncher
         discord
-        orca-slicer
-        stoat-desktop
-        pkgsRocm.blender
-        claude-code
       ]
     else
       with pkgs;
       [
         power-profiles-daemon
-        blender
       ];
 in
 {
@@ -73,7 +66,7 @@ in
   home.packages =
     with pkgs;
     [
-      # Gera Gerall
+      # Geral
       # --- Dev Tools ---
       gcc
       cargo
@@ -83,8 +76,6 @@ in
       ripgrep
       fd
       lua
-      # jetbrains.rider
-      # jetbrains.clion
       javaPackages.compiler.openjdk21
       python3
       glib
@@ -111,17 +102,15 @@ in
       bat
       wlr-randr
       wl-mirror
-      zenity
+      zenity # zapfast needs
 
       # --- Desktop Apps ---
-      # whatsie
       zapfast
       libreoffice-qt-stable
       nautilus
-      pinta
-      # mendeley
       loupe
       krita
+      qdirstat
 
       # --- Networking ---
       # openfortivpn
