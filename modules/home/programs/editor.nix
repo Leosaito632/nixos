@@ -4,6 +4,12 @@
   config,
   ...
 }:
+let
+  default-extensions = with pkgs.vscode-extensions; [
+    bierner.github-markdown-preview
+    tomoki1207.pdf
+  ];
+in
 {
   imports = [
     inputs.nix4nvchad.homeManagerModules.default
@@ -11,15 +17,38 @@
 
   programs.zed-editor = {
     enable = true;
+    extensions = [
+      "nix"
+      "catppuccin-icons"
+    ];
+    userSettings = {
+      theme = {
+        mode = "system";
+        light = "Gruvbox Light";
+        dark = "Gruvbox Dark";
+      };
+      icon_theme = "Catppuccin Frappé";
+    };
   };
 
   programs.vscode = {
     enable = true;
-    profiles.default.extensions = with pkgs.vscode-extensions; [
-      ms-python.python
-      ms-toolsai.jupyter
-      google.colab
-    ];
+    profiles = {
+      python = {
+        extensions =
+          with pkgs.vscode-extensions;
+          [
+            ms-python.python
+            ms-pyright.pyright
+            ms-toolsai.jupyter
+            google.colab
+          ]
+          ++ default-extensions;
+      };
+      default = {
+        extensions = default-extensions;
+      };
+    };
   };
 
   programs.nvchad = {
